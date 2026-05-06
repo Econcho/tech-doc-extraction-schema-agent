@@ -1,0 +1,78 @@
+[
+  {
+    "type": "function",
+    "function": {
+      "name": "get_neighbor_text_of_resblocks",
+      "description": "Get previous and next original-document text around residual blocks.",
+      "parameters": {
+        "type": "object",
+        "properties": {
+          "resblock_ids": {
+            "type": "array",
+            "items": {"type": "integer"}
+          },
+          "context_levels": {
+            "type": "array",
+            "items": {
+              "type": "string",
+              "enum": ["small", "medium", "large"]
+            }
+          },
+          "ignore_code_fence": {
+            "type": "boolean",
+            "default": false
+          }
+        },
+        "required": ["resblock_ids", "context_levels"],
+        "additionalProperties": false
+      }
+    }
+  },
+  {
+    "type": "function",
+    "function": {
+      "name": "get_extraction_result_of_neighbor_text",
+      "description": "Get extraction results whose char intervals overlap neighbor context around residual blocks.",
+      "parameters": {
+        "type": "object",
+        "properties": {
+          "resblock_ids": {
+            "type": "array",
+            "items": {"type": "integer"}
+          },
+          "context_levels": {
+            "type": "array",
+            "items": {
+              "type": "string",
+              "enum": ["small", "medium", "large"]
+            }
+          }
+        },
+        "required": ["resblock_ids", "context_levels"],
+        "additionalProperties": false
+      }
+    }
+  },
+  {
+    "type": "function",
+    "function": {
+      "name": "get_original_text_from_heading_tree",
+      "description": "Get original document content under the last heading of each residual block heading_tree.",
+      "parameters": {
+        "type": "object",
+        "properties": {
+          "resblock_ids": {
+            "type": "array",
+            "items": {"type": "integer"}
+          },
+          "ignore_code_fence": {
+            "type": "boolean",
+            "default": false
+          }
+        },
+        "required": ["resblock_ids"],
+        "additionalProperties": false
+      }
+    }
+  }
+]

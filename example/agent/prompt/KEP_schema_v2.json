@@ -1,0 +1,138 @@
+[
+  {
+    "class": "summary",
+    "description": "Use for spans that directly summarize what the KEP is proposing.\nUse this for concise \"what this KEP is about\" content, not for goals, not for implementation details.",
+    "boundary_guidance": "what the KEP is",
+    "attributes": null
+  },
+  {
+    "class": "motivation",
+    "description": "Use for spans that explain why the KEP is needed, what problem exists, or why the current situation is insufficient.\nUse this for \"why\" not \"what outcome\" and not \"how it works\".",
+    "boundary_guidance": "why it is needed",
+    "attributes": null
+  },
+  {
+    "class": "goal",
+    "description": "Use for explicit intended outcomes or target results of the KEP.\nUse this for statements of what the KEP wants to achieve.",
+    "boundary_guidance": "what outcome it wants to achieve",
+    "attributes": null
+  },
+  {
+    "class": "non_goal",
+    "description": "Use for spans that explicitly state what is out of scope for the current KEP.\nUse this when the text clearly excludes something from the proposal scope.",
+    "boundary_guidance": "what it explicitly does not aim to do",
+    "attributes": null
+  },
+  {
+    "class": "design_decision",
+    "description": "Use for concrete solution content: proposal definition, mechanism, workflow, API behavior, component behavior, compatibility behavior, rollout behavior, upgrade behavior, version skew behavior, dependency handling, monitoring design, scalability design, troubleshooting design, or other implementation details.",
+    "boundary_guidance": "how it works",
+    "attributes": {
+      "proposal_definition": "Use when the span defines the proposal at a high level: what the proposed mechanism or object is, what concept is being introduced, or what the proposal standardizes or establishes.",
+      "workflow": "Use when the span describes a sequence of steps, control flow, interaction flow, lifecycle flow, or how components/processes work together over time.",
+      "api_change": "Use when the span describes an API-level change: new fields, renamed fields, new resources, versioned API behavior, schema restrictions, request/response behavior, or endpoint/interface changes.",
+      "component_change": "Use when the span describes behavior or implementation changes in a specific Kubernetes component, controller, scheduler, kubelet, apiserver, webhook, or other concrete system component.",
+      "compatibility": "Use when the span explains compatibility expectations or behavior across existing systems, clients, resources, formats, or prior behavior, but is not specifically about upgrade flow or version skew policy.",
+      "rollout": "Use when the span describes staged enablement, feature-gated rollout, alpha/beta/GA rollout mechanics, progressive adoption, or how the feature will be introduced operationally.",
+      "upgrade_strategy": "Use when the span explains how upgrades, downgrades, rollback, re-enable behavior, or migration between old and new behavior should work.",
+      "version_skew_strategy": "Use when the span explains how different versions of components, clients, servers, resources, or APIs are expected to interoperate across version skew.",
+      "dependency": "Use when the span describes required external systems, required services, prerequisite components, or explicit dependencies between parts of the system.",
+      "monitoring": "Use when the span describes metrics, observability signals, SLI/SLO-related signals, health indicators, or how operators can detect whether the feature is working.",
+      "scalability": "Use when the span describes scale limits, size/count thresholds, latency targets, storage bounds, resource consumption limits, throughput expectations, or scale behavior.",
+      "troubleshooting": "Use when the span describes failure diagnosis, playbook-like guidance, failure reaction, debugging guidance, or what to do when something goes wrong.",
+      "implementation_detail": "Use when the span contains concrete implementation-specific design detail that does not fit the categories above, such as internal handling logic, algorithm choice, or code-path behavior.",
+      "other": "Use only if the span is clearly a design_decision but does not fit any category above."
+    }
+  },
+  {
+    "class": "user_story",
+    "description": "Use for a user- or actor-centered scenario that describes who needs something, in what situation, and why.\nTypical pattern: \"As a ..., I want ..., so that ...\".",
+    "boundary_guidance": "who needs what in which scenario",
+    "attributes": null
+  },
+  {
+    "class": "definition",
+    "description": "Use for explicit definitions of terms, concepts, roles, or artifacts.",
+    "boundary_guidance": "what a term or concept means",
+    "attributes": {
+      "term": "Use for a glossary-like term, abbreviation, or named concept being defined.",
+      "role": "Use for a defined actor, responsibility, or organizational role.",
+      "artifact": "Use for a defined object, file, resource, API object, document type, or system artifact.",
+      "other": "Use only if the span is clearly definitional but does not fit the above."
+    }
+  },
+  {
+    "class": "future_work",
+    "description": "Use for explicitly deferred future extensions, post-GA tasks, backlog items, or later work that is not part of the current KEP scope.",
+    "boundary_guidance": "later work, not part of the current committed scope",
+    "attributes": {
+      "post_ga": "Use when the text explicitly says the work belongs after GA or after the current graduation.",
+      "future_extension": "Use when the text describes a possible future capability, optional future extension, or later enhancement.",
+      "backlog": "Use when the text refers to queued follow-up work, task lists, or deferred items without a strong post-GA framing.",
+      "other": "Use only if the span is clearly future_work but none of the above fits."
+    }
+  },
+  {
+    "class": "risk",
+    "description": "Use for explicit risks, caveats, limitations, failure modes, negative consequences, or safety concerns.",
+    "boundary_guidance": "what could go wrong or what limitation exists",
+    "attributes": null
+  },
+  {
+    "class": "mitigation",
+    "description": "Use for an explicit safeguard, fallback, control, or risk-reduction measure.",
+    "boundary_guidance": "how a risk is reduced",
+    "attributes": null
+  },
+  {
+    "class": "test_case",
+    "description": "Use for explicit tests, validation items, or verification requirements.",
+    "boundary_guidance": "how the proposal is validated",
+    "attributes": {
+      "prerequisite_update": "Use for prerequisite or preparatory testing changes that must happen before broader testing is valid.",
+      "unit_test": "Use for unit-level validation of isolated logic or a specific package/component.",
+      "integration_test": "Use for integration-level testing across components, APIs, storage, conversions, or end-to-end behavior within the system under controlled integration conditions.",
+      "e2e_test": "Use for full end-to-end tests that exercise the feature in a realistic cluster workflow.",
+      "conformance_test": "Use for tests intended to be promoted to, or described as part of, Kubernetes conformance coverage.",
+      "manual_validation": "Use for explicitly manual checks, manual rollout checks, or human-run validation procedures.",
+      "benchmark_or_scale": "Use for scale tests, load tests, latency checks, or performance/scalability validation.",
+      "other": "Use only if the span is clearly a test_case but none of the above fits."
+    }
+  },
+  {
+    "class": "graduation_criterion",
+    "description": "Use for explicit conditions that must be satisfied for promotion to a maturity stage.",
+    "boundary_guidance": "what must be true for promotion",
+    "attributes": {
+      "alpha": "Use when the condition is explicitly tied to alpha readiness or alpha behavior.",
+      "beta": "Use when the condition is explicitly tied to beta readiness or beta promotion.",
+      "ga": "Use when the condition is explicitly tied to GA readiness, GA promotion, or general availability.",
+      "stable": "Use when the text explicitly uses \"stable\" rather than \"GA\" or when stable is the stated maturity target.",
+      "other": "Use only if the span is clearly a graduation criterion but the stage is not one of the above."
+    }
+  },
+  {
+    "class": "drawback",
+    "description": "Use for explicit disadvantages, tradeoffs, burdens, or downsides of the proposal itself.\nDo not use drawback for operational risk or failure mode; use risk for those.",
+    "boundary_guidance": "downside of the proposal itself",
+    "attributes": null
+  },
+  {
+    "class": "alternative",
+    "description": "Use for an alternative approach, rejected option, competing design, or another path considered instead of the proposed one.",
+    "boundary_guidance": "another approach considered",
+    "attributes": null
+  },
+  {
+    "class": "implementation_history",
+    "description": "Use for implementation timeline or history items such as dated events, release milestones, or stage transitions.",
+    "boundary_guidance": "historical or milestone event",
+    "attributes": {
+      "marker": "Use this for the explicit date, release, or stage label if one is clearly present in the text.",
+      "release": "Use when the marker is a Kubernetes release or version-like milestone such as 1.32, v1.34, Release 1.20.",
+      "date": "Use when the marker is an explicit calendar date.",
+      "stage": "Use when the marker is a named lifecycle stage such as alpha, beta, or stable.",
+      "other": "Use only if a marker is present but none of the above fits."
+    }
+  }
+]

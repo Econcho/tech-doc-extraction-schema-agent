@@ -1,0 +1,37 @@
+{
+  "run_id": "20260502_144354_doc_d70b5756_p0_7bf650",
+  "doc_id": "doc_d70b5756",
+  "policy_name": "KEPStructuredChunkPolicy",
+  "model_name": "deepseek-chat",
+  "max_char_buffer": 1000,
+  "config_snapshot": {
+    "min_fill_ratio": 0.6,
+    "preferred_fill_ratio": 1,
+    "max_containers_per_chunk": 10,
+    "max_container_types_per_chunk": 10,
+    "skip_toc": true,
+    "skip_checklist": true,
+    "skip_code_fence": true,
+    "skip_table": true
+  },
+  "observer_config": {
+    "enabled": true,
+    "output_dir": "F:\\LLM\\langextract-main\\runtime_observe",
+    "max_preview_chars": 1000,
+    "block_record": "full",
+    "skipped_block_record": "light",
+    "container_record": "full",
+    "chunk_decision_record": "light",
+    "chunk_record": "full",
+    "prompt_record": "light",
+    "llm_call_record": "light",
+    "parse_record": "light",
+    "extraction_record": "light"
+  },
+  "pass_index": 0,
+  "status": "success",
+  "error_message": null,
+  "start_time": "2026-05-02T14:43:54.496",
+  "end_time": "2026-05-02T14:44:22.498",
+  "duration_ms": 28002
+}

@@ -1,0 +1,46 @@
+dataset:
+  registry_path: eval_system/dataset/KEP/registry_all.json
+
+baseline:
+  path: result/KEP_prompt_v2
+  format: json
+  adapter: langextract
+  doc_subdir: true
+  filename_template: pred_{doc_id}_dschat-chunk1000-structured-ft.json
+
+candidate:
+  path: result/KEP_prompt_v2
+  format: json
+  adapter: langextract
+  doc_subdir: true
+  filename_template: pred_{doc_id}_dschat-chunk1000-structured-all_heading.json
+
+domain_plugin: kep_v1
+
+matcher:
+  type: max_weight_bipartite
+
+metrics:
+  - detection_strict
+  - detection_relaxed
+  - class_strict
+  - class_relaxed
+  - structured_strict
+  - structured_relaxed
+  - structure_anomaly_rate
+  - grounding_match_exact_rate
+  - grounding_match_lesser_rate
+  - grounding_match_fuzzy_rate
+  - grounding_match_none_rate
+
+thresholds:
+  text_relaxed_f1: 0.8
+  lccs_ratio: 0.7
+  substring_precision: 0.8
+  substring_recall: 0.8
+
+report:
+  output_dir: eval_system/reports/eval_all_with_compare
+  formats:
+    - json
+    - markdown

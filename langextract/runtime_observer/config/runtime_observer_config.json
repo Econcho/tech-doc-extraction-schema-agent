@@ -1,0 +1,14 @@
+{
+  "enabled": true,
+  "output_dir": "runtime_observe",
+  "max_preview_chars": 1000,
+  "block_record": "full",
+  "skipped_block_record": "light",
+  "container_record": "full",
+  "chunk_decision_record": "light",
+  "chunk_record": "full",
+  "prompt_record": "light",
+  "llm_call_record": "light",
+  "parse_record": "light",
+  "extraction_record": "light"
+}

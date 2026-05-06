@@ -1,0 +1,4 @@
+gold_path: eval_system/dataset/KEP/labels/sig-apps/19-Graduate-CronJob-to-Stable/label_v2.json
+pred_path: result/KEP_prompt_v2/19-Graduate-CronJob-to-Stable/pred_19-Graduate-CronJob-to-Stable_dschat-chunk1000-structured-ft.json
+save_result: true
+save_path: eval_system/reports/eval_single_file/19-Graduate-CronJob-to-Stable_eval.txt

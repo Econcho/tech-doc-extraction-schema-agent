@@ -1,0 +1,85 @@
+[
+  {
+    "type": "function",
+    "function": {
+      "name": "get_neighbor_text_of_resblocks",
+      "description": "Get previous and next original-document text around residual blocks.",
+      "parameters": {
+        "type": "object",
+        "properties": {
+          "resblock_ids": {
+            "type": "array",
+            "items": {"type": "integer"},
+            "description": "Residual block ids to query."
+          },
+          "context_levels": {
+            "type": "array",
+            "items": {
+              "type": "string",
+              "enum": ["small", "medium", "large"]
+            },
+            "description": "Context level per residual block. small=100, medium=200, large=300 characters."
+          },
+          "ignore_code_fence": {
+            "type": "boolean",
+            "description": "Whether code fence content should be removed from returned neighbor text.",
+            "default": false
+          }
+        },
+        "required": ["resblock_ids", "context_levels"],
+        "additionalProperties": false
+      }
+    }
+  },
+  {
+    "type": "function",
+    "function": {
+      "name": "get_extraction_result_of_neighbor_text",
+      "description": "Get extraction results whose char intervals overlap neighbor context around residual blocks.",
+      "parameters": {
+        "type": "object",
+        "properties": {
+          "resblock_ids": {
+            "type": "array",
+            "items": {"type": "integer"},
+            "description": "Residual block ids to query."
+          },
+          "context_levels": {
+            "type": "array",
+            "items": {
+              "type": "string",
+              "enum": ["small", "medium", "large"]
+            },
+            "description": "Context level per residual block. small=100, medium=200, large=300 characters."
+          }
+        },
+        "required": ["resblock_ids", "context_levels"],
+        "additionalProperties": false
+      }
+    }
+  },
+  {
+    "type": "function",
+    "function": {
+      "name": "get_original_text_from_heading_tree",
+      "description": "Get original document content under the last heading of each residual block heading_tree.",
+      "parameters": {
+        "type": "object",
+        "properties": {
+          "resblock_ids": {
+            "type": "array",
+            "items": {"type": "integer"},
+            "description": "Residual block ids to query."
+          },
+          "ignore_code_fence": {
+            "type": "boolean",
+            "description": "Whether code fence content should be removed from returned section content.",
+            "default": false
+          }
+        },
+        "required": ["resblock_ids"],
+        "additionalProperties": false
+      }
+    }
+  }
+]

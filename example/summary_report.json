@@ -1,0 +1,1391 @@
+{
+  "dataset_info": {
+    "dataset_name": "kep_all_labeled",
+    "version": "v1",
+    "domain": "kep",
+    "schema_version": "kep_schema_v2",
+    "label_policy_version": "registry_label_files",
+    "split": "kep_all_labeled",
+    "doc_count": 54,
+    "registry_path": "F:\\LLM\\langextract-main\\eval_system\\dataset\\KEP\\registry_all.json"
+  },
+  "run_info": {
+    "prediction_path": "F:\\LLM\\langextract-main\\result\\KEP_prompt_v2",
+    "adapter": "langextract",
+    "matcher": "max_weight_bipartite",
+    "metrics": [
+      "detection_strict",
+      "detection_relaxed",
+      "class_strict",
+      "class_relaxed",
+      "structured_strict",
+      "structured_relaxed",
+      "structure_anomaly_rate",
+      "grounding_match_exact_rate",
+      "grounding_match_lesser_rate",
+      "grounding_match_fuzzy_rate",
+      "grounding_match_none_rate"
+    ],
+    "matching_metrics": [
+      "detection_strict",
+      "detection_relaxed",
+      "class_strict",
+      "class_relaxed",
+      "structured_strict",
+      "structured_relaxed"
+    ],
+    "diagnostic_metrics": [
+      "structure_anomaly_rate",
+      "grounding_match_exact_rate",
+      "grounding_match_lesser_rate",
+      "grounding_match_fuzzy_rate",
+      "grounding_match_none_rate"
+    ],
+    "thresholds": {
+      "text_relaxed_f1": 0.8,
+      "substring_precision": 0.8,
+      "substring_recall": 0.8,
+      "lccs_ratio": 0.7
+    },
+    "tokenizer_name": "RegexTokenizer"
+  },
+  "micro_results": {
+    "detection_strict": {
+      "metric_name": "detection_strict",
+      "precision": 0.827,
+      "recall": 0.8033432657926103,
+      "f1": 0.8150000000000001,
+      "tp": 1609,
+      "fp": 337,
+      "fn": 394
+    },
+    "detection_relaxed": {
+      "metric_name": "detection_relaxed",
+      "precision": 0.862,
+      "recall": 0.8344474885844748,
+      "f1": 0.8480000000000001,
+      "tp": 1671,
+      "fp": 268,
+      "fn": 332
+    },
+    "class_strict": {
+      "metric_name": "class_strict",
+      "precision": 0.793,
+      "recall": 0.7713009950248757,
+      "f1": 0.7820000000000001,
+      "tp": 1545,
+      "fp": 403,
+      "fn": 458
+    },
+    "class_relaxed": {
+      "metric_name": "class_relaxed",
+      "precision": 0.8240000000000001,
+      "recall": 0.7984038231780167,
+      "f1": 0.8110000000000002,
+      "tp": 1599,
+      "fp": 342,
+      "fn": 404
+    },
+    "structured_strict": {
+      "metric_name": "structured_strict",
+      "precision": 0.7435,
+      "recall": 0.7237654280026542,
+      "f1": 0.7335,
+      "tp": 1450,
+      "fp": 500,
+      "fn": 553
+    },
+    "structured_relaxed": {
+      "metric_name": "structured_relaxed",
+      "precision": 0.778,
+      "recall": 0.7543645569620253,
+      "f1": 0.766,
+      "tp": 1511,
+      "fp": 431,
+      "fn": 492
+    }
+  },
+  "macro_doc_results": {
+    "detection_strict": {
+      "metric_name": "detection_strict",
+      "precision": 0.828,
+      "recall": 0.804342857142857,
+      "f1": 0.8159999999999998,
+      "tp": 1611,
+      "fp": 335,
+      "fn": 392
+    },
+    "detection_relaxed": {
+      "metric_name": "detection_relaxed",
+      "precision": 0.863,
+      "recall": 0.8354469783352337,
+      "f1": 0.849,
+      "tp": 1673,
+      "fp": 266,
+      "fn": 330
+    },
+    "class_strict": {
+      "metric_name": "class_strict",
+      "precision": 0.794,
+      "recall": 0.7723006211180125,
+      "f1": 0.783,
+      "tp": 1547,
+      "fp": 401,
+      "fn": 456
+    },
+    "class_relaxed": {
+      "metric_name": "class_relaxed",
+      "precision": 0.8250000000000001,
+      "recall": 0.7994033412887828,
+      "f1": 0.8119999999999999,
+      "tp": 1601,
+      "fp": 340,
+      "fn": 402
+    },
+    "structured_strict": {
+      "metric_name": "structured_strict",
+      "precision": 0.7454999999999999,
+      "recall": 0.725764725347452,
+      "f1": 0.7354999999999998,
+      "tp": 1454,
+      "fp": 496,
+      "fn": 549
+    },
+    "structured_relaxed": {
+      "metric_name": "structured_relaxed",
+      "precision": 0.779,
+      "recall": 0.7553640960809103,
+      "f1": 0.767,
+      "tp": 1513,
+      "fp": 429,
+      "fn": 490
+    }
+  },
+  "macro_class_results": {
+    "detection_strict": {
+      "summary": {
+        "metric_name": "detection_strict",
+        "precision": 0.8221088733470742,
+        "recall": 0.7984541520141675,
+        "f1": 0.810108873347074,
+        "tp": 44,
+        "fp": 10,
+        "fn": 11
+      },
+      "motivation": {
+        "metric_name": "detection_strict",
+        "precision": 0.8221341958179333,
+        "recall": 0.7984794640031294,
+        "f1": 0.8101341958179333,
+        "tp": 142,
+        "fp": 31,
+        "fn": 36
+      },
+      "goal": {
+        "metric_name": "detection_strict",
+        "precision": 0.8244352333644805,
+        "recall": 0.8007795517151574,
+        "f1": 0.8124352333644805,
+        "tp": 78,
+        "fp": 17,
+        "fn": 19
+      },
+      "non_goal": {
+        "metric_name": "detection_strict",
+        "precision": 0.8268152665581968,
+        "recall": 0.8031586079487054,
+        "f1": 0.8148152665581968,
+        "tp": 57,
+        "fp": 12,
+        "fn": 14
+      },
+      "design_decision": {
+        "metric_name": "detection_strict",
+        "precision": 0.8269812252458172,
+        "recall": 0.8033244987200425,
+        "f1": 0.8149812252458173,
+        "tp": 680,
+        "fp": 142,
+        "fn": 167
+      },
+      "user_story": {
+        "metric_name": "detection_strict",
+        "precision": 0.825340538490794,
+        "recall": 0.8016844845757634,
+        "f1": 0.813340538490794,
+        "tp": 30,
+        "fp": 6,
+        "fn": 8
+      },
+      "definition": {
+        "metric_name": "detection_strict",
+        "precision": 0.8245041947170765,
+        "recall": 0.8008484846821703,
+        "f1": 0.8125041947170765,
+        "tp": 85,
+        "fp": 18,
+        "fn": 21
+      },
+      "future_work": {
+        "metric_name": "detection_strict",
+        "precision": 0.8261021279238381,
+        "recall": 0.8024457614625256,
+        "f1": 0.8141021279238381,
+        "tp": 45,
+        "fp": 9,
+        "fn": 11
+      },
+      "risk": {
+        "metric_name": "detection_strict",
+        "precision": 0.8287951926773077,
+        "recall": 0.8051377255586898,
+        "f1": 0.8167951926773077,
+        "tp": 64,
+        "fp": 13,
+        "fn": 16
+      },
+      "mitigation": {
+        "metric_name": "detection_strict",
+        "precision": 0.8299085152852724,
+        "recall": 0.8062505952081752,
+        "f1": 0.8179085152852724,
+        "tp": 42,
+        "fp": 9,
+        "fn": 10
+      },
+      "test_case": {
+        "metric_name": "detection_strict",
+        "precision": 0.8286940282288463,
+        "recall": 0.8050366023287323,
+        "f1": 0.8166940282288464,
+        "tp": 112,
+        "fp": 23,
+        "fn": 27
+      },
+      "graduation_criterion": {
+        "metric_name": "detection_strict",
+        "precision": 0.827242885595303,
+        "recall": 0.8035860520432327,
+        "f1": 0.815242885595303,
+        "tp": 104,
+        "fp": 22,
+        "fn": 25
+      },
+      "drawback": {
+        "metric_name": "detection_strict",
+        "precision": 0.827934889482124,
+        "recall": 0.8042777732027628,
+        "f1": 0.815934889482124,
+        "tp": 16,
+        "fp": 3,
+        "fn": 4
+      },
+      "alternative": {
+        "metric_name": "detection_strict",
+        "precision": 0.8305358533953413,
+        "recall": 0.8068776786112527,
+        "f1": 0.8185358533953413,
+        "tp": 41,
+        "fp": 8,
+        "fn": 10
+      },
+      "implementation_history": {
+        "metric_name": "detection_strict",
+        "precision": 0.8324832387273453,
+        "recall": 0.8088242756914821,
+        "f1": 0.8204832387273453,
+        "tp": 68,
+        "fp": 14,
+        "fn": 16
+      }
+    },
+    "detection_relaxed": {
+      "summary": {
+        "metric_name": "detection_relaxed",
+        "precision": 0.8571088733470742,
+        "recall": 0.829558874503065,
+        "f1": 0.8431088733470743,
+        "tp": 46,
+        "fp": 8,
+        "fn": 9
+      },
+      "motivation": {
+        "metric_name": "detection_relaxed",
+        "precision": 0.8571341958179334,
+        "recall": 0.8295841838931138,
+        "f1": 0.8431341958179334,
+        "tp": 148,
+        "fp": 25,
+        "fn": 30
+      },
+      "goal": {
+        "metric_name": "detection_relaxed",
+        "precision": 0.8594352333644806,
+        "recall": 0.8318840359602838,
+        "f1": 0.8454352333644806,
+        "tp": 81,
+        "fp": 13,
+        "fn": 16
+      },
+      "non_goal": {
+        "metric_name": "detection_relaxed",
+        "precision": 0.8618152665581968,
+        "recall": 0.8342628495302779,
+        "f1": 0.8478152665581967,
+        "tp": 59,
+        "fp": 9,
+        "fn": 12
+      },
+      "design_decision": {
+        "metric_name": "detection_relaxed",
+        "precision": 0.8619812252458172,
+        "recall": 0.8344287234212375,
+        "f1": 0.8479812252458172,
+        "tp": 707,
+        "fp": 113,
+        "fn": 140
+      },
+      "user_story": {
+        "metric_name": "detection_relaxed",
+        "precision": 0.8603405384907941,
+        "recall": 0.8327888763897512,
+        "f1": 0.8463405384907939,
+        "tp": 32,
+        "fp": 5,
+        "fn": 6
+      },
+      "definition": {
+        "metric_name": "detection_relaxed",
+        "precision": 0.8595041947170765,
+        "recall": 0.8319529618808414,
+        "f1": 0.8455041947170765,
+        "tp": 88,
+        "fp": 14,
+        "fn": 18
+      },
+      "future_work": {
+        "metric_name": "detection_relaxed",
+        "precision": 0.8611021279238381,
+        "recall": 0.8335500756404435,
+        "f1": 0.8471021279238381,
+        "tp": 47,
+        "fp": 8,
+        "fn": 9
+      },
+      "risk": {
+        "metric_name": "detection_relaxed",
+        "precision": 0.8637951926773078,
+        "recall": 0.8362417660958799,
+        "f1": 0.8497951926773079,
+        "tp": 67,
+        "fp": 11,
+        "fn": 13
+      },
+      "mitigation": {
+        "metric_name": "detection_relaxed",
+        "precision": 0.8649085152852725,
+        "recall": 0.8373545230246249,
+        "f1": 0.8509085152852724,
+        "tp": 44,
+        "fp": 7,
+        "fn": 8
+      },
+      "test_case": {
+        "metric_name": "detection_relaxed",
+        "precision": 0.8636940282288463,
+        "recall": 0.8361406531202006,
+        "f1": 0.8496940282288463,
+        "tp": 116,
+        "fp": 18,
+        "fn": 23
+      },
+      "graduation_criterion": {
+        "metric_name": "detection_relaxed",
+        "precision": 0.862242885595303,
+        "recall": 0.834690250140504,
+        "f1": 0.848242885595303,
+        "tp": 108,
+        "fp": 17,
+        "fn": 21
+      },
+      "drawback": {
+        "metric_name": "detection_relaxed",
+        "precision": 0.862934889482124,
+        "recall": 0.835381901004532,
+        "f1": 0.848934889482124,
+        "tp": 17,
+        "fp": 3,
+        "fn": 3
+      },
+      "alternative": {
+        "metric_name": "detection_relaxed",
+        "precision": 0.8655358533953413,
+        "recall": 0.8379815430150274,
+        "f1": 0.8515358533953413,
+        "tp": 43,
+        "fp": 7,
+        "fn": 8
+      },
+      "implementation_history": {
+        "metric_name": "detection_relaxed",
+        "precision": 0.8674832387273453,
+        "recall": 0.8399279437231725,
+        "f1": 0.8534832387273453,
+        "tp": 71,
+        "fp": 11,
+        "fn": 13
+      }
+    },
+    "class_strict": {
+      "summary": {
+        "metric_name": "class_strict",
+        "precision": 0.7881088733470742,
+        "recall": 0.766411710680098,
+        "f1": 0.7771088733470743,
+        "tp": 42,
+        "fp": 11,
+        "fn": 13
+      },
+      "motivation": {
+        "metric_name": "class_strict",
+        "precision": 0.7881341958179334,
+        "recall": 0.7664370235548348,
+        "f1": 0.7771341958179335,
+        "tp": 136,
+        "fp": 37,
+        "fn": 42
+      },
+      "goal": {
+        "metric_name": "class_strict",
+        "precision": 0.7904352333644806,
+        "recall": 0.7687371916387432,
+        "f1": 0.7794352333644805,
+        "tp": 75,
+        "fp": 20,
+        "fn": 22
+      },
+      "non_goal": {
+        "metric_name": "class_strict",
+        "precision": 0.7928152665581969,
+        "recall": 0.7711163307579803,
+        "f1": 0.7818152665581969,
+        "tp": 55,
+        "fp": 14,
+        "fn": 16
+      },
+      "design_decision": {
+        "metric_name": "class_strict",
+        "precision": 0.7929812252458173,
+        "recall": 0.7712822272995977,
+        "f1": 0.7819812252458173,
+        "tp": 653,
+        "fp": 170,
+        "fn": 194
+      },
+      "user_story": {
+        "metric_name": "class_strict",
+        "precision": 0.7913405384907941,
+        "recall": 0.769642156056392,
+        "f1": 0.7803405384907941,
+        "tp": 29,
+        "fp": 8,
+        "fn": 9
+      },
+      "definition": {
+        "metric_name": "class_strict",
+        "precision": 0.7905041947170766,
+        "recall": 0.768806127010875,
+        "f1": 0.7795041947170765,
+        "tp": 81,
+        "fp": 21,
+        "fn": 25
+      },
+      "future_work": {
+        "metric_name": "class_strict",
+        "precision": 0.7921021279238382,
+        "recall": 0.7704034594626122,
+        "f1": 0.7811021279238382,
+        "tp": 43,
+        "fp": 11,
+        "fn": 13
+      },
+      "risk": {
+        "metric_name": "class_strict",
+        "precision": 0.7947951926773078,
+        "recall": 0.7730955171297235,
+        "f1": 0.7837951926773078,
+        "tp": 62,
+        "fp": 16,
+        "fn": 18
+      },
+      "mitigation": {
+        "metric_name": "class_strict",
+        "precision": 0.7959085152852725,
+        "recall": 0.7742084253685294,
+        "f1": 0.7849085152852724,
+        "tp": 40,
+        "fp": 10,
+        "fn": 12
+      },
+      "test_case": {
+        "metric_name": "class_strict",
+        "precision": 0.7946940282288464,
+        "recall": 0.7729943903905618,
+        "f1": 0.7836940282288464,
+        "tp": 107,
+        "fp": 28,
+        "fn": 32
+      },
+      "graduation_criterion": {
+        "metric_name": "class_strict",
+        "precision": 0.7932428855953031,
+        "recall": 0.7715437897180929,
+        "f1": 0.782242885595303,
+        "tp": 100,
+        "fp": 26,
+        "fn": 29
+      },
+      "drawback": {
+        "metric_name": "class_strict",
+        "precision": 0.7939348894821241,
+        "recall": 0.7722355349171303,
+        "f1": 0.782934889482124,
+        "tp": 15,
+        "fp": 4,
+        "fn": 5
+      },
+      "alternative": {
+        "metric_name": "class_strict",
+        "precision": 0.7965358533953414,
+        "recall": 0.7748355304920083,
+        "f1": 0.7855358533953414,
+        "tp": 40,
+        "fp": 10,
+        "fn": 11
+      },
+      "implementation_history": {
+        "metric_name": "class_strict",
+        "precision": 0.7984832387273454,
+        "recall": 0.7767821948865619,
+        "f1": 0.7874832387273454,
+        "tp": 65,
+        "fp": 16,
+        "fn": 19
+      }
+    },
+    "class_relaxed": {
+      "summary": {
+        "metric_name": "class_relaxed",
+        "precision": 0.8191088733470743,
+        "recall": 0.7935150701932159,
+        "f1": 0.8061088733470744,
+        "tp": 44,
+        "fp": 10,
+        "fn": 11
+      },
+      "motivation": {
+        "metric_name": "class_relaxed",
+        "precision": 0.8191341958179335,
+        "recall": 0.7935403803031987,
+        "f1": 0.8061341958179334,
+        "tp": 141,
+        "fp": 31,
+        "fn": 37
+      },
+      "goal": {
+        "metric_name": "class_relaxed",
+        "precision": 0.8214352333644807,
+        "recall": 0.795840297755922,
+        "f1": 0.8084352333644808,
+        "tp": 77,
+        "fp": 17,
+        "fn": 20
+      },
+      "non_goal": {
+        "metric_name": "class_relaxed",
+        "precision": 0.8238152665581969,
+        "recall": 0.7982191788833032,
+        "f1": 0.8108152665581969,
+        "tp": 57,
+        "fp": 12,
+        "fn": 14
+      },
+      "design_decision": {
+        "metric_name": "class_relaxed",
+        "precision": 0.8239812252458173,
+        "recall": 0.7983850574821983,
+        "f1": 0.8109812252458172,
+        "tp": 676,
+        "fp": 144,
+        "fn": 171
+      },
+      "user_story": {
+        "metric_name": "class_relaxed",
+        "precision": 0.8223405384907941,
+        "recall": 0.7967451638913651,
+        "f1": 0.8093405384907941,
+        "tp": 30,
+        "fp": 6,
+        "fn": 8
+      },
+      "definition": {
+        "metric_name": "class_relaxed",
+        "precision": 0.8215041947170766,
+        "recall": 0.7959092256350034,
+        "f1": 0.8085041947170766,
+        "tp": 84,
+        "fp": 18,
+        "fn": 22
+      },
+      "future_work": {
+        "metric_name": "class_relaxed",
+        "precision": 0.8231021279238382,
+        "recall": 0.7975063847588726,
+        "f1": 0.8101021279238382,
+        "tp": 45,
+        "fp": 10,
+        "fn": 11
+      },
+      "risk": {
+        "metric_name": "class_relaxed",
+        "precision": 0.8257951926773078,
+        "recall": 0.8001981515914155,
+        "f1": 0.8127951926773078,
+        "tp": 64,
+        "fp": 14,
+        "fn": 16
+      },
+      "mitigation": {
+        "metric_name": "class_relaxed",
+        "precision": 0.8269085152852725,
+        "recall": 0.8013109400658871,
+        "f1": 0.8139085152852726,
+        "tp": 42,
+        "fp": 9,
+        "fn": 10
+      },
+      "test_case": {
+        "metric_name": "class_relaxed",
+        "precision": 0.8256940282288464,
+        "recall": 0.8000970357484228,
+        "f1": 0.8126940282288465,
+        "tp": 111,
+        "fp": 23,
+        "fn": 28
+      },
+      "graduation_criterion": {
+        "metric_name": "class_relaxed",
+        "precision": 0.8242428855953031,
+        "recall": 0.7986465916235241,
+        "f1": 0.811242885595303,
+        "tp": 103,
+        "fp": 22,
+        "fn": 26
+      },
+      "drawback": {
+        "metric_name": "class_relaxed",
+        "precision": 0.8249348894821241,
+        "recall": 0.799338262111958,
+        "f1": 0.811934889482124,
+        "tp": 16,
+        "fp": 3,
+        "fn": 4
+      },
+      "alternative": {
+        "metric_name": "class_relaxed",
+        "precision": 0.8275358533953414,
+        "recall": 0.8019379778242216,
+        "f1": 0.8145358533953414,
+        "tp": 41,
+        "fp": 9,
+        "fn": 10
+      },
+      "implementation_history": {
+        "metric_name": "class_relaxed",
+        "precision": 0.8294832387273454,
+        "recall": 0.8038844336526125,
+        "f1": 0.8164832387273454,
+        "tp": 68,
+        "fp": 14,
+        "fn": 16
+      }
+    },
+    "structured_strict": {
+      "summary": {
+        "metric_name": "structured_strict",
+        "precision": 0.741,
+        "recall": 0.7212663115845539,
+        "f1": 0.7310000000000001,
+        "tp": 40,
+        "fp": 14,
+        "fn": 15
+      },
+      "motivation": {
+        "metric_name": "structured_strict",
+        "precision": 0.741,
+        "recall": 0.7212663115845539,
+        "f1": 0.7310000000000001,
+        "tp": 128,
+        "fp": 45,
+        "fn": 50
+      },
+      "goal": {
+        "metric_name": "structured_strict",
+        "precision": 0.7424352333644806,
+        "recall": 0.7227010369727269,
+        "f1": 0.7324352333644806,
+        "tp": 70,
+        "fp": 24,
+        "fn": 27
+      },
+      "non_goal": {
+        "metric_name": "structured_strict",
+        "precision": 0.7448152665581969,
+        "recall": 0.7250802320522202,
+        "f1": 0.7348152665581967,
+        "tp": 51,
+        "fp": 17,
+        "fn": 20
+      },
+      "design_decision": {
+        "metric_name": "structured_strict",
+        "precision": 0.7449812252458172,
+        "recall": 0.7252461324955768,
+        "f1": 0.7349812252458171,
+        "tp": 614,
+        "fp": 210,
+        "fn": 233
+      },
+      "user_story": {
+        "metric_name": "structured_strict",
+        "precision": 0.7433405384907941,
+        "recall": 0.7236060226772691,
+        "f1": 0.7333405384907941,
+        "tp": 27,
+        "fp": 9,
+        "fn": 11
+      },
+      "definition": {
+        "metric_name": "structured_strict",
+        "precision": 0.7425041947170765,
+        "recall": 0.7227699739664204,
+        "f1": 0.7325041947170765,
+        "tp": 77,
+        "fp": 27,
+        "fn": 29
+      },
+      "future_work": {
+        "metric_name": "structured_strict",
+        "precision": 0.7441021279238381,
+        "recall": 0.7243673439901959,
+        "f1": 0.7341021279238382,
+        "tp": 41,
+        "fp": 14,
+        "fn": 15
+      },
+      "risk": {
+        "metric_name": "structured_strict",
+        "precision": 0.7467951926773078,
+        "recall": 0.7270594649691183,
+        "f1": 0.7367951926773079,
+        "tp": 58,
+        "fp": 20,
+        "fn": 22
+      },
+      "mitigation": {
+        "metric_name": "structured_strict",
+        "precision": 0.7479085152852725,
+        "recall": 0.7281723993767776,
+        "f1": 0.7379085152852723,
+        "tp": 38,
+        "fp": 13,
+        "fn": 14
+      },
+      "test_case": {
+        "metric_name": "structured_strict",
+        "precision": 0.7466940282288463,
+        "recall": 0.7269583358519264,
+        "f1": 0.7366940282288464,
+        "tp": 101,
+        "fp": 34,
+        "fn": 38
+      },
+      "graduation_criterion": {
+        "metric_name": "structured_strict",
+        "precision": 0.745242885595303,
+        "recall": 0.7255077010656829,
+        "f1": 0.735242885595303,
+        "tp": 94,
+        "fp": 32,
+        "fn": 35
+      },
+      "drawback": {
+        "metric_name": "structured_strict",
+        "precision": 0.745934889482124,
+        "recall": 0.7261994625330346,
+        "f1": 0.735934889482124,
+        "tp": 15,
+        "fp": 5,
+        "fn": 5
+      },
+      "alternative": {
+        "metric_name": "structured_strict",
+        "precision": 0.7485358533953413,
+        "recall": 0.7287995192446282,
+        "f1": 0.7385358533953413,
+        "tp": 37,
+        "fp": 12,
+        "fn": 14
+      },
+      "implementation_history": {
+        "metric_name": "structured_strict",
+        "precision": 0.749,
+        "recall": 0.7292635046113306,
+        "f1": 0.739,
+        "tp": 61,
+        "fp": 20,
+        "fn": 23
+      }
+    },
+    "structured_relaxed": {
+      "summary": {
+        "metric_name": "structured_relaxed",
+        "precision": 0.7731088733470742,
+        "recall": 0.749475701451783,
+        "f1": 0.7611088733470742,
+        "tp": 41,
+        "fp": 12,
+        "fn": 14
+      },
+      "motivation": {
+        "metric_name": "structured_relaxed",
+        "precision": 0.7731341958179334,
+        "recall": 0.7495010120915514,
+        "f1": 0.7611341958179333,
+        "tp": 133,
+        "fp": 39,
+        "fn": 45
+      },
+      "goal": {
+        "metric_name": "structured_relaxed",
+        "precision": 0.7754352333644806,
+        "recall": 0.7518009777302355,
+        "f1": 0.7634352333644805,
+        "tp": 73,
+        "fp": 21,
+        "fn": 24
+      },
+      "non_goal": {
+        "metric_name": "structured_relaxed",
+        "precision": 0.7778152665581969,
+        "recall": 0.7541799087880882,
+        "f1": 0.7658152665581969,
+        "tp": 54,
+        "fp": 15,
+        "fn": 17
+      },
+      "design_decision": {
+        "metric_name": "structured_relaxed",
+        "precision": 0.7779812252458173,
+        "recall": 0.7543457908719312,
+        "f1": 0.7659812252458172,
+        "tp": 639,
+        "fp": 182,
+        "fn": 208
+      },
+      "user_story": {
+        "metric_name": "structured_relaxed",
+        "precision": 0.7763405384907941,
+        "recall": 0.7527058628473866,
+        "f1": 0.7643405384907941,
+        "tp": 29,
+        "fp": 8,
+        "fn": 9
+      },
+      "definition": {
+        "metric_name": "structured_relaxed",
+        "precision": 0.7755041947170765,
+        "recall": 0.7518699070547784,
+        "f1": 0.7635041947170764,
+        "tp": 80,
+        "fp": 23,
+        "fn": 26
+      },
+      "future_work": {
+        "metric_name": "structured_relaxed",
+        "precision": 0.7771021279238381,
+        "recall": 0.7534670996934084,
+        "f1": 0.765102127923838,
+        "tp": 42,
+        "fp": 12,
+        "fn": 14
+      },
+      "risk": {
+        "metric_name": "structured_relaxed",
+        "precision": 0.7797951926773078,
+        "recall": 0.7561589230998507,
+        "f1": 0.7677951926773078,
+        "tp": 60,
+        "fp": 17,
+        "fn": 20
+      },
+      "mitigation": {
+        "metric_name": "structured_relaxed",
+        "precision": 0.7809085152852725,
+        "recall": 0.7572717349940384,
+        "f1": 0.7689085152852724,
+        "tp": 39,
+        "fp": 11,
+        "fn": 13
+      },
+      "test_case": {
+        "metric_name": "structured_relaxed",
+        "precision": 0.7796940282288464,
+        "recall": 0.756057805129683,
+        "f1": 0.7676940282288464,
+        "tp": 105,
+        "fp": 30,
+        "fn": 34
+      },
+      "graduation_criterion": {
+        "metric_name": "structured_relaxed",
+        "precision": 0.7782428855953031,
+        "recall": 0.7546073305086958,
+        "f1": 0.766242885595303,
+        "tp": 97,
+        "fp": 28,
+        "fn": 32
+      },
+      "drawback": {
+        "metric_name": "structured_relaxed",
+        "precision": 0.7789348894821241,
+        "recall": 0.7552990155357725,
+        "f1": 0.7669348894821241,
+        "tp": 15,
+        "fp": 4,
+        "fn": 5
+      },
+      "alternative": {
+        "metric_name": "structured_relaxed",
+        "precision": 0.7815358533953414,
+        "recall": 0.7578987859569486,
+        "f1": 0.7695358533953414,
+        "tp": 39,
+        "fp": 11,
+        "fn": 12
+      },
+      "implementation_history": {
+        "metric_name": "structured_relaxed",
+        "precision": 0.7834832387273454,
+        "recall": 0.7598452828107137,
+        "f1": 0.7714832387273453,
+        "tp": 64,
+        "fp": 18,
+        "fn": 20
+      }
+    }
+  },
+  "diagnostic_results": {
+    "structure_anomaly_rate": {
+      "metric_name": "structure_anomaly_rate",
+      "value": 0.00321285140562249,
+      "numerator": 8,
+      "denominator": 2490,
+      "details": {}
+    },
+    "grounding_match_exact_rate": {
+      "metric_name": "grounding_match_exact_rate",
+      "value": 0.98714859437751,
+      "numerator": 2458,
+      "denominator": 2490,
+      "details": {}
+    },
+    "grounding_match_lesser_rate": {
+      "metric_name": "grounding_match_lesser_rate",
+      "value": 0.010040160642570281,
+      "numerator": 25,
+      "denominator": 2490,
+      "details": {}
+    },
+    "grounding_match_fuzzy_rate": {
+      "metric_name": "grounding_match_fuzzy_rate",
+      "value": 0.002811244979919679,
+      "numerator": 7,
+      "denominator": 2490,
+      "details": {}
+    },
+    "grounding_match_none_rate": {
+      "metric_name": "grounding_match_none_rate",
+      "value": 0,
+      "numerator": 0,
+      "denominator": 2490,
+      "details": {}
+    }
+  },
+  "error_buckets": {
+    "miss": 883,
+    "spurious": 1370,
+    "duplicate": 25,
+    "text_drift": 151,
+    "class_error": 151,
+    "attribute_error": 210
+  },
+  "error_samples": [
+    {
+      "bucket": "miss",
+      "doc_id": "116-windows-node-support",
+      "pred_index": null,
+      "gold_index": 0,
+      "details": {}
+    },
+    {
+      "bucket": "miss",
+      "doc_id": "116-windows-node-support",
+      "pred_index": null,
+      "gold_index": 2,
+      "details": {}
+    },
+    {
+      "bucket": "miss",
+      "doc_id": "116-windows-node-support",
+      "pred_index": null,
+      "gold_index": 8,
+      "details": {}
+    },
+    {
+      "bucket": "miss",
+      "doc_id": "116-windows-node-support",
+      "pred_index": null,
+      "gold_index": 11,
+      "details": {}
+    },
+    {
+      "bucket": "miss",
+      "doc_id": "116-windows-node-support",
+      "pred_index": null,
+      "gold_index": 12,
+      "details": {}
+    },
+    {
+      "bucket": "miss",
+      "doc_id": "116-windows-node-support",
+      "pred_index": null,
+      "gold_index": 13,
+      "details": {}
+    },
+    {
+      "bucket": "miss",
+      "doc_id": "116-windows-node-support",
+      "pred_index": null,
+      "gold_index": 14,
+      "details": {}
+    },
+    {
+      "bucket": "miss",
+      "doc_id": "116-windows-node-support",
+      "pred_index": null,
+      "gold_index": 15,
+      "details": {}
+    },
+    {
+      "bucket": "miss",
+      "doc_id": "116-windows-node-support",
+      "pred_index": null,
+      "gold_index": 16,
+      "details": {}
+    },
+    {
+      "bucket": "miss",
+      "doc_id": "116-windows-node-support",
+      "pred_index": null,
+      "gold_index": 17,
+      "details": {}
+    },
+    {
+      "bucket": "miss",
+      "doc_id": "116-windows-node-support",
+      "pred_index": null,
+      "gold_index": 18,
+      "details": {}
+    },
+    {
+      "bucket": "miss",
+      "doc_id": "116-windows-node-support",
+      "pred_index": null,
+      "gold_index": 19,
+      "details": {}
+    },
+    {
+      "bucket": "miss",
+      "doc_id": "116-windows-node-support",
+      "pred_index": null,
+      "gold_index": 20,
+      "details": {}
+    },
+    {
+      "bucket": "miss",
+      "doc_id": "116-windows-node-support",
+      "pred_index": null,
+      "gold_index": 21,
+      "details": {}
+    },
+    {
+      "bucket": "miss",
+      "doc_id": "116-windows-node-support",
+      "pred_index": null,
+      "gold_index": 22,
+      "details": {}
+    },
+    {
+      "bucket": "miss",
+      "doc_id": "116-windows-node-support",
+      "pred_index": null,
+      "gold_index": 23,
+      "details": {}
+    },
+    {
+      "bucket": "miss",
+      "doc_id": "116-windows-node-support",
+      "pred_index": null,
+      "gold_index": 24,
+      "details": {}
+    },
+    {
+      "bucket": "miss",
+      "doc_id": "116-windows-node-support",
+      "pred_index": null,
+      "gold_index": 25,
+      "details": {}
+    },
+    {
+      "bucket": "miss",
+      "doc_id": "116-windows-node-support",
+      "pred_index": null,
+      "gold_index": 26,
+      "details": {}
+    },
+    {
+      "bucket": "miss",
+      "doc_id": "116-windows-node-support",
+      "pred_index": null,
+      "gold_index": 27,
+      "details": {}
+    },
+    {
+      "bucket": "miss",
+      "doc_id": "116-windows-node-support",
+      "pred_index": null,
+      "gold_index": 28,
+      "details": {}
+    },
+    {
+      "bucket": "miss",
+      "doc_id": "116-windows-node-support",
+      "pred_index": null,
+      "gold_index": 29,
+      "details": {}
+    },
+    {
+      "bucket": "miss",
+      "doc_id": "116-windows-node-support",
+      "pred_index": null,
+      "gold_index": 30,
+      "details": {}
+    },
+    {
+      "bucket": "miss",
+      "doc_id": "116-windows-node-support",
+      "pred_index": null,
+      "gold_index": 31,
+      "details": {}
+    },
+    {
+      "bucket": "miss",
+      "doc_id": "116-windows-node-support",
+      "pred_index": null,
+      "gold_index": 32,
+      "details": {}
+    },
+    {
+      "bucket": "miss",
+      "doc_id": "116-windows-node-support",
+      "pred_index": null,
+      "gold_index": 34,
+      "details": {}
+    },
+    {
+      "bucket": "miss",
+      "doc_id": "116-windows-node-support",
+      "pred_index": null,
+      "gold_index": 35,
+      "details": {}
+    },
+    {
+      "bucket": "miss",
+      "doc_id": "116-windows-node-support",
+      "pred_index": null,
+      "gold_index": 36,
+      "details": {}
+    },
+    {
+      "bucket": "miss",
+      "doc_id": "116-windows-node-support",
+      "pred_index": null,
+      "gold_index": 37,
+      "details": {}
+    },
+    {
+      "bucket": "miss",
+      "doc_id": "116-windows-node-support",
+      "pred_index": null,
+      "gold_index": 38,
+      "details": {}
+    },
+    {
+      "bucket": "miss",
+      "doc_id": "116-windows-node-support",
+      "pred_index": null,
+      "gold_index": 39,
+      "details": {}
+    },
+    {
+      "bucket": "miss",
+      "doc_id": "116-windows-node-support",
+      "pred_index": null,
+      "gold_index": 40,
+      "details": {}
+    },
+    {
+      "bucket": "miss",
+      "doc_id": "116-windows-node-support",
+      "pred_index": null,
+      "gold_index": 41,
+      "details": {}
+    },
+    {
+      "bucket": "miss",
+      "doc_id": "116-windows-node-support",
+      "pred_index": null,
+      "gold_index": 42,
+      "details": {}
+    },
+    {
+      "bucket": "miss",
+      "doc_id": "116-windows-node-support",
+      "pred_index": null,
+      "gold_index": 43,
+      "details": {}
+    },
+    {
+      "bucket": "miss",
+      "doc_id": "116-windows-node-support",
+      "pred_index": null,
+      "gold_index": 44,
+      "details": {}
+    },
+    {
+      "bucket": "miss",
+      "doc_id": "116-windows-node-support",
+      "pred_index": null,
+      "gold_index": 45,
+      "details": {}
+    },
+    {
+      "bucket": "miss",
+      "doc_id": "116-windows-node-support",
+      "pred_index": null,
+      "gold_index": 46,
+      "details": {}
+    },
+    {
+      "bucket": "miss",
+      "doc_id": "116-windows-node-support",
+      "pred_index": null,
+      "gold_index": 47,
+      "details": {}
+    },
+    {
+      "bucket": "miss",
+      "doc_id": "116-windows-node-support",
+      "pred_index": null,
+      "gold_index": 48,
+      "details": {}
+    },
+    {
+      "bucket": "miss",
+      "doc_id": "116-windows-node-support",
+      "pred_index": null,
+      "gold_index": 49,
+      "details": {}
+    },
+    {
+      "bucket": "miss",
+      "doc_id": "116-windows-node-support",
+      "pred_index": null,
+      "gold_index": 50,
+      "details": {}
+    },
+    {
+      "bucket": "miss",
+      "doc_id": "116-windows-node-support",
+      "pred_index": null,
+      "gold_index": 51,
+      "details": {}
+    },
+    {
+      "bucket": "miss",
+      "doc_id": "116-windows-node-support",
+      "pred_index": null,
+      "gold_index": 52,
+      "details": {}
+    },
+    {
+      "bucket": "miss",
+      "doc_id": "116-windows-node-support",
+      "pred_index": null,
+      "gold_index": 53,
+      "details": {}
+    },
+    {
+      "bucket": "miss",
+      "doc_id": "116-windows-node-support",
+      "pred_index": null,
+      "gold_index": 54,
+      "details": {}
+    },
+    {
+      "bucket": "miss",
+      "doc_id": "116-windows-node-support",
+      "pred_index": null,
+      "gold_index": 55,
+      "details": {}
+    },
+    {
+      "bucket": "miss",
+      "doc_id": "116-windows-node-support",
+      "pred_index": null,
+      "gold_index": 56,
+      "details": {}
+    },
+    {
+      "bucket": "miss",
+      "doc_id": "116-windows-node-support",
+      "pred_index": null,
+      "gold_index": 57,
+      "details": {}
+    },
+    {
+      "bucket": "miss",
+      "doc_id": "116-windows-node-support",
+      "pred_index": null,
+      "gold_index": 58,
+      "details": {}
+    }
+  ],
+  "gate_result": {
+    "passed": true,
+    "status": "pass",
+    "reasons": [],
+    "details": {}
+  }
+}

@@ -1,0 +1,18 @@
+{
+    "conclusions": [
+        {
+            "block_id": "0",
+            "text": "Items marked with (R) are required *prior to targeting to a milestone / release*.\n\n- [x] (R) Enhancement issue in release milestone, which links to KEP dir in [kubernetes/enhancements] (not the initial KEP PR)\n- [x] (R) KEP approvers have approved the KEP status as `implementable`\n- [x] (R) Design details are appropriately documented\n- [x] (R) Test plan is in place, giving consideration to SIG Architecture and SIG Testing input\n- [x] (R) Graduation criteria is in place\n- [x] (R) Production readiness review completed\n- [x] Production readiness review approved\n- [x] \"Implementation History\" section is up-to-date for milestone\n- [x] User-facing documentation has been created in [kubernetes/website], for publication to [kubernetes.io]\n- [x] Supporting documentation—e.g., additional design documents, links to mailing list discussions/SIG meetings, relevant PRs/issues, release notes\n\n[kubernetes.io]: https://kubernetes.io/\n[kubernetes/enhancements]: https://git.k8s.io/enhancements\n[kubernetes/kubernetes]: https://git.k8s.io/kubernetes\n[kubernetes/website]: https://git.k8s.io/website",
+            "conclusion": "new_attr",
+            "reason": "new_attr reason", 
+            "related_old_schema_name": "summary"
+        }, 
+        {
+            "block_id": "1",
+            "text": "](https://kubernetes.io/docs/concepts/workloads/controllers/cron-jobs/) is a Kubernetes API that creates Job object on a schedule specified by a cron spec. It is in beta status since v1.8, and currently if it does not progress before v1.22, it will be marked deprecated with target release for removal being v1.25. This document lays out the plan to promote it to stable.",
+            "conclusion": "new_schema",
+            "reason": "new_schema reason", 
+            "related_old_schema_name": ""
+        }
+    ]
+}

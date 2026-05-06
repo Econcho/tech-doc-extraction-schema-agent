@@ -1,0 +1,2582 @@
+[
+  {
+    "extraction_class": "summary",
+    "extraction_text": "CronJobs (previously ScheduledJobs)",
+    "char_interval": {
+      "start_pos": 10,
+      "end_pos": 45
+    },
+    "alignment_status": "match_exact",
+    "extraction_index": 1,
+    "group_index": 0,
+    "description": null,
+    "attributes": {}
+  },
+  {
+    "extraction_class": "design_decision",
+    "extraction_text": "Plan for promoting CronJob to GA",
+    "char_interval": {
+      "start_pos": 217,
+      "end_pos": 249
+    },
+    "alignment_status": "match_exact",
+    "extraction_index": 2,
+    "group_index": 1,
+    "description": null,
+    "attributes": {
+      "category": "rollout"
+    }
+  },
+  {
+    "extraction_class": "design_decision",
+    "extraction_text": "Existing controller",
+    "char_interval": {
+      "start_pos": 291,
+      "end_pos": 310
+    },
+    "alignment_status": "match_exact",
+    "extraction_index": 3,
+    "group_index": 2,
+    "description": null,
+    "attributes": {
+      "category": "component_change"
+    }
+  },
+  {
+    "extraction_class": "design_decision",
+    "extraction_text": "New controller",
+    "char_interval": {
+      "start_pos": 339,
+      "end_pos": 353
+    },
+    "alignment_status": "match_exact",
+    "extraction_index": 4,
+    "group_index": 3,
+    "description": null,
+    "attributes": {
+      "category": "component_change"
+    }
+  },
+  {
+    "extraction_class": "design_decision",
+    "extraction_text": "Informers and Caches",
+    "char_interval": {
+      "start_pos": 379,
+      "end_pos": 399
+    },
+    "alignment_status": "match_exact",
+    "extraction_index": 5,
+    "group_index": 4,
+    "description": null,
+    "attributes": {
+      "category": "implementation_detail"
+    }
+  },
+  {
+    "extraction_class": "design_decision",
+    "extraction_text": "Multiple workers",
+    "char_interval": {
+      "start_pos": 431,
+      "end_pos": 447
+    },
+    "alignment_status": "match_exact",
+    "extraction_index": 6,
+    "group_index": 5,
+    "description": null,
+    "attributes": {
+      "category": "implementation_detail"
+    }
+  },
+  {
+    "extraction_class": "design_decision",
+    "extraction_text": "Handling Cron aspect",
+    "char_interval": {
+      "start_pos": 475,
+      "end_pos": 495
+    },
+    "alignment_status": "match_exact",
+    "extraction_index": 7,
+    "group_index": 6,
+    "description": null,
+    "attributes": {
+      "category": "implementation_detail"
+    }
+  },
+  {
+    "extraction_class": "design_decision",
+    "extraction_text": "Metrics",
+    "char_interval": {
+      "start_pos": 525,
+      "end_pos": 532
+    },
+    "alignment_status": "match_exact",
+    "extraction_index": 8,
+    "group_index": 7,
+    "description": null,
+    "attributes": {
+      "category": "monitoring"
+    }
+  },
+  {
+    "extraction_class": "design_decision",
+    "extraction_text": "Add .status.lastSuccessfulTime",
+    "char_interval": {
+      "start_pos": 549,
+      "end_pos": 579
+    },
+    "alignment_status": "match_exact",
+    "extraction_index": 9,
+    "group_index": 8,
+    "description": null,
+    "attributes": {
+      "category": "api_change"
+    }
+  },
+  {
+    "extraction_class": "design_decision",
+    "extraction_text": "Fix applicable open issues",
+    "char_interval": {
+      "start_pos": 617,
+      "end_pos": 643
+    },
+    "alignment_status": "match_exact",
+    "extraction_index": 10,
+    "group_index": 9,
+    "description": null,
+    "attributes": {
+      "category": "implementation_detail"
+    }
+  },
+  {
+    "extraction_class": "design_decision",
+    "extraction_text": "Scale Targets for GA",
+    "char_interval": {
+      "start_pos": 679,
+      "end_pos": 699
+    },
+    "alignment_status": "match_exact",
+    "extraction_index": 11,
+    "group_index": 10,
+    "description": null,
+    "attributes": {
+      "category": "scalability"
+    }
+  },
+  {
+    "extraction_class": "design_decision",
+    "extraction_text": "CronJob Limits",
+    "char_interval": {
+      "start_pos": 731,
+      "end_pos": 745
+    },
+    "alignment_status": "match_exact",
+    "extraction_index": 12,
+    "group_index": 11,
+    "description": null,
+    "attributes": {
+      "category": "scalability"
+    }
+  },
+  {
+    "extraction_class": "design_decision",
+    "extraction_text": "Frequency of launched jobs",
+    "char_interval": {
+      "start_pos": 771,
+      "end_pos": 797
+    },
+    "alignment_status": "match_exact",
+    "extraction_index": 13,
+    "group_index": 12,
+    "description": null,
+    "attributes": {
+      "category": "scalability"
+    }
+  },
+  {
+    "extraction_class": "design_decision",
+    "extraction_text": "CronJob v1 API",
+    "char_interval": {
+      "start_pos": 863,
+      "end_pos": 877
+    },
+    "alignment_status": "match_exact",
+    "extraction_index": 14,
+    "group_index": 13,
+    "description": null,
+    "attributes": {
+      "category": "api_change"
+    }
+  },
+  {
+    "extraction_class": "design_decision",
+    "extraction_text": "CronJob v1beta1 API",
+    "char_interval": {
+      "start_pos": 901,
+      "end_pos": 920
+    },
+    "alignment_status": "match_exact",
+    "extraction_index": 15,
+    "group_index": 14,
+    "description": null,
+    "attributes": {
+      "category": "api_change"
+    }
+  },
+  {
+    "extraction_class": "design_decision",
+    "extraction_text": "Validations",
+    "char_interval": {
+      "start_pos": 949,
+      "end_pos": 960
+    },
+    "alignment_status": "match_exact",
+    "extraction_index": 16,
+    "group_index": 15,
+    "description": null,
+    "attributes": {
+      "category": "api_change"
+    }
+  },
+  {
+    "extraction_class": "test_case",
+    "extraction_text": "Tests",
+    "char_interval": {
+      "start_pos": 979,
+      "end_pos": 984
+    },
+    "alignment_status": "match_exact",
+    "extraction_index": 17,
+    "group_index": 16,
+    "description": null,
+    "attributes": {
+      "test_type": "other"
+    }
+  },
+  {
+    "extraction_class": "summary",
+    "extraction_text": "CronJob is a Kubernetes API that creates Job object on a schedule specified by a cron spec.",
+    "char_interval": {
+      "start_pos": 3498,
+      "end_pos": 3505
+    },
+    "alignment_status": "match_lesser",
+    "extraction_index": 1,
+    "group_index": 0,
+    "description": null,
+    "attributes": {}
+  },
+  {
+    "extraction_class": "motivation",
+    "extraction_text": "CronJob is useful to run periodic tasks using cron like facility in a kubernetes cluster.",
+    "char_interval": {
+      "start_pos": 3893,
+      "end_pos": 3982
+    },
+    "alignment_status": "match_exact",
+    "extraction_index": 2,
+    "group_index": 1,
+    "description": null,
+    "attributes": {}
+  },
+  {
+    "extraction_class": "goal",
+    "extraction_text": "Write a new controller which will\n  - Use informers instead of polling\n  - Address some open issues with the current controller\n  - Add metrics exposing controller throughput, latency etc.",
+    "char_interval": {
+      "start_pos": 4185,
+      "end_pos": 4373
+    },
+    "alignment_status": "match_exact",
+    "extraction_index": 3,
+    "group_index": 2,
+    "description": null,
+    "attributes": {}
+  },
+  {
+    "extraction_class": "goal",
+    "extraction_text": "Extend CronJob status field\n  - lastSuccessfulTime: tracks the last time the job completed successfully",
+    "char_interval": {
+      "start_pos": 4376,
+      "end_pos": 4479
+    },
+    "alignment_status": "match_exact",
+    "extraction_index": 4,
+    "group_index": 3,
+    "description": null,
+    "attributes": {}
+  },
+  {
+    "extraction_class": "design_decision",
+    "extraction_text": "To promote to GA we would create `batch/v1/CronJob` in the [batch/v1 API](https://github.com/kubernetes/kubernetes/blob/b58777eda0f0077eba79d063c1c8f31cd7dbb8b9/staging/src/k8s.io/api/batch/v1/types.go).",
+    "char_interval": {
+      "start_pos": 4532,
+      "end_pos": 4735
+    },
+    "alignment_status": "match_exact",
+    "extraction_index": 1,
+    "group_index": 0,
+    "description": null,
+    "attributes": {
+      "category": "api_change"
+    }
+  },
+  {
+    "extraction_class": "design_decision",
+    "extraction_text": "We shall have dual implementation of controller (old and new) co-exist, until the new controller reaches GA.",
+    "char_interval": {
+      "start_pos": 4737,
+      "end_pos": 4845
+    },
+    "alignment_status": "match_exact",
+    "extraction_index": 2,
+    "group_index": 1,
+    "description": null,
+    "attributes": {
+      "category": "rollout"
+    }
+  },
+  {
+    "extraction_class": "design_decision",
+    "extraction_text": "The old and new implementation of the controller will be toggled through a feature flag:",
+    "char_interval": {
+      "start_pos": 4846,
+      "end_pos": 4934
+    },
+    "alignment_status": "match_exact",
+    "extraction_index": 3,
+    "group_index": 2,
+    "description": null,
+    "attributes": {
+      "category": "rollout"
+    }
+  },
+  {
+    "extraction_class": "design_decision",
+    "extraction_text": "alpha (disabled by default, can be enabled)",
+    "char_interval": {
+      "start_pos": 4937,
+      "end_pos": 4980
+    },
+    "alignment_status": "match_exact",
+    "extraction_index": 4,
+    "group_index": 3,
+    "description": null,
+    "attributes": {
+      "category": "rollout"
+    }
+  },
+  {
+    "extraction_class": "design_decision",
+    "extraction_text": "beta (enabled by default, can be disabled)",
+    "char_interval": {
+      "start_pos": 4983,
+      "end_pos": 5025
+    },
+    "alignment_status": "match_exact",
+    "extraction_index": 5,
+    "group_index": 4,
+    "description": null,
+    "attributes": {
+      "category": "rollout"
+    }
+  },
+  {
+    "extraction_class": "design_decision",
+    "extraction_text": "GA (enabled by default, cannot be disabled)",
+    "char_interval": {
+      "start_pos": 5028,
+      "end_pos": 5071
+    },
+    "alignment_status": "match_exact",
+    "extraction_index": 6,
+    "group_index": 5,
+    "description": null,
+    "attributes": {
+      "category": "rollout"
+    }
+  },
+  {
+    "extraction_class": "design_decision",
+    "extraction_text": "After reaching GA we will remove the old controller.",
+    "char_interval": {
+      "start_pos": 5073,
+      "end_pos": 5125
+    },
+    "alignment_status": "match_exact",
+    "extraction_index": 7,
+    "group_index": 6,
+    "description": null,
+    "attributes": {
+      "category": "rollout"
+    }
+  },
+  {
+    "extraction_class": "design_decision",
+    "extraction_text": "The current implementation of the CronJob controller is different than the other workload controllers.",
+    "char_interval": {
+      "start_pos": 5152,
+      "end_pos": 5254
+    },
+    "alignment_status": "match_exact",
+    "extraction_index": 1,
+    "group_index": 0,
+    "description": null,
+    "attributes": {
+      "category": "implementation_detail"
+    }
+  },
+  {
+    "extraction_class": "design_decision",
+    "extraction_text": "GA workload controllers use informers and caches to reduce the load on API server.",
+    "char_interval": {
+      "start_pos": 5255,
+      "end_pos": 5337
+    },
+    "alignment_status": "match_exact",
+    "extraction_index": 2,
+    "group_index": 1,
+    "description": null,
+    "attributes": {
+      "category": "implementation_detail"
+    }
+  },
+  {
+    "extraction_class": "design_decision",
+    "extraction_text": "Whereas the cronjob controller does a periodic poll and sweep of all the objects and acts on them.",
+    "char_interval": {
+      "start_pos": 5338,
+      "end_pos": 5436
+    },
+    "alignment_status": "match_exact",
+    "extraction_index": 3,
+    "group_index": 2,
+    "description": null,
+    "attributes": {
+      "category": "workflow"
+    }
+  },
+  {
+    "extraction_class": "design_decision",
+    "extraction_text": "The CronJob controller has only one worker doing this.",
+    "char_interval": {
+      "start_pos": 5437,
+      "end_pos": 5491
+    },
+    "alignment_status": "match_exact",
+    "extraction_index": 4,
+    "group_index": 3,
+    "description": null,
+    "attributes": {
+      "category": "implementation_detail"
+    }
+  },
+  {
+    "extraction_class": "design_decision",
+    "extraction_text": "syncs all CronJob objects every 10 seconds.",
+    "char_interval": {
+      "start_pos": 5496,
+      "end_pos": 5521
+    },
+    "alignment_status": "match_lesser",
+    "extraction_index": 5,
+    "group_index": 4,
+    "description": null,
+    "attributes": {
+      "category": "workflow"
+    }
+  },
+  {
+    "extraction_class": "design_decision",
+    "extraction_text": "Using pager library, gets all Pods and all CronJobs and processes them one by one.",
+    "char_interval": {
+      "start_pos": 5682,
+      "end_pos": 5737
+    },
+    "alignment_status": "match_lesser",
+    "extraction_index": 6,
+    "group_index": 5,
+    "description": null,
+    "attributes": {
+      "category": "workflow"
+    }
+  },
+  {
+    "extraction_class": "design_decision",
+    "extraction_text": "This is not a scalable design and ends up loading the API server.",
+    "char_interval": {
+      "start_pos": 5905,
+      "end_pos": 5970
+    },
+    "alignment_status": "match_exact",
+    "extraction_index": 7,
+    "group_index": 6,
+    "description": null,
+    "attributes": {
+      "category": "scalability"
+    }
+  },
+  {
+    "extraction_class": "design_decision",
+    "extraction_text": "With this approach we aim to reduce the potential scale issues (e.g. load on API server and memory usage) when using lots of CronJob objects.",
+    "char_interval": {
+      "start_pos": 6212,
+      "end_pos": 6353
+    },
+    "alignment_status": "match_exact",
+    "extraction_index": 1,
+    "group_index": 0,
+    "description": null,
+    "attributes": {
+      "category": "scalability"
+    }
+  },
+  {
+    "extraction_class": "design_decision",
+    "extraction_text": "To reduce the need to list all Jobs and CronJobs frequently to reconcile, we propose to use Informers and WorkQueue based architecture.",
+    "char_interval": {
+      "start_pos": 6382,
+      "end_pos": 6517
+    },
+    "alignment_status": "match_exact",
+    "extraction_index": 2,
+    "group_index": 1,
+    "description": null,
+    "attributes": {
+      "category": "implementation_detail"
+    }
+  },
+  {
+    "extraction_class": "design_decision",
+    "extraction_text": "We would be sharing the [same informer cache](https://github.com/kubernetes/kubernetes/blob/b58777eda0f0077eba79d063c1c8f31cd7dbb8b9/cmd/kube-controller-manager/app/controllermanager.go#L450) as the Job controller uses.",
+    "char_interval": {
+      "start_pos": 6518,
+      "end_pos": 6737
+    },
+    "alignment_status": "match_exact",
+    "extraction_index": 3,
+    "group_index": 2,
+    "description": null,
+    "attributes": {
+      "category": "implementation_detail"
+    }
+  },
+  {
+    "extraction_class": "design_decision",
+    "extraction_text": "We will follow a controller structure similar to existing workload controllers and as [outlined in the guideline](https://github.com/kubernetes/community/blob/b58777eda0f0077eba79d063c1c8f31cd7dbb8b9/contributors/devel/sig-api-machinery/controllers.md#rough-structure).",
+    "char_interval": {
+      "start_pos": 6739,
+      "end_pos": 7008
+    },
+    "alignment_status": "match_exact",
+    "extraction_index": 4,
+    "group_index": 3,
+    "description": null,
+    "attributes": {
+      "category": "implementation_detail"
+    }
+  },
+  {
+    "extraction_class": "design_decision",
+    "extraction_text": "We also propose to have multiple workers controller by a flag similar to [statefulset controller](https://github.com/kubernetes/kubernetes/blob/b58777eda0f0077eba79d063c1c8f31cd7dbb8b9/cmd/kube-controller-manager/app/apps.go#L65).",
+    "char_interval": {
+      "start_pos": 7864,
+      "end_pos": 8094
+    },
+    "alignment_status": "match_exact",
+    "extraction_index": 1,
+    "group_index": 0,
+    "description": null,
+    "attributes": {
+      "category": "component_change"
+    }
+  },
+  {
+    "extraction_class": "design_decision",
+    "extraction_text": "The default would be set to 5 similar to [statefulset](https://github.com/kubernetes/kubernetes/blob/b58777eda0f0077eba79d063c1c8f31cd7dbb8b9/pkg/controller/statefulset/config/v1alpha1/defaults.go#L34)",
+    "char_interval": {
+      "start_pos": 8095,
+      "end_pos": 8296
+    },
+    "alignment_status": "match_exact",
+    "extraction_index": 2,
+    "group_index": 1,
+    "description": null,
+    "attributes": {
+      "category": "component_change"
+    }
+  },
+  {
+    "extraction_class": "design_decision",
+    "extraction_text": "To detect which CronJob has met its schedule and need to create Jobs we need to implement a timer component.",
+    "char_interval": {
+      "start_pos": 8325,
+      "end_pos": 8433
+    },
+    "alignment_status": "match_exact",
+    "extraction_index": 1,
+    "group_index": 0,
+    "description": null,
+    "attributes": {
+      "category": "implementation_detail"
+    }
+  },
+  {
+    "extraction_class": "design_decision",
+    "extraction_text": "We shall implement a Heap based timer algorithm.",
+    "char_interval": {
+      "start_pos": 8434,
+      "end_pos": 8482
+    },
+    "alignment_status": "match_exact",
+    "extraction_index": 2,
+    "group_index": 1,
+    "description": null,
+    "attributes": {
+      "category": "implementation_detail"
+    }
+  },
+  {
+    "extraction_class": "design_decision",
+    "extraction_text": "We will introduce a separate queue with the [`DelayingInterface`](https://github.com/kubernetes/client-go/blob/b58777eda0f0077eba79d063c1c8f31cd7dbb8b9/util/workqueue/delaying_queue.go#L37) that implements heap based single shot api [`AddAfter`](https://github.com/kubernetes/client-go/blob/b58777eda0f0077eba79d063c1c8f31cd7dbb8b9/util/workqueue/delaying_queue.go#L150).",
+    "char_interval": {
+      "start_pos": 8483,
+      "end_pos": 8854
+    },
+    "alignment_status": "match_exact",
+    "extraction_index": 3,
+    "group_index": 2,
+    "description": null,
+    "attributes": {
+      "category": "implementation_detail"
+    }
+  },
+  {
+    "extraction_class": "design_decision",
+    "extraction_text": "Every time we process an entry from this queue, we will add it back to the queue to simulate a periodic timer.",
+    "char_interval": {
+      "start_pos": 8855,
+      "end_pos": 8965
+    },
+    "alignment_status": "match_exact",
+    "extraction_index": 4,
+    "group_index": 3,
+    "description": null,
+    "attributes": {
+      "category": "workflow"
+    }
+  },
+  {
+    "extraction_class": "design_decision",
+    "extraction_text": "We propose to add metrics that could expose the performance and health of the controller including and not limited to:\n- Skew (actualJobCreationTime-expectedJobCreationTime) - [Histogram](https://prometheus.io/docs/concepts/metric_types/#histogram)",
+    "char_interval": {
+      "start_pos": 9359,
+      "end_pos": 9607
+    },
+    "alignment_status": "match_exact",
+    "extraction_index": 1,
+    "group_index": 0,
+    "description": null,
+    "attributes": {
+      "category": "monitoring"
+    }
+  },
+  {
+    "extraction_class": "design_decision",
+    "extraction_text": "Add `lastSuccessfulTime` to `.status` that tracks the last time the job completed successfully.",
+    "char_interval": {
+      "start_pos": 9804,
+      "end_pos": 9899
+    },
+    "alignment_status": "match_exact",
+    "extraction_index": 2,
+    "group_index": 1,
+    "description": null,
+    "attributes": {
+      "category": "api_change"
+    }
+  },
+  {
+    "extraction_class": "test_case",
+    "extraction_text": "Updating a cronjob causes jobs to be scheduled retroactively",
+    "char_interval": {
+      "start_pos": 10328,
+      "end_pos": 10388
+    },
+    "alignment_status": "match_exact",
+    "extraction_index": 1,
+    "group_index": 0,
+    "description": null,
+    "attributes": {
+      "test_type": "other"
+    }
+  },
+  {
+    "extraction_class": "test_case",
+    "extraction_text": "CLI: Updated CronJob Schedule Missing from Dry Run",
+    "char_interval": {
+      "start_pos": 10448,
+      "end_pos": 10498
+    },
+    "alignment_status": "match_exact",
+    "extraction_index": 2,
+    "group_index": 1,
+    "description": null,
+    "attributes": {
+      "test_type": "other"
+    }
+  },
+  {
+    "extraction_class": "test_case",
+    "extraction_text": "Kubernetes CronJob pods is not getting clean-up when Job is completed",
+    "char_interval": {
+      "start_pos": 10558,
+      "end_pos": 10627
+    },
+    "alignment_status": "match_exact",
+    "extraction_index": 3,
+    "group_index": 2,
+    "description": null,
+    "attributes": {
+      "test_type": "other"
+    }
+  },
+  {
+    "extraction_class": "test_case",
+    "extraction_text": "Infinite ImagePullBackOff CronJob results in resource leak",
+    "char_interval": {
+      "start_pos": 10687,
+      "end_pos": 10745
+    },
+    "alignment_status": "match_exact",
+    "extraction_index": 4,
+    "group_index": 3,
+    "description": null,
+    "attributes": {
+      "test_type": "other"
+    }
+  },
+  {
+    "extraction_class": "test_case",
+    "extraction_text": "Cronjob `spec.schedule` cannot be change when `spec.schedule` value not `\"` or `’`",
+    "char_interval": {
+      "start_pos": 10805,
+      "end_pos": 10887
+    },
+    "alignment_status": "match_exact",
+    "extraction_index": 5,
+    "group_index": 4,
+    "description": null,
+    "attributes": {
+      "test_type": "other"
+    }
+  },
+  {
+    "extraction_class": "test_case",
+    "extraction_text": "Kubelet CPU/Memory Usage linearly increases using CronJob",
+    "char_interval": {
+      "start_pos": 10947,
+      "end_pos": 11004
+    },
+    "alignment_status": "match_exact",
+    "extraction_index": 6,
+    "group_index": 5,
+    "description": null,
+    "attributes": {
+      "test_type": "other"
+    }
+  },
+  {
+    "extraction_class": "design_decision",
+    "extraction_text": "The scale targets for CronJob GA API shall conform to existing [SLIs/SLOs of Kubernetes native types](https://github.com/kubernetes/community/blob/b58777eda0f0077eba79d063c1c8f31cd7dbb8b9/sig-scalability/slos/slos.md#kubernetes-slisslos).",
+    "char_interval": {
+      "start_pos": 11329,
+      "end_pos": 11567
+    },
+    "alignment_status": "match_exact",
+    "extraction_index": 1,
+    "group_index": 0,
+    "description": null,
+    "attributes": {
+      "category": "scalability"
+    }
+  },
+  {
+    "extraction_class": "design_decision",
+    "extraction_text": "There should be nothing in the implementation that limits CronJobs per namespace.",
+    "char_interval": {
+      "start_pos": 11889,
+      "end_pos": 11970
+    },
+    "alignment_status": "match_exact",
+    "extraction_index": 2,
+    "group_index": 1,
+    "description": null,
+    "attributes": {
+      "category": "scalability"
+    }
+  },
+  {
+    "extraction_class": "design_decision",
+    "extraction_text": "Overall cluster-wide limits of CronJob are important.",
+    "char_interval": {
+      "start_pos": 11971,
+      "end_pos": 12024
+    },
+    "alignment_status": "match_exact",
+    "extraction_index": 3,
+    "group_index": 2,
+    "description": null,
+    "attributes": {
+      "category": "scalability"
+    }
+  },
+  {
+    "extraction_class": "design_decision",
+    "extraction_text": "Cluster wide limits for CronJob should be storage bound since it shares the storage space with all other objects.",
+    "char_interval": {
+      "start_pos": 12025,
+      "end_pos": 12138
+    },
+    "alignment_status": "match_exact",
+    "extraction_index": 4,
+    "group_index": 3,
+    "description": null,
+    "attributes": {
+      "category": "scalability"
+    }
+  },
+  {
+    "extraction_class": "non_goal",
+    "extraction_text": "Determining the appropriate storage limit for a cluster is out-of-scope for this document.",
+    "char_interval": {
+      "start_pos": 12139,
+      "end_pos": 12229
+    },
+    "alignment_status": "match_exact",
+    "extraction_index": 5,
+    "group_index": 4,
+    "description": null,
+    "attributes": {}
+  },
+  {
+    "extraction_class": "design_decision",
+    "extraction_text": "The number of CronJobs is also sensitive to the API server QPS and the schedule of the individual CronJobs.",
+    "char_interval": {
+      "start_pos": 12264,
+      "end_pos": 12371
+    },
+    "alignment_status": "match_exact",
+    "extraction_index": 1,
+    "group_index": 0,
+    "description": null,
+    "attributes": {
+      "category": "scalability"
+    }
+  },
+  {
+    "extraction_class": "design_decision",
+    "extraction_text": "The design must be able to easily saturate the API server QPS.",
+    "char_interval": {
+      "start_pos": 12631,
+      "end_pos": 12693
+    },
+    "alignment_status": "match_exact",
+    "extraction_index": 2,
+    "group_index": 1,
+    "description": null,
+    "attributes": {
+      "category": "scalability"
+    }
+  },
+  {
+    "extraction_class": "design_decision",
+    "extraction_text": "The user can setup rate limits for CronJob and Job APIs using [API Server rate limting config](https://kubernetes.io/docs/reference/access-authn-authz/admission-controllers/#eventratelimit).",
+    "char_interval": {
+      "start_pos": 12694,
+      "end_pos": 12884
+    },
+    "alignment_status": "match_exact",
+    "extraction_index": 3,
+    "group_index": 2,
+    "description": null,
+    "attributes": {
+      "category": "scalability"
+    }
+  },
+  {
+    "extraction_class": "design_decision",
+    "extraction_text": "These are the new fields added as part of promotion to stable:\n- `.status`\n  - `.lastSuccessfulTime`",
+    "char_interval": {
+      "start_pos": 12902,
+      "end_pos": 13002
+    },
+    "alignment_status": "match_exact",
+    "extraction_index": 4,
+    "group_index": 3,
+    "description": null,
+    "attributes": {
+      "category": "api_change"
+    }
+  },
+  {
+    "extraction_class": "design_decision",
+    "extraction_text": "CronJob v1 API",
+    "char_interval": {
+      "start_pos": 13008,
+      "end_pos": 13022
+    },
+    "alignment_status": "match_exact",
+    "extraction_index": 5,
+    "group_index": 4,
+    "description": null,
+    "attributes": {
+      "category": "api_change"
+    }
+  },
+  {
+    "extraction_class": "design_decision",
+    "extraction_text": "All the new fields described in the v1 section would be introduced in the v1beta1 API as well.",
+    "char_interval": {
+      "start_pos": 16550,
+      "end_pos": 16644
+    },
+    "alignment_status": "match_exact",
+    "extraction_index": 1,
+    "group_index": 0,
+    "description": null,
+    "attributes": {
+      "category": "api_change"
+    }
+  },
+  {
+    "extraction_class": "test_case",
+    "extraction_text": "CronJob E2E test code is [located here](https://github.com/kubernetes/kubernetes/blob/b58777eda0f0077eba79d063c1c8f31cd7dbb8b9/test/e2e/apps/cronjob.go).",
+    "char_interval": {
+      "start_pos": 16720,
+      "end_pos": 16873
+    },
+    "alignment_status": "match_exact",
+    "extraction_index": 2,
+    "group_index": 1,
+    "description": null,
+    "attributes": {
+      "test_type": "e2e_test"
+    }
+  },
+  {
+    "extraction_class": "test_case",
+    "extraction_text": "should schedule multiple jobs concurrently",
+    "char_interval": {
+      "start_pos": 16980,
+      "end_pos": 17022
+    },
+    "alignment_status": "match_exact",
+    "extraction_index": 3,
+    "group_index": 2,
+    "description": null,
+    "attributes": {
+      "test_type": "e2e_test"
+    }
+  },
+  {
+    "extraction_class": "test_case",
+    "extraction_text": "should not schedule new jobs when ForbidConcurrent",
+    "char_interval": {
+      "start_pos": 17027,
+      "end_pos": 17077
+    },
+    "alignment_status": "match_exact",
+    "extraction_index": 4,
+    "group_index": 3,
+    "description": null,
+    "attributes": {
+      "test_type": "e2e_test"
+    }
+  },
+  {
+    "extraction_class": "test_case",
+    "extraction_text": "should replace jobs when ReplaceConcurrent",
+    "char_interval": {
+      "start_pos": 17082,
+      "end_pos": 17124
+    },
+    "alignment_status": "match_exact",
+    "extraction_index": 5,
+    "group_index": 4,
+    "description": null,
+    "attributes": {
+      "test_type": "e2e_test"
+    }
+  },
+  {
+    "extraction_class": "test_case",
+    "extraction_text": "should not schedule jobs when suspended",
+    "char_interval": {
+      "start_pos": 17139,
+      "end_pos": 17178
+    },
+    "alignment_status": "match_exact",
+    "extraction_index": 6,
+    "group_index": 5,
+    "description": null,
+    "attributes": {
+      "test_type": "e2e_test"
+    }
+  },
+  {
+    "extraction_class": "test_case",
+    "extraction_text": "should delete successful finished jobs when above successfulJobsHistoryLimit",
+    "char_interval": {
+      "start_pos": 17212,
+      "end_pos": 17288
+    },
+    "alignment_status": "match_exact",
+    "extraction_index": 7,
+    "group_index": 6,
+    "description": null,
+    "attributes": {
+      "test_type": "e2e_test"
+    }
+  },
+  {
+    "extraction_class": "test_case",
+    "extraction_text": "should delete failed finished jobs when above failedJobsHistoryLimit",
+    "char_interval": {
+      "start_pos": 17318,
+      "end_pos": 17386
+    },
+    "alignment_status": "match_exact",
+    "extraction_index": 8,
+    "group_index": 7,
+    "description": null,
+    "attributes": {
+      "test_type": "e2e_test"
+    }
+  },
+  {
+    "extraction_class": "test_case",
+    "extraction_text": "should not emit unexpected warnings",
+    "char_interval": {
+      "start_pos": 17409,
+      "end_pos": 17444
+    },
+    "alignment_status": "match_exact",
+    "extraction_index": 9,
+    "group_index": 8,
+    "description": null,
+    "attributes": {
+      "test_type": "e2e_test"
+    }
+  },
+  {
+    "extraction_class": "test_case",
+    "extraction_text": "should remove from active list jobs that have been deleted",
+    "char_interval": {
+      "start_pos": 17449,
+      "end_pos": 17507
+    },
+    "alignment_status": "match_exact",
+    "extraction_index": 10,
+    "group_index": 9,
+    "description": null,
+    "attributes": {
+      "test_type": "e2e_test"
+    }
+  },
+  {
+    "extraction_class": "test_case",
+    "extraction_text": "Should not create a cronjob with invalid schedule format",
+    "char_interval": {
+      "start_pos": 17545,
+      "end_pos": 17601
+    },
+    "alignment_status": "match_exact",
+    "extraction_index": 1,
+    "group_index": 0,
+    "description": null,
+    "attributes": {
+      "test_type": "other"
+    }
+  },
+  {
+    "extraction_class": "test_case",
+    "extraction_text": "Should not schedule a job within two minutes when missed the current window if StartingDeadlineSeconds is 0",
+    "char_interval": {
+      "start_pos": 17632,
+      "end_pos": 17739
+    },
+    "alignment_status": "match_exact",
+    "extraction_index": 2,
+    "group_index": 1,
+    "description": null,
+    "attributes": {
+      "test_type": "other"
+    }
+  },
+  {
+    "extraction_class": "test_case",
+    "extraction_text": "Should schedule a job soon when missed the current window if StartingDeadlineSeconds is long",
+    "char_interval": {
+      "start_pos": 17744,
+      "end_pos": 17836
+    },
+    "alignment_status": "match_exact",
+    "extraction_index": 3,
+    "group_index": 2,
+    "description": null,
+    "attributes": {
+      "test_type": "other"
+    }
+  },
+  {
+    "extraction_class": "test_case",
+    "extraction_text": "Should not schedule a job with invalid job template",
+    "char_interval": {
+      "start_pos": 17855,
+      "end_pos": 17906
+    },
+    "alignment_status": "match_exact",
+    "extraction_index": 4,
+    "group_index": 3,
+    "description": null,
+    "attributes": {
+      "test_type": "other"
+    }
+  },
+  {
+    "extraction_class": "test_case",
+    "extraction_text": "Should list cronjobs for all namespaces",
+    "char_interval": {
+      "start_pos": 17988,
+      "end_pos": 18027
+    },
+    "alignment_status": "match_exact",
+    "extraction_index": 5,
+    "group_index": 4,
+    "description": null,
+    "attributes": {
+      "test_type": "other"
+    }
+  },
+  {
+    "extraction_class": "test_case",
+    "extraction_text": "Should update a cronjob",
+    "char_interval": {
+      "start_pos": 18032,
+      "end_pos": 18055
+    },
+    "alignment_status": "match_exact",
+    "extraction_index": 6,
+    "group_index": 5,
+    "description": null,
+    "attributes": {
+      "test_type": "other"
+    }
+  },
+  {
+    "extraction_class": "test_case",
+    "extraction_text": "Should patch a cronjob",
+    "char_interval": {
+      "start_pos": 18060,
+      "end_pos": 18082
+    },
+    "alignment_status": "match_exact",
+    "extraction_index": 7,
+    "group_index": 6,
+    "description": null,
+    "attributes": {
+      "test_type": "other"
+    }
+  },
+  {
+    "extraction_class": "test_case",
+    "extraction_text": "Should delete all cronjobs in a namespace",
+    "char_interval": {
+      "start_pos": 18087,
+      "end_pos": 18128
+    },
+    "alignment_status": "match_exact",
+    "extraction_index": 8,
+    "group_index": 7,
+    "description": null,
+    "attributes": {
+      "test_type": "other"
+    }
+  },
+  {
+    "extraction_class": "test_case",
+    "extraction_text": "Should get a cronjob status",
+    "char_interval": {
+      "start_pos": 18133,
+      "end_pos": 18160
+    },
+    "alignment_status": "match_exact",
+    "extraction_index": 9,
+    "group_index": 8,
+    "description": null,
+    "attributes": {
+      "test_type": "other"
+    }
+  },
+  {
+    "extraction_class": "test_case",
+    "extraction_text": "Should update a cronjob status",
+    "char_interval": {
+      "start_pos": 18165,
+      "end_pos": 18195
+    },
+    "alignment_status": "match_exact",
+    "extraction_index": 10,
+    "group_index": 9,
+    "description": null,
+    "attributes": {
+      "test_type": "other"
+    }
+  },
+  {
+    "extraction_class": "test_case",
+    "extraction_text": "Should patch a cronjob status",
+    "char_interval": {
+      "start_pos": 18200,
+      "end_pos": 18229
+    },
+    "alignment_status": "match_exact",
+    "extraction_index": 11,
+    "group_index": 10,
+    "description": null,
+    "attributes": {
+      "test_type": "other"
+    }
+  },
+  {
+    "extraction_class": "test_case",
+    "extraction_text": "Should not start “missed” jobs from old cronjob after updating time",
+    "char_interval": {
+      "start_pos": 18276,
+      "end_pos": 18343
+    },
+    "alignment_status": "match_exact",
+    "extraction_index": 12,
+    "group_index": 11,
+    "description": null,
+    "attributes": {
+      "test_type": "other"
+    }
+  },
+  {
+    "extraction_class": "test_case",
+    "extraction_text": "Should cleanup finished pods when job is completed",
+    "char_interval": {
+      "start_pos": 18419,
+      "end_pos": 18469
+    },
+    "alignment_status": "match_exact",
+    "extraction_index": 13,
+    "group_index": 12,
+    "description": null,
+    "attributes": {
+      "test_type": "other"
+    }
+  },
+  {
+    "extraction_class": "test_case",
+    "extraction_text": "Should be able to create and schedule at least 5000 cronjobs",
+    "char_interval": {
+      "start_pos": 18836,
+      "end_pos": 18896
+    },
+    "alignment_status": "match_exact",
+    "extraction_index": 1,
+    "group_index": 0,
+    "description": null,
+    "attributes": {
+      "test_type": "benchmark_or_scale"
+    }
+  },
+  {
+    "extraction_class": "test_case",
+    "extraction_text": "Measure scheduling skew, podCreationLatency and check if it meets expectation (To Be Defined)",
+    "char_interval": {
+      "start_pos": 18901,
+      "end_pos": 18994
+    },
+    "alignment_status": "match_exact",
+    "extraction_index": 2,
+    "group_index": 1,
+    "description": null,
+    "attributes": {
+      "test_type": "benchmark_or_scale"
+    }
+  },
+  {
+    "extraction_class": "test_case",
+    "extraction_text": "Schedule cronjobs and randomly stop the controller and start it.",
+    "char_interval": {
+      "start_pos": 19018,
+      "end_pos": 19082
+    },
+    "alignment_status": "match_exact",
+    "extraction_index": 3,
+    "group_index": 2,
+    "description": null,
+    "attributes": {
+      "test_type": "e2e_test"
+    }
+  },
+  {
+    "extraction_class": "test_case",
+    "extraction_text": "Schedule cronjobs and stop the controller and start it after the deadline.",
+    "char_interval": {
+      "start_pos": 19087,
+      "end_pos": 19161
+    },
+    "alignment_status": "match_exact",
+    "extraction_index": 4,
+    "group_index": 3,
+    "description": null,
+    "attributes": {
+      "test_type": "e2e_test"
+    }
+  },
+  {
+    "extraction_class": "test_case",
+    "extraction_text": "should schedule multiple jobs concurrently when AllowConcurrent",
+    "char_interval": {
+      "start_pos": 19522,
+      "end_pos": 19585
+    },
+    "alignment_status": "match_exact",
+    "extraction_index": 1,
+    "group_index": 0,
+    "description": null,
+    "attributes": {
+      "test_type": "conformance_test"
+    }
+  },
+  {
+    "extraction_class": "test_case",
+    "extraction_text": "should not schedule new jobs when ForbidConcurrent",
+    "char_interval": {
+      "start_pos": 19590,
+      "end_pos": 19640
+    },
+    "alignment_status": "match_exact",
+    "extraction_index": 2,
+    "group_index": 1,
+    "description": null,
+    "attributes": {
+      "test_type": "conformance_test"
+    }
+  },
+  {
+    "extraction_class": "test_case",
+    "extraction_text": "should replace jobs when ReplaceConcurrent",
+    "char_interval": {
+      "start_pos": 19645,
+      "end_pos": 19687
+    },
+    "alignment_status": "match_exact",
+    "extraction_index": 3,
+    "group_index": 2,
+    "description": null,
+    "attributes": {
+      "test_type": "conformance_test"
+    }
+  },
+  {
+    "extraction_class": "test_case",
+    "extraction_text": "should not schedule jobs when suspended",
+    "char_interval": {
+      "start_pos": 19702,
+      "end_pos": 19741
+    },
+    "alignment_status": "match_exact",
+    "extraction_index": 4,
+    "group_index": 3,
+    "description": null,
+    "attributes": {
+      "test_type": "conformance_test"
+    }
+  },
+  {
+    "extraction_class": "test_case",
+    "extraction_text": "should delete successful finished jobs when above successfulJobsHistoryLimit",
+    "char_interval": {
+      "start_pos": 19775,
+      "end_pos": 19851
+    },
+    "alignment_status": "match_exact",
+    "extraction_index": 5,
+    "group_index": 4,
+    "description": null,
+    "attributes": {
+      "test_type": "conformance_test"
+    }
+  },
+  {
+    "extraction_class": "test_case",
+    "extraction_text": "should delete failed finished jobs when above failedJobsHistoryLimit",
+    "char_interval": {
+      "start_pos": 19881,
+      "end_pos": 19949
+    },
+    "alignment_status": "match_exact",
+    "extraction_index": 6,
+    "group_index": 5,
+    "description": null,
+    "attributes": {
+      "test_type": "conformance_test"
+    }
+  },
+  {
+    "extraction_class": "test_case",
+    "extraction_text": "Should schedule a job soon when missed the current window if StartingDeadlineSeconds is long",
+    "char_interval": {
+      "start_pos": 19980,
+      "end_pos": 20072
+    },
+    "alignment_status": "match_exact",
+    "extraction_index": 7,
+    "group_index": 6,
+    "description": null,
+    "attributes": {
+      "test_type": "conformance_test"
+    }
+  },
+  {
+    "extraction_class": "test_case",
+    "extraction_text": "Tests covering Bug fixes",
+    "char_interval": {
+      "start_pos": 20075,
+      "end_pos": 20099
+    },
+    "alignment_status": "match_exact",
+    "extraction_index": 8,
+    "group_index": 7,
+    "description": null,
+    "attributes": {
+      "test_type": "conformance_test"
+    }
+  },
+  {
+    "extraction_class": "test_case",
+    "extraction_text": "Start Stop Tests",
+    "char_interval": {
+      "start_pos": 20245,
+      "end_pos": 20261
+    },
+    "alignment_status": "match_exact",
+    "extraction_index": 1,
+    "group_index": 0,
+    "description": null,
+    "attributes": {
+      "test_type": "integration_test"
+    }
+  },
+  {
+    "extraction_class": "test_case",
+    "extraction_text": "Schedule cronjobs and randomly stop the controller and start it.",
+    "char_interval": {
+      "start_pos": 20266,
+      "end_pos": 20330
+    },
+    "alignment_status": "match_exact",
+    "extraction_index": 2,
+    "group_index": 1,
+    "description": null,
+    "attributes": {
+      "test_type": "integration_test"
+    }
+  },
+  {
+    "extraction_class": "test_case",
+    "extraction_text": "Schedule cronjobs and stop the controller and start it after the deadline.",
+    "char_interval": {
+      "start_pos": 20335,
+      "end_pos": 20409
+    },
+    "alignment_status": "match_exact",
+    "extraction_index": 3,
+    "group_index": 2,
+    "description": null,
+    "attributes": {
+      "test_type": "integration_test"
+    }
+  },
+  {
+    "extraction_class": "test_case",
+    "extraction_text": "Run or Not tests the controller under different scenarios to check if the Job is created or not",
+    "char_interval": {
+      "start_pos": 20541,
+      "end_pos": 20551
+    },
+    "alignment_status": "match_lesser",
+    "extraction_index": 1,
+    "group_index": 0,
+    "description": null,
+    "attributes": {
+      "test_type": "unit_test"
+    }
+  },
+  {
+    "extraction_class": "test_case",
+    "extraction_text": "Validates Job cleanup path of the controller under different conditions.",
+    "char_interval": {
+      "start_pos": 20784,
+      "end_pos": 20805
+    },
+    "alignment_status": "match_lesser",
+    "extraction_index": 2,
+    "group_index": 1,
+    "description": null,
+    "attributes": {
+      "test_type": "unit_test"
+    }
+  },
+  {
+    "extraction_class": "test_case",
+    "extraction_text": "Validates Status of the CronJob after sync under different conditions.",
+    "char_interval": {
+      "start_pos": 21004,
+      "end_pos": 21020
+    },
+    "alignment_status": "match_lesser",
+    "extraction_index": 3,
+    "group_index": 2,
+    "description": null,
+    "attributes": {
+      "test_type": "unit_test"
+    }
+  },
+  {
+    "extraction_class": "design_decision",
+    "extraction_text": "Alpha: Feature flag for new controller is disabled by default",
+    "char_interval": {
+      "start_pos": 21265,
+      "end_pos": 21326
+    },
+    "alignment_status": "match_exact",
+    "extraction_index": 4,
+    "group_index": 3,
+    "description": null,
+    "attributes": {
+      "category": "rollout"
+    }
+  },
+  {
+    "extraction_class": "design_decision",
+    "extraction_text": "Dual controller. Both old and new implementation co-exist",
+    "char_interval": {
+      "start_pos": 21329,
+      "end_pos": 21386
+    },
+    "alignment_status": "match_exact",
+    "extraction_index": 5,
+    "group_index": 4,
+    "description": null,
+    "attributes": {
+      "category": "rollout"
+    }
+  },
+  {
+    "extraction_class": "implementation_history",
+    "extraction_text": "Beta: Feature flag for new controller is enabled by default. If the distribution chooses it can be disabled",
+    "char_interval": {
+      "start_pos": 21409,
+      "end_pos": 21516
+    },
+    "alignment_status": "match_exact",
+    "extraction_index": 1,
+    "group_index": 0,
+    "description": null,
+    "attributes": {
+      "marker": "1.21",
+      "marker_type": "release"
+    }
+  },
+  {
+    "extraction_class": "implementation_history",
+    "extraction_text": "Introduce CronJob in batch/v1",
+    "char_interval": {
+      "start_pos": 21519,
+      "end_pos": 21548
+    },
+    "alignment_status": "match_exact",
+    "extraction_index": 2,
+    "group_index": 1,
+    "description": null,
+    "attributes": {
+      "marker": "1.21",
+      "marker_type": "release"
+    }
+  },
+  {
+    "extraction_class": "implementation_history",
+    "extraction_text": "GA: The feature flag is deprecated and the old controller code is cleaned up",
+    "char_interval": {
+      "start_pos": 21571,
+      "end_pos": 21647
+    },
+    "alignment_status": "match_exact",
+    "extraction_index": 3,
+    "group_index": 2,
+    "description": null,
+    "attributes": {
+      "marker": "1.22",
+      "marker_type": "release"
+    }
+  },
+  {
+    "extraction_class": "graduation_criterion",
+    "extraction_text": "Implement shared informers to reduce pressure on API Server",
+    "char_interval": {
+      "start_pos": 21679,
+      "end_pos": 21738
+    },
+    "alignment_status": "match_exact",
+    "extraction_index": 4,
+    "group_index": 3,
+    "description": null,
+    "attributes": {
+      "stage": "other"
+    }
+  },
+  {
+    "extraction_class": "graduation_criterion",
+    "extraction_text": "Pass conformance tests",
+    "char_interval": {
+      "start_pos": 21745,
+      "end_pos": 21767
+    },
+    "alignment_status": "match_exact",
+    "extraction_index": 5,
+    "group_index": 4,
+    "description": null,
+    "attributes": {
+      "stage": "other"
+    }
+  },
+  {
+    "extraction_class": "graduation_criterion",
+    "extraction_text": "Update documents reflecting the changes",
+    "char_interval": {
+      "start_pos": 21774,
+      "end_pos": 21813
+    },
+    "alignment_status": "match_exact",
+    "extraction_index": 6,
+    "group_index": 5,
+    "description": null,
+    "attributes": {
+      "stage": "other"
+    }
+  },
+  {
+    "extraction_class": "test_case",
+    "extraction_text": "Pass CronJob e2e tests",
+    "char_interval": {
+      "start_pos": 21820,
+      "end_pos": 21842
+    },
+    "alignment_status": "match_exact",
+    "extraction_index": 7,
+    "group_index": 6,
+    "description": null,
+    "attributes": {
+      "test_type": "e2e_test"
+    }
+  },
+  {
+    "extraction_class": "test_case",
+    "extraction_text": "Pass CronJob unit-tests",
+    "char_interval": {
+      "start_pos": 21849,
+      "end_pos": 21872
+    },
+    "alignment_status": "match_exact",
+    "extraction_index": 8,
+    "group_index": 7,
+    "description": null,
+    "attributes": {
+      "test_type": "unit_test"
+    }
+  },
+  {
+    "extraction_class": "test_case",
+    "extraction_text": "Pass scale tests",
+    "char_interval": {
+      "start_pos": 21879,
+      "end_pos": 21895
+    },
+    "alignment_status": "match_exact",
+    "extraction_index": 9,
+    "group_index": 8,
+    "description": null,
+    "attributes": {
+      "test_type": "benchmark_or_scale"
+    }
+  },
+  {
+    "extraction_class": "design_decision",
+    "extraction_text": "Feature gate (also fill in values in `kep.yaml`)",
+    "char_interval": {
+      "start_pos": 22056,
+      "end_pos": 22104
+    },
+    "alignment_status": "match_exact",
+    "extraction_index": 1,
+    "group_index": 0,
+    "description": null,
+    "attributes": {
+      "category": "rollout"
+    }
+  },
+  {
+    "extraction_class": "design_decision",
+    "extraction_text": "Feature gate name: `CronJobControllerV2`",
+    "char_interval": {
+      "start_pos": 22111,
+      "end_pos": 22151
+    },
+    "alignment_status": "match_exact",
+    "extraction_index": 2,
+    "group_index": 1,
+    "description": null,
+    "attributes": {
+      "category": "rollout"
+    }
+  },
+  {
+    "extraction_class": "design_decision",
+    "extraction_text": "Components depending on the feature gate: `kube-controller-manager`",
+    "char_interval": {
+      "start_pos": 22158,
+      "end_pos": 22225
+    },
+    "alignment_status": "match_exact",
+    "extraction_index": 3,
+    "group_index": 2,
+    "description": null,
+    "attributes": {
+      "category": "rollout"
+    }
+  },
+  {
+    "extraction_class": "design_decision",
+    "extraction_text": "Does enabling the feature change any default behavior? No.",
+    "char_interval": {
+      "start_pos": 22231,
+      "end_pos": 22285
+    },
+    "alignment_status": "match_lesser",
+    "extraction_index": 4,
+    "group_index": 3,
+    "description": null,
+    "attributes": {
+      "category": "rollout"
+    }
+  },
+  {
+    "extraction_class": "design_decision",
+    "extraction_text": "Can the feature be disabled once it has been enabled (i.e. can we roll back the enablement)? Yes.",
+    "char_interval": {
+      "start_pos": 22299,
+      "end_pos": 22393
+    },
+    "alignment_status": "match_lesser",
+    "extraction_index": 5,
+    "group_index": 4,
+    "description": null,
+    "attributes": {
+      "category": "rollout"
+    }
+  },
+  {
+    "extraction_class": "design_decision",
+    "extraction_text": "What happens if we reenable the feature if it was previously rolled back? No changes are expected.",
+    "char_interval": {
+      "start_pos": 22408,
+      "end_pos": 22481
+    },
+    "alignment_status": "match_lesser",
+    "extraction_index": 6,
+    "group_index": 5,
+    "description": null,
+    "attributes": {
+      "category": "rollout"
+    }
+  },
+  {
+    "extraction_class": "design_decision",
+    "extraction_text": "Are there any tests for feature enablement/disablement? Not applicable, given we're missing framework allowing switching feature-gates during e2e.",
+    "char_interval": {
+      "start_pos": 22516,
+      "end_pos": 22571
+    },
+    "alignment_status": "match_lesser",
+    "extraction_index": 7,
+    "group_index": 6,
+    "description": null,
+    "attributes": {
+      "category": "rollout"
+    }
+  },
+  {
+    "extraction_class": "risk",
+    "extraction_text": "This might fail when leader election for kube-controller-manager ends up assigned to two separate instances. In this case the two controller might end up fighting over the cronjob resource.",
+    "char_interval": {
+      "start_pos": 22785,
+      "end_pos": 22974
+    },
+    "alignment_status": "match_exact",
+    "extraction_index": 1,
+    "group_index": 0,
+    "description": null,
+    "attributes": {}
+  },
+  {
+    "extraction_class": "risk",
+    "extraction_text": "Additionally, a bug in the new controller might trigger a panic and thus crashing the whole kube-controller-manager.",
+    "char_interval": {
+      "start_pos": 22976,
+      "end_pos": 23092
+    },
+    "alignment_status": "match_exact",
+    "extraction_index": 2,
+    "group_index": 1,
+    "description": null,
+    "attributes": {}
+  },
+  {
+    "extraction_class": "risk",
+    "extraction_text": "Another problem might come from GA-ing batch/v1.CronJob which might cause problems with conversions between different versions of that resource.",
+    "char_interval": {
+      "start_pos": 23094,
+      "end_pos": 23238
+    },
+    "alignment_status": "match_exact",
+    "extraction_index": 3,
+    "group_index": 2,
+    "description": null,
+    "attributes": {}
+  },
+  {
+    "extraction_class": "design_decision",
+    "extraction_text": "Unexpected restarts of kube-controller-manager.",
+    "char_interval": {
+      "start_pos": 23296,
+      "end_pos": 23343
+    },
+    "alignment_status": "match_exact",
+    "extraction_index": 4,
+    "group_index": 3,
+    "description": null,
+    "attributes": {
+      "category": "monitoring"
+    }
+  },
+  {
+    "extraction_class": "test_case",
+    "extraction_text": "Manual test is planned once the implementation is finished.",
+    "char_interval": {
+      "start_pos": 23436,
+      "end_pos": 23495
+    },
+    "alignment_status": "match_exact",
+    "extraction_index": 5,
+    "group_index": 4,
+    "description": null,
+    "attributes": {
+      "test_type": "manual_validation"
+    }
+  },
+  {
+    "extraction_class": "design_decision",
+    "extraction_text": "batch/v1beta1.CronJob is already deprecated.",
+    "char_interval": {
+      "start_pos": 23621,
+      "end_pos": 23665
+    },
+    "alignment_status": "match_exact",
+    "extraction_index": 6,
+    "group_index": 5,
+    "description": null,
+    "attributes": {
+      "category": "compatibility"
+    }
+  },
+  {
+    "extraction_class": "design_decision",
+    "extraction_text": "For the new controller part checking `cronjob_job_creation_skew` and `cronjob_controller_rate_limiter_use` metrics, accompanied with a set of queue-related metrics the old controller is not using.",
+    "char_interval": {
+      "start_pos": 23773,
+      "end_pos": 23969
+    },
+    "alignment_status": "match_exact",
+    "extraction_index": 1,
+    "group_index": 0,
+    "description": null,
+    "attributes": {
+      "category": "monitoring"
+    }
+  },
+  {
+    "extraction_class": "design_decision",
+    "extraction_text": "For the CronJob resource GA verifying if CronJob exists in `batch/v1` API group in the cluster.",
+    "char_interval": {
+      "start_pos": 23971,
+      "end_pos": 24066
+    },
+    "alignment_status": "match_exact",
+    "extraction_index": 2,
+    "group_index": 1,
+    "description": null,
+    "attributes": {
+      "category": "monitoring"
+    }
+  },
+  {
+    "extraction_class": "design_decision",
+    "extraction_text": "Metric name: `cronjob_controller_rate_limiter_use`",
+    "char_interval": {
+      "start_pos": 24201,
+      "end_pos": 24251
+    },
+    "alignment_status": "match_exact",
+    "extraction_index": 3,
+    "group_index": 2,
+    "description": null,
+    "attributes": {
+      "category": "monitoring"
+    }
+  },
+  {
+    "extraction_class": "design_decision",
+    "extraction_text": "Metric name: `cronjob_job_creation_skew`",
+    "char_interval": {
+      "start_pos": 24258,
+      "end_pos": 24298
+    },
+    "alignment_status": "match_exact",
+    "extraction_index": 4,
+    "group_index": 3,
+    "description": null,
+    "attributes": {
+      "category": "monitoring"
+    }
+  },
+  {
+    "extraction_class": "design_decision",
+    "extraction_text": "Metric name: `workqueue_depth`",
+    "char_interval": {
+      "start_pos": 24305,
+      "end_pos": 24335
+    },
+    "alignment_status": "match_exact",
+    "extraction_index": 5,
+    "group_index": 4,
+    "description": null,
+    "attributes": {
+      "category": "monitoring"
+    }
+  },
+  {
+    "extraction_class": "design_decision",
+    "extraction_text": "Metric name: `workqueue_retries`",
+    "char_interval": {
+      "start_pos": 24342,
+      "end_pos": 24374
+    },
+    "alignment_status": "match_exact",
+    "extraction_index": 6,
+    "group_index": 5,
+    "description": null,
+    "attributes": {
+      "category": "monitoring"
+    }
+  },
+  {
+    "extraction_class": "design_decision",
+    "extraction_text": "Metric name: `workqueue_adds_total`",
+    "char_interval": {
+      "start_pos": 24381,
+      "end_pos": 24416
+    },
+    "alignment_status": "match_exact",
+    "extraction_index": 7,
+    "group_index": 6,
+    "description": null,
+    "attributes": {
+      "category": "monitoring"
+    }
+  },
+  {
+    "extraction_class": "design_decision",
+    "extraction_text": "Components exposing the metric: `kube-controller-manager`",
+    "char_interval": {
+      "start_pos": 24423,
+      "end_pos": 24480
+    },
+    "alignment_status": "match_exact",
+    "extraction_index": 8,
+    "group_index": 7,
+    "description": null,
+    "attributes": {
+      "category": "monitoring"
+    }
+  },
+  {
+    "extraction_class": "design_decision",
+    "extraction_text": "Metric name: `etcd_object_counts{resource=\"jobs.batch\"}`",
+    "char_interval": {
+      "start_pos": 24487,
+      "end_pos": 24543
+    },
+    "alignment_status": "match_exact",
+    "extraction_index": 9,
+    "group_index": 8,
+    "description": null,
+    "attributes": {
+      "category": "monitoring"
+    }
+  },
+  {
+    "extraction_class": "design_decision",
+    "extraction_text": "Components exposing the metric: `kube-apiserver`.",
+    "char_interval": {
+      "start_pos": 24550,
+      "end_pos": 24599
+    },
+    "alignment_status": "match_exact",
+    "extraction_index": 10,
+    "group_index": 9,
+    "description": null,
+    "attributes": {
+      "category": "monitoring"
+    }
+  },
+  {
+    "extraction_class": "design_decision",
+    "extraction_text": "99th percentile of cron_job_creation_skew <= X per cluster-day.",
+    "char_interval": {
+      "start_pos": 24685,
+      "end_pos": 24748
+    },
+    "alignment_status": "match_exact",
+    "extraction_index": 1,
+    "group_index": 0,
+    "description": null,
+    "attributes": {
+      "category": "monitoring"
+    }
+  },
+  {
+    "extraction_class": "design_decision",
+    "extraction_text": "No.",
+    "char_interval": {
+      "start_pos": 24859,
+      "end_pos": 24862
+    },
+    "alignment_status": "match_exact",
+    "extraction_index": 2,
+    "group_index": 1,
+    "description": null,
+    "attributes": {
+      "category": "monitoring"
+    }
+  },
+  {
+    "extraction_class": "design_decision",
+    "extraction_text": "WATCH cronjobs, which will replace the current cronjobs polling",
+    "char_interval": {
+      "start_pos": 25060,
+      "end_pos": 25123
+    },
+    "alignment_status": "match_exact",
+    "extraction_index": 1,
+    "group_index": 0,
+    "description": null,
+    "attributes": {
+      "category": "api_change"
+    }
+  },
+  {
+    "extraction_class": "design_decision",
+    "extraction_text": "Graduating CronJob API to GA, iow. CronJob in `batch/v1`.",
+    "char_interval": {
+      "start_pos": 25287,
+      "end_pos": 25344
+    },
+    "alignment_status": "match_exact",
+    "extraction_index": 2,
+    "group_index": 1,
+    "description": null,
+    "attributes": {
+      "category": "api_change"
+    }
+  },
+  {
+    "extraction_class": "definition",
+    "extraction_text": "CronJob",
+    "char_interval": {
+      "start_pos": 26549,
+      "end_pos": 26556
+    },
+    "alignment_status": "match_fuzzy",
+    "extraction_index": 1,
+    "group_index": 0,
+    "description": null,
+    "attributes": {
+      "definition_type": "term"
+    }
+  },
+  {
+    "extraction_class": "definition",
+    "extraction_text": "ScheduledJobs",
+    "char_interval": {
+      "start_pos": 26593,
+      "end_pos": 26606
+    },
+    "alignment_status": "match_fuzzy",
+    "extraction_index": 2,
+    "group_index": 1,
+    "description": null,
+    "attributes": {
+      "definition_type": "term"
+    }
+  },
+  {
+    "extraction_class": "design_decision",
+    "extraction_text": "The controller will not be able to work.",
+    "char_interval": {
+      "start_pos": 26136,
+      "end_pos": 26176
+    },
+    "alignment_status": "match_exact",
+    "extraction_index": 3,
+    "group_index": 2,
+    "description": null,
+    "attributes": {
+      "category": "troubleshooting"
+    }
+  },
+  {
+    "extraction_class": "design_decision",
+    "extraction_text": "None.",
+    "char_interval": {
+      "start_pos": 26222,
+      "end_pos": 26227
+    },
+    "alignment_status": "match_exact",
+    "extraction_index": 4,
+    "group_index": 3,
+    "description": null,
+    "attributes": {
+      "category": "troubleshooting"
+    }
+  },
+  {
+    "extraction_class": "design_decision",
+    "extraction_text": "TBD",
+    "char_interval": {
+      "start_pos": 26316,
+      "end_pos": 26319
+    },
+    "alignment_status": "match_exact",
+    "extraction_index": 5,
+    "group_index": 4,
+    "description": null,
+    "attributes": {
+      "category": "troubleshooting"
+    }
+  },
+  {
+    "extraction_class": "implementation_history",
+    "extraction_text": "CronJob was introduced in Kubernetes 1.3 as ScheduledJobs",
+    "char_interval": {
+      "start_pos": 26549,
+      "end_pos": 26606
+    },
+    "alignment_status": "match_exact",
+    "extraction_index": 6,
+    "group_index": 5,
+    "description": null,
+    "attributes": {
+      "marker": "1.3",
+      "marker_type": "release"
+    }
+  },
+  {
+    "extraction_class": "implementation_history",
+    "extraction_text": "In Kubernetes 1.8 it was renamed to CronJob and promoted to Beta",
+    "char_interval": {
+      "start_pos": 26609,
+      "end_pos": 26673
+    },
+    "alignment_status": "match_exact",
+    "extraction_index": 7,
+    "group_index": 6,
+    "description": null,
+    "attributes": {
+      "marker": "1.8",
+      "marker_type": "release"
+    }
+  },
+  {
+    "extraction_class": "implementation_history",
+    "extraction_text": "In Kubernetes 1.19 CronJob was marked deprecated with removal in 1.22 due to not being promoted to GA.",
+    "char_interval": {
+      "start_pos": 26676,
+      "end_pos": 26778
+    },
+    "alignment_status": "match_exact",
+    "extraction_index": 8,
+    "group_index": 7,
+    "description": null,
+    "attributes": {
+      "marker": "1.19",
+      "marker_type": "release"
+    }
+  },
+  {
+    "extraction_class": "future_work",
+    "extraction_text": "Add `nextScheduleTime` to `.status` that tracks the next time the job will be scheduled.",
+    "char_interval": {
+      "start_pos": 28687,
+      "end_pos": 28775
+    },
+    "alignment_status": "match_exact",
+    "extraction_index": 1,
+    "group_index": 0,
+    "description": null,
+    "attributes": {
+      "horizon": "future_extension"
+    }
+  },
+  {
+    "extraction_class": "design_decision",
+    "extraction_text": "These counters would be added to `.status` section of the CronJob object:",
+    "char_interval": {
+      "start_pos": 29366,
+      "end_pos": 29439
+    },
+    "alignment_status": "match_exact",
+    "extraction_index": 1,
+    "group_index": 0,
+    "description": null,
+    "attributes": {
+      "category": "api_change"
+    }
+  },
+  {
+    "extraction_class": "design_decision",
+    "extraction_text": "- `SuccessfulRuns` Count of all successful runs",
+    "char_interval": {
+      "start_pos": 29440,
+      "end_pos": 29487
+    },
+    "alignment_status": "match_exact",
+    "extraction_index": 2,
+    "group_index": 1,
+    "description": null,
+    "attributes": {
+      "category": "api_change"
+    }
+  },
+  {
+    "extraction_class": "design_decision",
+    "extraction_text": "- `FailedRuns` Count of all failed runs",
+    "char_interval": {
+      "start_pos": 29488,
+      "end_pos": 29527
+    },
+    "alignment_status": "match_exact",
+    "extraction_index": 3,
+    "group_index": 2,
+    "description": null,
+    "attributes": {
+      "category": "api_change"
+    }
+  },
+  {
+    "extraction_class": "design_decision",
+    "extraction_text": "- `FailuresSinceSuccess` Count of failed runs since last successful",
+    "char_interval": {
+      "start_pos": 29528,
+      "end_pos": 29595
+    },
+    "alignment_status": "match_exact",
+    "extraction_index": 4,
+    "group_index": 3,
+    "description": null,
+    "attributes": {
+      "category": "api_change"
+    }
+  },
+  {
+    "extraction_class": "design_decision",
+    "extraction_text": "Add a condition array with `Settled` condition type.",
+    "char_interval": {
+      "start_pos": 29625,
+      "end_pos": 29677
+    },
+    "alignment_status": "match_exact",
+    "extraction_index": 5,
+    "group_index": 4,
+    "description": null,
+    "attributes": {
+      "category": "api_change"
+    }
+  },
+  {
+    "extraction_class": "design_decision",
+    "extraction_text": "This would help with the effort of standardizing conditions across all core types.",
+    "char_interval": {
+      "start_pos": 29678,
+      "end_pos": 29760
+    },
+    "alignment_status": "match_exact",
+    "extraction_index": 6,
+    "group_index": 5,
+    "description": null,
+    "attributes": {
+      "category": "implementation_detail"
+    }
+  },
+  {
+    "extraction_class": "design_decision",
+    "extraction_text": "`Settled` is set at the end of every successful reconcile run.",
+    "char_interval": {
+      "start_pos": 29761,
+      "end_pos": 29823
+    },
+    "alignment_status": "match_exact",
+    "extraction_index": 7,
+    "group_index": 6,
+    "description": null,
+    "attributes": {
+      "category": "workflow"
+    }
+  },
+  {
+    "extraction_class": "design_decision",
+    "extraction_text": "The key thing to note here is the notions of `Settled` does not imply the `Job`s are running correctly.",
+    "char_interval": {
+      "start_pos": 29824,
+      "end_pos": 29927
+    },
+    "alignment_status": "match_exact",
+    "extraction_index": 8,
+    "group_index": 7,
+    "description": null,
+    "attributes": {
+      "category": "implementation_detail"
+    }
+  },
+  {
+    "extraction_class": "design_decision",
+    "extraction_text": "It just means that the controller is done processing this object successfully.",
+    "char_interval": {
+      "start_pos": 29928,
+      "end_pos": 30006
+    },
+    "alignment_status": "match_exact",
+    "extraction_index": 9,
+    "group_index": 8,
+    "description": null,
+    "attributes": {
+      "category": "implementation_detail"
+    }
+  },
+  {
+    "extraction_class": "design_decision",
+    "extraction_text": "We propose to introduce `.spec.jitter` which is a percentage of the time delta to the next schedule.",
+    "char_interval": {
+      "start_pos": 30112,
+      "end_pos": 30212
+    },
+    "alignment_status": "match_exact",
+    "extraction_index": 10,
+    "group_index": 9,
+    "description": null,
+    "attributes": {
+      "category": "api_change"
+    }
+  },
+  {
+    "extraction_class": "design_decision",
+    "extraction_text": "We propose to cap it to 50%.",
+    "char_interval": {
+      "start_pos": 30213,
+      "end_pos": 30241
+    },
+    "alignment_status": "match_exact",
+    "extraction_index": 11,
+    "group_index": 10,
+    "description": null,
+    "attributes": {
+      "category": "implementation_detail"
+    }
+  },
+  {
+    "extraction_class": "summary",
+    "extraction_text": "We propose to introduce `.spec.timezone` which indicates the timezone to be considered when scheduling this cronjob.",
+    "char_interval": {
+      "start_pos": 30497,
+      "end_pos": 30613
+    },
+    "alignment_status": "match_exact",
+    "extraction_index": 1,
+    "group_index": 0,
+    "description": null,
+    "attributes": {}
+  },
+  {
+    "extraction_class": "motivation",
+    "extraction_text": "Clusters across different environments have different timezones.",
+    "char_interval": {
+      "start_pos": 30615,
+      "end_pos": 30679
+    },
+    "alignment_status": "match_exact",
+    "extraction_index": 2,
+    "group_index": 1,
+    "description": null,
+    "attributes": {}
+  },
+  {
+    "extraction_class": "motivation",
+    "extraction_text": "There is no known recommendation or conformance test to define timezone for the control plane.",
+    "char_interval": {
+      "start_pos": 30680,
+      "end_pos": 30774
+    },
+    "alignment_status": "match_exact",
+    "extraction_index": 3,
+    "group_index": 2,
+    "description": null,
+    "attributes": {}
+  },
+  {
+    "extraction_class": "motivation",
+    "extraction_text": "Different distributions may have different behavior.",
+    "char_interval": {
+      "start_pos": 30775,
+      "end_pos": 30827
+    },
+    "alignment_status": "match_exact",
+    "extraction_index": 4,
+    "group_index": 3,
+    "description": null,
+    "attributes": {}
+  },
+  {
+    "extraction_class": "motivation",
+    "extraction_text": "For CronJob, the timezone is inferred from the control plane (specifically, the timezone as seen by the kube-controller-manager process).",
+    "char_interval": {
+      "start_pos": 30828,
+      "end_pos": 30965
+    },
+    "alignment_status": "match_exact",
+    "extraction_index": 5,
+    "group_index": 4,
+    "description": null,
+    "attributes": {}
+  },
+  {
+    "extraction_class": "motivation",
+    "extraction_text": "Someone with just API access has no idea what that controller manager timezone is.",
+    "char_interval": {
+      "start_pos": 30966,
+      "end_pos": 31048
+    },
+    "alignment_status": "match_exact",
+    "extraction_index": 6,
+    "group_index": 5,
+    "description": null,
+    "attributes": {}
+  },
+  {
+    "extraction_class": "motivation",
+    "extraction_text": "Sometimes cluster operators too, who run the controller manager in a container with a UTC timezone on a host with a non-UTC timezone.",
+    "char_interval": {
+      "start_pos": 31049,
+      "end_pos": 31182
+    },
+    "alignment_status": "match_exact",
+    "extraction_index": 7,
+    "group_index": 6,
+    "description": null,
+    "attributes": {}
+  },
+  {
+    "extraction_class": "motivation",
+    "extraction_text": "These conditions imply that people with just API access who want to predict when their job will run have no guarantee.",
+    "char_interval": {
+      "start_pos": 31184,
+      "end_pos": 31302
+    },
+    "alignment_status": "match_exact",
+    "extraction_index": 8,
+    "group_index": 7,
+    "description": null,
+    "attributes": {}
+  },
+  {
+    "extraction_class": "design_decision",
+    "extraction_text": "By providing a timezone field we provide an absolute value instead of relying on the relative timezone of where the master is running.",
+    "char_interval": {
+      "start_pos": 31303,
+      "end_pos": 31437
+    },
+    "alignment_status": "match_exact",
+    "extraction_index": 9,
+    "group_index": 8,
+    "description": null,
+    "attributes": {
+      "category": "api_change"
+    }
+  },
+  {
+    "extraction_class": "design_decision",
+    "extraction_text": "This ensures more portability of the CronJob configs across clusters as well.",
+    "char_interval": {
+      "start_pos": 31438,
+      "end_pos": 31515
+    },
+    "alignment_status": "match_exact",
+    "extraction_index": 1,
+    "group_index": 0,
+    "description": null,
+    "attributes": {
+      "category": "compatibility"
+    }
+  },
+  {
+    "extraction_class": "design_decision",
+    "extraction_text": "This is an optional field and when not present reverts to existing behavior of using the timezone of the `kube-controller-manager` process.",
+    "char_interval": {
+      "start_pos": 31517,
+      "end_pos": 31656
+    },
+    "alignment_status": "match_exact",
+    "extraction_index": 2,
+    "group_index": 1,
+    "description": null,
+    "attributes": {
+      "category": "api_change"
+    }
+  },
+  {
+    "extraction_class": "motivation",
+    "extraction_text": "There is also a [community request](https://github.com/kubernetes/kubernetes/issues/47202) for this.",
+    "char_interval": {
+      "start_pos": 31658,
+      "end_pos": 31758
+    },
+    "alignment_status": "match_exact",
+    "extraction_index": 3,
+    "group_index": 2,
+    "description": null,
+    "attributes": {}
+  }
+]

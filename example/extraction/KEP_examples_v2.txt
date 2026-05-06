@@ -1,0 +1,854 @@
+Q: ## Summary
+
+A standardized development process for Kubernetes is proposed, in order to:
+- provide a common structure for proposing changes to Kubernetes
+- ensure that the motivation for a change is clear
+- allow for the enumeration of stability milestones and stability graduation criteria
+- persist project information in a Version Control System (VCS) for future Kubernauts
+- support the creation of _high-value, user-facing_ information such as:
+- an overall project development roadmap
+- motivation for impactful user-facing changes
+- reserve GitHub issues for tracking work in flight, instead of creating "umbrella" issues
+- ensure community participants can successfully drive changes to completion across one or more releases while stakeholders are adequately represented throughout the process
+
+This process is supported by a unit of work called a Kubernetes Enhancement Proposal, or KEP.
+A KEP attempts to combine aspects of
+- a feature, and effort-tracking document
+- a product requirements document
+- a design document
+into one file, which is created incrementally in collaboration with one or more Special Interest Groups (SIGs).
+
+## Motivation
+
+For cross-project SIGs such as SIG Release, an abstraction beyond a single GitHub Issue or pull request seems to be required in order to understand and communicate upcoming changes to Kubernetes.
+It is vital for the project to be able to track the chain of custody for a proposed enhancement from conception through implementation.
+Without a standardized mechanism for describing important enhancements, our talented technical writers and product managers struggle to weave a coherent narrative explaining why a particular release is important.
+A: {
+  "extractions": [
+    {
+      "summary": "A standardized development process for Kubernetes is proposed",
+      "summary_attributes": {}
+    },
+    {
+      "goal": "provide a common structure for proposing changes to Kubernetes",
+      "goal_attributes": {}
+    },
+    {
+      "goal": "ensure that the motivation for a change is clear",
+      "goal_attributes": {}
+    },
+    {
+      "design_decision": "This process is supported by a unit of work called a Kubernetes Enhancement Proposal, or KEP.",
+      "design_decision_attributes": {
+        "category": "proposal_definition"
+      }
+    },
+    {
+      "design_decision": "A KEP attempts to combine aspects of\n- a feature, and effort-tracking document\n- a product requirements document\n- a design document\ninto one file, which is created incrementally in collaboration with one or more Special Interest Groups (SIGs).",
+      "design_decision_attributes": {
+        "category": "proposal_definition"
+      }
+    },
+    {
+      "motivation": "For cross-project SIGs such as SIG Release, an abstraction beyond a single GitHub Issue or pull request seems to be required in order to understand and communicate upcoming changes to Kubernetes.",
+      "motivation_attributes": {}
+    }
+  ]
+}
+
+Q: ## Drawbacks
+
+Any additional process has the potential to engender resentment within the community.
+There is also a risk that the KEP process as designed will not sufficiently address the scaling challenges we face today.
+PR review bandwidth is already at a premium, and we may find that the KEP process introduces an unreasonable bottleneck on our development velocity.
+The centrality of Git and GitHub within the KEP process also may place too high a barrier to potential contributors.
+
+## Alternatives
+
+### GitHub Issues vs. KEPs
+
+The use of GitHub issues when proposing changes does not provide SIGs good facilities for signaling approval or rejection of a proposed change to Kubernetes, because anyone can open a GitHub issue at any time.
+Additionally, managing a proposed change across multiple releases is somewhat cumbersome as labels and milestones need to be updated for every release that a change spans.
+These long-lived GitHub issues lead to an ever-increasing number of issues open against `kubernetes/features`, which itself has become a management problem.
+While git is a fantastic version control system (VCS), it is neither a project management tool nor a cogent way of managing an architectural catalog or backlog.
+A: {
+  "extractions": [
+    {
+      "drawback": "Any additional process has the potential to engender resentment within the community.",
+      "drawback_attributes": {}
+    },
+    {
+      "drawback": "The centrality of Git and GitHub within the KEP process also may place too high a barrier to potential contributors.",
+      "drawback_attributes": {}
+    },
+    {
+      "alternative": "The use of GitHub issues when proposing changes does not provide SIGs good facilities for signaling approval or rejection of a proposed change to Kubernetes, because anyone can open a GitHub issue at any time.",
+      "alternative_attributes": {}
+    },
+    {
+      "alternative": "While git is a fantastic version control system (VCS), it is neither a project management tool nor a cogent way of managing an architectural catalog or backlog.",
+      "alternative_attributes": {}
+    }
+  ]
+}
+
+Q: ## Optional Future Extensions
+The following features have been considered for future extensions of the this proposal.
+They are out of scope for the initial proposal and/or implementation, but may be implemented in the future (in which case they should be moved out of this section).
+This whole section should be considered <<[UNRESOLVED]>>.
+
+### Automated PSP migration tooling
+We could also ship a standalone tool to assist with the steps identified above.
+
+### Offline Policy Checking
+We could provide a standalone tool that is capable of checking the policies against resource files or through stdin.
+
+## Implementation History
+- 2021-03-16: Initial proposal provisionally accepted.
+- 2021-08-04: v1.22 Alpha version released
+- 2021-08-24: v1.23 Beta KEP updates
+- 2021-11-03: v1.23 Beta version released
+A: {
+  "extractions": [
+    {
+      "future_work": "We could also ship a standalone tool to assist with the steps identified above.",
+      "future_work_attributes": {
+        "horizon": "future_extension"
+      }
+    },
+    {
+      "future_work": "We could provide a standalone tool that is capable of checking the policies against resource files or through stdin.",
+      "future_work_attributes": {
+        "horizon": "future_extension"
+      }
+    },
+    {
+      "implementation_history": "2021-03-16: Initial proposal provisionally accepted.",
+      "implementation_history_attributes": {
+        "marker": "2021-03-16",
+        "marker_type": "date"
+      }
+    },
+    {
+      "implementation_history": "2021-08-04: v1.22 Alpha version released",
+      "implementation_history_attributes": {
+        "marker": "2021-08-04",
+        "marker_type": "date"
+      }
+    }
+  ]
+}
+
+Q: ## Terms
+- **CCM**: Cloud Controller Manager - The controller manager responsible for running cloud provider dependent logic, such as the service and route controllers.
+- **KCM**: Kubernetes Controller Manager - The controller manager responsible for running generic Kubernetes logic, such as job and node_lifecycle controllers.
+- **KAS**: Kubernetes API Server - The core api server responsible for handling all API requests for the Kubernetes control plane. This includes things like namespace, node, pod and job resources.
+- **K8s/K8s**: The core kubernetes github repository.
+- **K8s/cloud-provider**: Any or all of the repos for each cloud provider.
+Examples include cloud-provider-gcp, cloud-provider-aws and cloud-provider-azure. We have created these repos for each of the in-tree cloud providers.
+Whether this is a long-term solution to which additional cloud providers will be added, or an incremental step toward moving out of the Kubernetes org is out of scope of this document.
+A: {
+  "extractions": [
+    {
+      "definition": "CCM",
+      "definition_attributes": {
+        "definition_type": "term"
+      }
+    },
+    {
+      "definition": "KAS",
+      "definition_attributes": {
+        "definition_type": "term"
+      }
+    },
+    {
+      "definition": "K8s/cloud-provider",
+      "definition_attributes": {
+        "definition_type": "term"
+      }
+    },
+    {
+      "non_goal": "Whether this is a long-term solution to which additional cloud providers will be added, or an incremental step toward moving out of the Kubernetes org is out of scope of this document.",
+      "non_goal_attributes": {}
+    }
+  ]
+}
+
+Q: ## Summary
+We propose to enhance the observability, troubleshooting, and debugging capabilities of core Kubernetes components by implementing a flagz endpoint for all components.
+This will provide users with real-time visibility into the command-line flags each component was started with, aiding in the diagnosis of configuration issues and unexpected behavior
+
+## Motivation
+This proposal extends the ideas presented in the Component Statusz KEP, however, it proposes a distinct flagz endpoint to enhance visibility into component configurations.
+By providing real-time visibility into the active configuration of Kubernetes components, flagz enables users to quickly spot misconfigurations that could lead to system instability or outages
+
+### Goals
+* Provide users with the ability to dynamically inspect and understand the active flags of running Kubernetes components
+### Non-Goals
+* Replace existing monitoring solutions: metrics, logs, traces
+* Provide information about components that are not directly accessible due to network restrictions
+
+### User Stories
+#### User Story 1: Debugging Component Behavior
+- As a cluster administrator, I want to be able to query the /flagz endpoint on individual Kubernetes components so I can inspect their runtime flag values and diagnose unexpected behavior
+#### User Story 2: Verifying Flag Changes
+- As a developer, I want to access the /flagz endpoint after deploying a component with modified flags so I can verify that my changes have been applied correctly
+
+### Risks and Mitigations
+**No sensitive data exposed** We will ensure that no sensitive data is exposed through flagz and that access to this endpoint is gated by using system-monitoring group.
+A: {
+  "extractions": [
+    {
+      "summary": "We propose to enhance the observability, troubleshooting, and debugging capabilities of core Kubernetes components by implementing a flagz endpoint for all components.",
+      "summary_attributes": {}
+    },
+    {
+      "motivation": "By providing real-time visibility into the active configuration of Kubernetes components, flagz enables users to quickly spot misconfigurations that could lead to system instability or outages",
+      "motivation_attributes": {}
+    },
+    {
+      "goal": "Provide users with the ability to dynamically inspect and understand the active flags of running Kubernetes components",
+      "goal_attributes": {}
+    },
+    {
+      "non_goal": "Replace existing monitoring solutions: metrics, logs, traces",
+      "non_goal_attributes": {}
+    },
+    {
+      "user_story": "As a cluster administrator, I want to be able to query the /flagz endpoint on individual Kubernetes components so I can inspect their runtime flag values and diagnose unexpected behavior",
+      "user_story_attributes": {}
+    },
+    {
+      "user_story": "As a developer, I want to access the /flagz endpoint after deploying a component with modified flags so I can verify that my changes have been applied correctly",
+      "user_story_attributes": {}
+    },
+    {
+      "mitigation": "We will ensure that no sensitive data is exposed through flagz and that access to this endpoint is gated by using system-monitoring group.",
+      "mitigation_attributes": {}
+    }
+  ]
+}
+
+Q: ### Test Plan
+[x] I/we understand the owners of the involved components may require updates to existing tests to make this code solid enough prior to committing the changes necessary to implement this enhancement.
+
+##### Prerequisite testing updates
+##### Unit tests
+- `staging/src/k8s.io/component-base/zpages/flagz`: Unit tests have been added to cover both the plain text and structured output, including serialization and content negotiation logic.
+
+##### Integration tests
+- Integration tests have been added for each component to verify that the `/flagz` endpoint is correctly registered and serves both `text/plain` and the versioned `application/json`, `application/yaml`, `application/cbor` content types.
+
+##### e2e tests
+- E2E tests have been added to query the `/flagz` endpoint for each core component and validate the following:
+- The endpoint is reachable and returns a `200 OK` status.
+
+### Graduation Criteria
+#### Alpha
+- Feature gate `ComponentFlagz` is disabled by default.
+- A structured JSON response (`config.k8s.io/v1alpha1`) is introduced for feedback, alongside the default `text/plain` format.
+
+#### GA
+- The structured API is promoted to a stable `v1` version after bake-in.
+- Conformance tests are in place for the endpoint.
+
+### Upgrade / Downgrade Strategy
+In alpha, no changes are required to maintain previous behavior.
+
+### Version Skew Strategy
+The primary purpose of the flagz page is to provide information about the individual component itself. While the underlying data format may be enhanced over time, the endpoint itself will remain a reliable source of flag information across Kubernetes versions.
+A: {
+  "extractions": [
+    {
+      "test_case": "`staging/src/k8s.io/component-base/zpages/flagz`: Unit tests have been added to cover both the plain text and structured output, including serialization and content negotiation logic.",
+      "test_case_attributes": {
+        "test_type": "unit_test"
+      }
+    },
+    {
+      "test_case": "Integration tests have been added for each component to verify that the `/flagz` endpoint is correctly registered and serves both `text/plain` and the versioned `application/json`, `application/yaml`, `application/cbor` content types.",
+      "test_case_attributes": {
+        "test_type": "integration_test"
+      }
+    },
+    {
+      "test_case": "E2E tests have been added to query the `/flagz` endpoint for each core component and validate the following:",
+      "test_case_attributes": {
+        "test_type": "e2e_test"
+      }
+    },
+    {
+      "graduation_criterion": "Feature gate `ComponentFlagz` is disabled by default.",
+      "graduation_criterion_attributes": {
+        "stage": "alpha"
+      }
+    },
+    {
+      "graduation_criterion": "The structured API is promoted to a stable `v1` version after bake-in.",
+      "graduation_criterion_attributes": {
+        "stage": "ga"
+      }
+    },
+    {
+      "design_decision": "In alpha, no changes are required to maintain previous behavior.",
+      "design_decision_attributes": {
+        "category": "upgrade_strategy"
+      }
+    },
+    {
+      "design_decision": "The primary purpose of the flagz page is to provide information about the individual component itself. While the underlying data format may be enhanced over time, the endpoint itself will remain a reliable source of flag information across Kubernetes versions.",
+      "design_decision_attributes": {
+        "category": "version_skew_strategy"
+      }
+    }
+  ]
+}
+
+Q: ## Summary
+After kubelet is restarted, it looses track of all volume it mounted for running Pods.
+It tries to restore this state from the API server, where kubelet can find Pods that should be running, and from the host's OS, where it can find actually mounted volumes. We know this process is imperfect. This KEP tries to rework the process.
+
+### User Stories (Optional)
+#### Story 1 (This is not a new story, we want to keep this behavior)
+As a cluster admin, I want kubelet to resume where it stopped when it was restarted or its machine was rebooted, so I don't need to clean up / unmount any volumes manually. It must be able to recognize what happened in the meantime and either unmount any volumes of Pods that were deleted in the API server or mount volumes for newly created Pods.
+
+### Risks and Mitigations
+The whole VolumeManager startup was rewritten as part of KEP 1710. It can contain bugs that are not trivial to find, because kubelet can be used in number of situations that we don't have in CI.
+We don't know what other kubelet configurations people use, so we decided to write a KEP and move the new VolumeManager startup behind a feature gate.
+
+## Design Details
+### Proposed VolumeManager startup
+When kubelet starts, VolumeManager starts DSWP and reconciler in parallel.
+A: {
+  "extractions": [
+    {
+      "summary": "After kubelet is restarted, it looses track of all volume it mounted for running Pods.",
+      "summary_attributes": {}
+    },
+    {
+      "user_story": "As a cluster admin, I want kubelet to resume where it stopped when it was restarted or its machine was rebooted, so I don't need to clean up / unmount any volumes manually. It must be able to recognize what happened in the meantime and either unmount any volumes of Pods that were deleted in the API server or mount volumes for newly created Pods.",
+      "user_story_attributes": {}
+    },
+    {
+      "risk": "It can contain bugs that are not trivial to find, because kubelet can be used in number of situations that we don't have in CI.",
+      "risk_attributes": {}
+    },
+    {
+      "mitigation": "we decided to write a KEP and move the new VolumeManager startup behind a feature gate.",
+      "mitigation_attributes": {}
+    },
+    {
+      "design_decision": "When kubelet starts, VolumeManager starts DSWP and reconciler in parallel.",
+      "design_decision_attributes": {
+        "category": "workflow"
+      }
+    }
+  ]
+}
+
+Q: ## Motivation
+The current Dynamic Resource Allocation (DRA) feature enables users to request resources but lacks a mechanism for cluster administrators to gain privileged access to devices already in use by other users.
+This limitation restricts administrators from performing tasks like:
+- Monitoring device health or status.
+- Performing diagnostics and troubleshooting on devices shared across users.
+Enabling such administrative tasks without compromising security is critical to cluster operations. Non-admin users gaining access to devices in use by others could result in:
+- Unauthorized access to confidential information about device usage.
+- Potential conflicts or misuse of shared hardware.
+
+### Goals
+- Provide a privileged mode for cluster administrators to access devices already in use.
+- Ensure that only authorized users can use the privileged mode.
+- Maintain security and prevent unauthorized access to devices.
+
+### Non-Goals
+- Redesign DRA.
+- Extend privileged mode access to non-admin users.
+- Define how administrators use the data accessed through privileged mode.
+A: {
+  "extractions": [
+    {
+      "motivation": "The current Dynamic Resource Allocation (DRA) feature enables users to request resources but lacks a mechanism for cluster administrators to gain privileged access to devices already in use by other users.",
+      "motivation_attributes": {}
+    },
+    {
+      "risk": "Unauthorized access to confidential information about device usage.",
+      "risk_attributes": {}
+    },
+    {
+      "goal": "Provide a privileged mode for cluster administrators to access devices already in use.",
+      "goal_attributes": {}
+    },
+    {
+      "goal": "Maintain security and prevent unauthorized access to devices.",
+      "goal_attributes": {}
+    },
+    {
+      "non_goal": "Redesign DRA.",
+      "non_goal_attributes": {}
+    },
+    {
+      "non_goal": "Extend privileged mode access to non-admin users.",
+      "non_goal_attributes": {}
+    }
+  ]
+}
+
+Q: ## Summary
+Kubernetes clusters are increasingly deployed in multi-zone environments but unfortunately network routing has not caught up with that. This KEP proposes an automatic topology aware hinting mechanism that would provide a way for EndpointSlice producers to indicate where consumers should use specific endpoints.
+Even in scenarios where endpoints are not balanced evenly across zones, EndpointSlice producers could use these hints to allocate endpoints from zones with extra endpoints to zones with insufficient endpoints. This would enable EndpointSlice consumers such as Kube-Proxy to implement simple topology aware routing.
+
+## Motivation
+Kubernetes clusters are increasingly deployed in multi-zone environments. Network traffic is routed randomly to any endpoint matching a Service.
+Some users might want the traffic to stay in the same zone for the following reasons:
+- Cost savings: Keeping traffic within a zone can limit cross-zone networking costs.
+- Performance: Traffic within a zone usually has less latency and bandwidth constraints.
+
+### Goals
+- Provide a simple way for users to indicate their preference for keeping traffic in zone.
+- Use the standard topology label `topology.kubernetes.io/zone` to derive the zones of nodes and endpoints.
+
+### Non-Goals
+- Real-time distribution rebalancing based on traffic load or distribution feedback or metrics.
+- Multi-cluster topology aware routing (this same pattern may be useful there though).
+A: {
+  "extractions": [
+    {
+      "summary": "Kubernetes clusters are increasingly deployed in multi-zone environments but unfortunately network routing has not caught up with that. This KEP proposes an automatic topology aware hinting mechanism that would provide a way for EndpointSlice producers to indicate where consumers should use specific endpoints.",
+      "summary_attributes": {}
+    },
+    {
+      "motivation": "Some users might want the traffic to stay in the same zone for the following reasons:",
+      "motivation_attributes": {}
+    },
+    {
+      "goal": "Provide a simple way for users to indicate their preference for keeping traffic in zone.",
+      "goal_attributes": {}
+    },
+    {
+      "goal": "Use the standard topology label `topology.kubernetes.io/zone` to derive the zones of nodes and endpoints.",
+      "goal_attributes": {}
+    },
+    {
+      "non_goal": "Real-time distribution rebalancing based on traffic load or distribution feedback or metrics.",
+      "non_goal_attributes": {}
+    },
+    {
+      "non_goal": "Multi-cluster topology aware routing (this same pattern may be useful there though).",
+      "non_goal_attributes": {}
+    }
+  ]
+}
+
+Q: ### Additional Heuristics
+To enable additional heuristics to be added in the future, we will:
+1. Remove the requirement in kube-proxy that the hints annotation must be set to a known value on the associated Service before the values of EndpointSlice hints will be considered.
+2. Ensure the EndpointSlice controller TopologyCache provides an interface that simplifies adding additional heuristics in the future.
+
+### Future Expansion
+In the future we may expand this functionality if needed. This could include:
+- As described above, additional heuristics may be added in the future.
+- A new option to specify a minimum threshold for the `Auto` (PreferZone) approach.
+- Support for region based hints.
+
+### Test Plan
+[x] I/we understand the owners of the involved components may require updates to existing tests to make this code solid enough prior to committing the changes necessary to implement this enhancement.
+
+#### Unit tests
+- `k8s.io/pkg/controller/endpointslice`: `2022-10-05` - `73.1`
+
+#### e2e tests
+This feature has e2e test coverage with the "Topology Hints" test.
+A: {
+  "extractions": [
+    {
+      "design_decision": "Ensure the EndpointSlice controller TopologyCache provides an interface that simplifies adding additional heuristics in the future.",
+      "design_decision_attributes": {
+        "category": "implementation_detail"
+      }
+    },
+    {
+      "future_work": "As described above, additional heuristics may be added in the future.",
+      "future_work_attributes": {
+        "horizon": "future_extension"
+      }
+    },
+    {
+      "future_work": "Support for region based hints.",
+      "future_work_attributes": {
+        "horizon": "future_extension"
+      }
+    },
+    {
+      "test_case": "`k8s.io/pkg/controller/endpointslice`: `2022-10-05` - `73.1`",
+      "test_case_attributes": {
+        "test_type": "unit_test"
+      }
+    },
+    {
+      "test_case": "This feature has e2e test coverage with the \"Topology Hints\" test.",
+      "test_case_attributes": {
+        "test_type": "e2e_test"
+      }
+    }
+  ]
+}
+
+Q: ## Summary
+We intend to introduce version compatibility and emulation options to Kubernetes control plane components to make upgrades safer by increasing the granularity of steps available to cluster administrators.
+We will introduce a `--emulation-version` flag to emulate the capabiliites (APIs, features, ...) of a prior Kubernetes release version. When used, the capabilities available will match the emulated version.
+This enables a binary version to emulate the behavior of a previous version with sufficient fidelity that interoperability with other system components can be defined in terms of the emulated version.
+We will also introduce a `--min-compatibility-version` flag to control the minimum version a control plane component is compatible with (in terms of storage versions, validation rules, ...).
+When used, the component tolerates workloads that expect the behavior of the specified minimum compatibility version, component skew ranges extend based on the minimum compatibility version, and rollbacks can be performed back to the specified minimum compatibility version.
+A: {
+  "extractions": [
+    {
+      "summary": "We intend to introduce version compatibility and emulation options to Kubernetes control plane components to make upgrades safer by increasing the granularity of steps available to cluster administrators.",
+      "summary_attributes": {}
+    },
+    {
+      "design_decision": "We will introduce a `--emulation-version` flag to emulate the capabiliites (APIs, features, ...) of a prior Kubernetes release version.",
+      "design_decision_attributes": {
+        "category": "upgrade_strategy"
+      }
+    },
+    {
+      "design_decision": "We will also introduce a `--min-compatibility-version` flag to control the minimum version a control plane component is compatible with (in terms of storage versions, validation rules, ...).",
+      "design_decision_attributes": {
+        "category": "version_skew_strategy"
+      }
+    }
+  ]
+}
+
+Q: ## Summary
+The DRA Structured Parameters feature has added the ability to make requests for very specific types of devices using a `ResourceClaim`.
+However, the current API does not allow the user to indicate any priority when multiple types or configurations of devices may meet the needs of the workload. This feature allows the user to specify alternative requests that statisfy the workloads need, giving the scheduler more flexiblity in scheduling the workload.
+
+## Motivation
+"Obtainability" of certain types of scarce resources is a primary concern of many AI/ML users. GPUs are in high demand, particularly the latest models.
+A user may have a preference for the latest model, but would like to run the workload even if only an older model is available.
+
+## Implementation History
+- 1.32 Enhancements Freeze - KEP merged, alpha implementation initiated
+- 1.33 Prioritized List is included as an alpha feature.
+- 1.34 Prioritized List graduates to beta.
+- 1.36 Prioritized List graduates to stable.
+
+## Drawbacks
+This adds complexity to the scheduler and to the cluster autoscaler, which will simulate the satisfaction of claims with different node shapes.
+
+## Alternatives
+Rather than embedding a list of alternative request objects, we could use an indirection at either the `ResourceClaim` level, or the `DeviceClaim` level.
+A: {
+  "extractions": [
+    {
+      "summary": "The DRA Structured Parameters feature has added the ability to make requests for very specific types of devices using a `ResourceClaim`.",
+      "summary_attributes": {}
+    },
+    {
+      "motivation": "\"Obtainability\" of certain types of scarce resources is a primary concern of many AI/ML users.",
+      "motivation_attributes": {}
+    },
+    {
+      "implementation_history": "1.33 Prioritized List is included as an alpha feature.",
+      "implementation_history_attributes": {
+        "marker": "1.33",
+        "marker_type": "release"
+      }
+    },
+    {
+      "implementation_history": "1.36 Prioritized List graduates to stable.",
+      "implementation_history_attributes": {
+        "marker": "1.36",
+        "marker_type": "release"
+      }
+    },
+    {
+      "drawback": "This adds complexity to the scheduler and to the cluster autoscaler, which will simulate the satisfaction of claims with different node shapes.",
+      "drawback_attributes": {}
+    },
+    {
+      "alternative": "Rather than embedding a list of alternative request objects, we could use an indirection at either the `ResourceClaim` level, or the `DeviceClaim` level.",
+      "alternative_attributes": {}
+    }
+  ]
+}
+
+Q: ## Summary
+Today every multicluster scheduler publishes its own API to convey where a workload should run, forcing downstream tools such as GitOps engine, workload orchestrator, progressive rollout controller, or AI/ML pipeline to understand a scheduler-specific API.
+This KEP introduces a vendor neutral `PlacementDecision` API that standardizes the output of multicluster placement calculations.
+What this API standardizes: The "which clusters" answer (the decision output).
+What this API does NOT standardize: How to request placement (the input remains vendor-specific), or how consumers deploy workloads to the selected clusters.
+This focused scope means:
+- Consumers write ONE integration to read decisions from ANY scheduler
+- Schedulers write ONE output format that works with ALL consumers
+
+### Upgrade / Downgrade Strategy
+Additive-only until GA; optional fields carry defaults; no disruptive schema changes.
+### Version Skew Strategy
+Older consumers ignore unknown fields; older schedulers remain valid.
+
+## Alternatives
+- Status quo: every multicluster provider/scheduler ships its own API leads to consumer bloat and vendor lock-in.
+- Extending `Work API`: overloads a workload syncner API with scheduling details which couples the where with the what.
+A: {
+  "extractions": [
+    {
+      "summary": "This KEP introduces a vendor neutral `PlacementDecision` API that standardizes the output of multicluster placement calculations.",
+      "summary_attributes": {}
+    },
+    {
+      "non_goal": "What this API does NOT standardize: How to request placement (the input remains vendor-specific), or how consumers deploy workloads to the selected clusters.",
+      "non_goal_attributes": {}
+    },
+    {
+      "design_decision": "Additive-only until GA; optional fields carry defaults; no disruptive schema changes.",
+      "design_decision_attributes": {
+        "category": "upgrade_strategy"
+      }
+    },
+    {
+      "design_decision": "Older consumers ignore unknown fields; older schedulers remain valid.",
+      "design_decision_attributes": {
+        "category": "version_skew_strategy"
+      }
+    },
+    {
+      "alternative": "Status quo: every multicluster provider/scheduler ships its own API leads to consumer bloat and vendor lock-in.",
+      "alternative_attributes": {}
+    },
+    {
+      "alternative": "Extending `Work API`: overloads a workload syncner API with scheduling details which couples the where with the what.",
+      "alternative_attributes": {}
+    }
+  ]
+}
+
+Q: ## Summary
+From the Kubernetes release where this change is introduced, and onwards, beta APIs will not be enabled in clusters by default.
+Existing beta APIs and new versions of existing beta APIs, will continue to be enabled by default.
+
+## Motivation
+Beta APIs are not considered stable and reliance upon APIs in this state leads to exposure to bugs, guaranteed migration pain for users when the APIs move to stable, and the risk that dependencies will grow around unfinished APIs.
+Enabling beta APIs by default exacerbates these problems by making them on in nearly every cluster.
+By disabling beta APIs by default, a cluster-admin can opt-in for specific APIs without having every incomplete API present in the cluster.
+
+### Goals
+1. Disable new beta APIs by default.
+2. Continue enabling existing beta APIs and new version of existing beta APIs by default.
+3. Allow enabling specific resources in beta.
+
+### Non-Goals
+1. Change feature gate defaults.
+A: {
+  "extractions": [
+    {
+      "summary": "From the Kubernetes release where this change is introduced, and onwards, beta APIs will not be enabled in clusters by default.",
+      "summary_attributes": {}
+    },
+    {
+      "motivation": "Beta APIs are not considered stable and reliance upon APIs in this state leads to exposure to bugs, guaranteed migration pain for users when the APIs move to stable, and the risk that dependencies will grow around unfinished APIs.",
+      "motivation_attributes": {}
+    },
+    {
+      "goal": "Disable new beta APIs by default.",
+      "goal_attributes": {}
+    },
+    {
+      "goal": "Allow enabling specific resources in beta.",
+      "goal_attributes": {}
+    },
+    {
+      "non_goal": "Change feature gate defaults.",
+      "non_goal_attributes": {}
+    }
+  ]
+}
+
+Q: ## Summary
+This KEP adds support to use user-namespaces.
+
+## Motivation
+User namespaces isolate security-related identifiers and attributes, in particular, user IDs and group IDs, the root directory, keys, and capabilities.
+A process's user and group IDs can be different inside and outside a user namespace.
+In particular, a process can have a normal unprivileged user ID outside a user namespace while at the same time having a user ID of 0 inside the namespace.
+The goal of supporting user namespaces in Kubernetes is to be able to run processes in pods with a different user and group IDs than in the host.
+Specifically, a privileged process in the pod runs as an unprivileged process in the host. If such a process is able to break out of the container to the host, it'll have limited impact as it'll be running as an unprivileged user there.
+The following security vulnerabilities are completely or partially mitigated with user namespaces as we propose here and it is expected that it will mitigate similar future vulnerabilities too.
+A: {
+  "extractions": [
+    {
+      "summary": "This KEP adds support to use user-namespaces.",
+      "summary_attributes": {}
+    },
+    {
+      "motivation": "User namespaces isolate security-related identifiers and attributes, in particular, user IDs and group IDs, the root directory, keys, and capabilities.",
+      "motivation_attributes": {}
+    },
+    {
+      "goal": "The goal of supporting user namespaces in Kubernetes is to be able to run processes in pods with a different user and group IDs than in the host.",
+      "goal_attributes": {}
+    }
+  ]
+}
+
+Q: ## Summary
+`RuntimeClass` is a new cluster-scoped resource that surfaces container runtime properties to the control plane.
+RuntimeClasses are assigned to pods through a `runtimeClass` field on the `PodSpec`. This provides a new mechanism for supporting multiple runtimes in a cluster and/or node.
+
+## Motivation
+There is growing interest in using different runtimes within a cluster. Sandboxes are the primary motivator for this right now, with both Kata containers and gVisor looking to integrate with Kubernetes. Other runtime models such as Windows containers or even remote runtimes will also require support in the future.
+RuntimeClass provides a way to select between different runtimes configured in the cluster and surface their properties.
+
+### Goals
+- Provide a mechanism for surfacing container runtime properties to the control plane
+- Support multiple runtimes per-cluster, and provide a mechanism for users to select the desired runtime
+
+### Non-Goals
+- RuntimeClass is NOT RuntimeComponentConfig.
+- RuntimeClass is NOT a general policy mechanism.
+
+### User Stories
+- As a cluster operator, I want to provide multiple runtime options to support a wide variety of workloads.
+- As an application developer, I want to select the runtime that best fits my workload.
+
+## Proposal
+The initial design includes:
+- `RuntimeClass` API resource definition
+- `RuntimeClass` pod field for specifying the RuntimeClass the pod should be run with
+
+## Graduation Criteria
+Alpha:
+- Introduce the RuntimeClass API resource
+Stable:
+- Wide adoption of the feature
+A: {
+  "extractions": [
+    {
+      "summary": "`RuntimeClass` is a new cluster-scoped resource that surfaces container runtime properties to the control plane.",
+      "summary_attributes": {}
+    },
+    {
+      "motivation": "There is growing interest in using different runtimes within a cluster.",
+      "motivation_attributes": {}
+    },
+    {
+      "goal": "Provide a mechanism for surfacing container runtime properties to the control plane",
+      "goal_attributes": {}
+    },
+    {
+      "non_goal": "RuntimeClass is NOT a general policy mechanism.",
+      "non_goal_attributes": {}
+    },
+    {
+      "user_story": "As a cluster operator, I want to provide multiple runtime options to support a wide variety of workloads.",
+      "user_story_attributes": {}
+    },
+    {
+      "design_decision": "`RuntimeClass` API resource definition",
+      "design_decision_attributes": {
+        "category": "api_change"
+      }
+    },
+    {
+      "graduation_criterion": "Introduce the RuntimeClass API resource",
+      "graduation_criterion_attributes": {
+        "stage": "alpha"
+      }
+    },
+    {
+      "graduation_criterion": "Wide adoption of the feature",
+      "graduation_criterion_attributes": {
+        "stage": "stable"
+      }
+    }
+  ]
+}
+
+Q: ## Summary
+This document presents an addition to the kubelet pod resources endpoint (pod resources API) which allows third party consumers to learn about the compute device allocation, thus, alongside the existing pod resources API endpoint, properly evaluate the node capacity.
+
+## Motivation
+
+### Goals
+* Enable node monitoring agents to know the allocatable compute resources on a node, thus properly calculate the node compute resource utilization.
+
+### Non-Goals
+* Add new endpoint (like kubelet `/pods`)
+
+## Proposal
+### User Stories
+#### Node Feature Discovery
+Enable the Node Feature Discovery to expose hardware topology information.
+
+#### Topology aware scheduling
+This interface can be used to track down allocated resources with information about the NUMA topology of the worker node in general way.
+The kubelet is the best source of information because it manages concrete resources assignment.
+
+### Risks and Mitigations
+This API is read-only, which removes a large class of risks.
+Too many requests risk impacting the kubelet performances.
+Implement rate limiting and or passive caching, follow best practices for gRPC resource management.
+A: {
+  "extractions": [
+    {
+      "summary": "This document presents an addition to the kubelet pod resources endpoint (pod resources API) which allows third party consumers to learn about the compute device allocation, thus, alongside the existing pod resources API endpoint, properly evaluate the node capacity.",
+      "summary_attributes": {}
+    },
+    {
+      "goal": "Enable node monitoring agents to know the allocatable compute resources on a node, thus properly calculate the node compute resource utilization.",
+      "goal_attributes": {}
+    },
+    {
+      "non_goal": "Add new endpoint (like kubelet `/pods`)",
+      "non_goal_attributes": {}
+    },
+    {
+      "risk": "Too many requests risk impacting the kubelet performances.",
+      "risk_attributes": {}
+    },
+    {
+      "mitigation": "Implement rate limiting and or passive caching, follow best practices for gRPC resource management.",
+      "mitigation_attributes": {}
+    }
+  ]
+}
+
+Q: ## Summary
+As Kubernetes has matured, we have taken strides towards limiting the need for long lived credentials that are stored in the Kubernetes API.
+The canonical example of this change is the move of Kubernetes Service Account tokens from ones that were long lived, persisted in the Kubernetes API, and never rotated to tokens that are ephemeral, short lived, and automatically rotated.
+This KEP aims to make it possible for a similar 'secret-less' flow to be created for image pulls, which happen before the pod is running.
+Today, admins are limited to image pull secrets that are stored directly in the Kubernetes API and thus are long lived and hard to rotate.
+
+## Motivation
+By moving to image pulls that are based on KSA tokens, we seek to:
+- Reduce secret management overhead for developers and admins
+- Reduce security risks associated with long lived secrets
+
+### Goals
+- Allow workloads to pull images based on their own runtime identity without long lived / persisted secrets
+- Avoid needing a kubelet/node based identity to pull images
+A: {
+  "extractions": [
+    {
+      "summary": "This KEP aims to make it possible for a similar 'secret-less' flow to be created for image pulls, which happen before the pod is running.",
+      "summary_attributes": {}
+    },
+    {
+      "motivation": "Reduce secret management overhead for developers and admins",
+      "motivation_attributes": {}
+    },
+    {
+      "motivation": "Reduce security risks associated with long lived secrets",
+      "motivation_attributes": {}
+    },
+    {
+      "goal": "Allow workloads to pull images based on their own runtime identity without long lived / persisted secrets",
+      "goal_attributes": {}
+    },
+    {
+      "goal": "Avoid needing a kubelet/node based identity to pull images",
+      "goal_attributes": {}
+    }
+  ]
+}

@@ -1,0 +1,272 @@
+{
+  "registry_name": "kep_all_labeled",
+  "version": "v1",
+  "domain": "kep",
+  "schema_version": "kep_schema_v2",
+  "entries": [
+    {
+      "doc_id": "116-windows-node-support",
+      "doc_type": "sig-windows",
+      "document_path": "docs/sig-windows/116-windows-node-support/README.md",
+      "label_path": "labels/sig-windows/116-windows-node-support/label_v2.json",
+      "enabled": false,
+      "metadata": {
+        "label_filename": "label_v2.json",
+        "document_filename": "README.md"
+      }
+    },
+    {
+      "doc_id": "121-local-persistent-volumes",
+      "doc_type": "sig-storage",
+      "document_path": "docs/sig-storage/121-local-persistent-volumes/README.md",
+      "label_path": "labels/sig-storage/121-local-persistent-volumes/label_v2.json",
+      "enabled": false,
+      "metadata": {
+        "label_filename": "label_v2.json",
+        "document_filename": "README.md"
+      }
+    },
+    {
+      "doc_id": "1326-third-party-content-in-docs",
+      "doc_type": "sig-docs",
+      "document_path": "docs/sig-docs/1326-third-party-content-in-docs/README.md",
+      "label_path": "labels/sig-docs/1326-third-party-content-in-docs/label_v2.json",
+      "enabled": true,
+      "metadata": {
+        "label_filename": "label_v2.json",
+        "document_filename": "README.md"
+      }
+    },
+    {
+      "doc_id": "1553-issue-triage",
+      "doc_type": "sig-contributor-experience",
+      "document_path": "docs/sig-contributor-experience/1553-issue-triage/README.md",
+      "label_path": "labels/sig-contributor-experience/1553-issue-triage/label_v2.json",
+      "enabled": false,
+      "metadata": {
+        "label_filename": "label_v2.json",
+        "document_filename": "README.md"
+      }
+    },
+    {
+      "doc_id": "1731-publishing-packages",
+      "doc_type": "sig-release",
+      "document_path": "docs/sig-release/1731-publishing-packages/README.md",
+      "label_path": "labels/sig-release/1731-publishing-packages/label_v2.json",
+      "enabled": false,
+      "metadata": {
+        "label_filename": "label_v2.json",
+        "document_filename": "README.md"
+      }
+    },
+    {
+      "doc_id": "19-Graduate-CronJob-to-Stable",
+      "doc_type": "sig-apps",
+      "document_path": "docs/sig-apps/19-Graduate-CronJob-to-Stable/README.md",
+      "label_path": "labels/sig-apps/19-Graduate-CronJob-to-Stable/label_v2.json",
+      "enabled": true,
+      "metadata": {
+        "label_filename": "label_v2.json",
+        "document_filename": "README.md"
+      }
+    },
+    {
+      "doc_id": "1933-secret-logging-static-analysis",
+      "doc_type": "sig-security",
+      "document_path": "docs/sig-security/1933-secret-logging-static-analysis/README.md",
+      "label_path": "labels/sig-security/1933-secret-logging-static-analysis/label_v2.json",
+      "enabled": false,
+      "metadata": {
+        "label_filename": "label_v2.json",
+        "document_filename": "README.md"
+      }
+    },
+    {
+      "doc_id": "2149-clusterid",
+      "doc_type": "sig-multicluster",
+      "document_path": "docs/sig-multicluster/2149-clusterid/README.md",
+      "label_path": "labels/sig-multicluster/2149-clusterid/label_v2.json",
+      "enabled": false,
+      "metadata": {
+        "label_filename": "label_v2.json",
+        "document_filename": "README.md"
+      }
+    },
+    {
+      "doc_id": "2314-custom-endpoints-support-for-aws-cloud-provider",
+      "doc_type": "provider-aws",
+      "document_path": "docs/provider-aws/2314-custom-endpoints-support-for-aws-cloud-provider/README.md",
+      "label_path": "labels/provider-aws/2314-custom-endpoints-support-for-aws-cloud-provider/label_v2.json",
+      "enabled": false,
+      "metadata": {
+        "label_filename": "label_v2.json",
+        "document_filename": "README.md"
+      }
+    },
+    {
+      "doc_id": "2392-cloud-controller-manager",
+      "doc_type": "sig-cloud-provider",
+      "document_path": "docs/sig-cloud-provider/2392-cloud-controller-manager/README.md",
+      "label_path": "labels/sig-cloud-provider/2392-cloud-controller-manager/label_v2.json",
+      "enabled": false,
+      "metadata": {
+        "label_filename": "label_v2.json",
+        "document_filename": "README.md"
+      }
+    },
+    {
+      "doc_id": "2494-Manifest-Bundle",
+      "doc_type": "sig-cluster-lifecycle/addons",
+      "document_path": "docs/sig-cluster-lifecycle/addons/2494-Manifest-Bundle/README.md",
+      "label_path": "labels/sig-cluster-lifecycle/addons/2494-Manifest-Bundle/label_v2.json",
+      "enabled": true,
+      "metadata": {
+        "label_filename": "label_v2.json",
+        "document_filename": "README.md"
+      }
+    },
+    {
+      "doc_id": "2551-return-code-normalization",
+      "doc_type": "sig-cli",
+      "document_path": "docs/sig-cli/2551-return-code-normalization/README.md",
+      "label_path": "labels/sig-cli/2551-return-code-normalization/label_v2.json",
+      "enabled": false,
+      "metadata": {
+        "label_filename": "label_v2.json",
+        "document_filename": "README.md"
+      }
+    },
+    {
+      "doc_id": "266-kubelet-client-certificate-bootstrap-rotation",
+      "doc_type": "sig-auth",
+      "document_path": "docs/sig-auth/266-kubelet-client-certificate-bootstrap-rotation/README.md",
+      "label_path": "labels/sig-auth/266-kubelet-client-certificate-bootstrap-rotation/label_v2.json",
+      "enabled": false,
+      "metadata": {
+        "label_filename": "label_v2.json",
+        "document_filename": "README.md"
+      }
+    },
+    {
+      "doc_id": "268-priority-preemption",
+      "doc_type": "sig-scheduling",
+      "document_path": "docs/sig-scheduling/268-priority-preemption/README.md",
+      "label_path": "labels/sig-scheduling/268-priority-preemption/label_v2.json",
+      "enabled": true,
+      "metadata": {
+        "label_filename": "label_v2.json",
+        "document_filename": "README.md"
+      }
+    },
+    {
+      "doc_id": "2804-consolidate-workload-controllers-status",
+      "doc_type": "sig-apps",
+      "document_path": "docs/sig-apps/2804-consolidate-workload-controllers-status/README.md",
+      "label_path": "labels/sig-apps/2804-consolidate-workload-controllers-status/label_v2.json",
+      "enabled": false,
+      "metadata": {
+        "label_filename": "label_v2.json",
+        "document_filename": "README.md"
+      }
+    },
+    {
+      "doc_id": "34-sysctl-fields",
+      "doc_type": "sig-node",
+      "document_path": "docs/sig-node/34-sysctl-fields/README.md",
+      "label_path": "labels/sig-node/34-sysctl-fields/label_v2.json",
+      "enabled": false,
+      "metadata": {
+        "label_filename": "label_v2.json",
+        "document_filename": "README.md"
+      }
+    },
+    {
+      "doc_id": "383-new-event-api-ga-graduation",
+      "doc_type": "sig-instrumentation",
+      "document_path": "docs/sig-instrumentation/383-new-event-api-ga-graduation/README.md",
+      "label_path": "labels/sig-instrumentation/383-new-event-api-ga-graduation/label_v2.json",
+      "enabled": false,
+      "metadata": {
+        "label_filename": "label_v2.json",
+        "document_filename": "README.md"
+      }
+    },
+    {
+      "doc_id": "427-coredns",
+      "doc_type": "sig-network",
+      "document_path": "docs/sig-network/427-coredns/README.md",
+      "label_path": "labels/sig-network/427-coredns/label_v2.json",
+      "enabled": false,
+      "metadata": {
+        "label_filename": "label_v2.json",
+        "document_filename": "README.md"
+      }
+    },
+    {
+      "doc_id": "4578-server-feature-gate",
+      "doc_type": "sig-etcd",
+      "document_path": "docs/sig-etcd/4578-server-feature-gate/README.md",
+      "label_path": "labels/sig-etcd/4578-server-feature-gate/label_v2.json",
+      "enabled": true,
+      "metadata": {
+        "label_filename": "label_v2.json",
+        "document_filename": "README.md"
+      }
+    },
+    {
+      "doc_id": "5008-headlamp",
+      "doc_type": "sig-ui",
+      "document_path": "docs/sig-ui/5008-headlamp/README.md",
+      "label_path": "labels/sig-ui/5008-headlamp/label_v2.json",
+      "enabled": false,
+      "metadata": {
+        "label_filename": "label_v2.json",
+        "document_filename": "README.md"
+      }
+    },
+    {
+      "doc_id": "5679-external-metric-fallback",
+      "doc_type": "sig-autoscaling",
+      "document_path": "docs/sig-autoscaling/5679-external-metric-fallback/README.md",
+      "label_path": "labels/sig-autoscaling/5679-external-metric-fallback/label_v2.json",
+      "enabled": false,
+      "metadata": {
+        "label_filename": "label_v2.json",
+        "document_filename": "README.md"
+      }
+    },
+    {
+      "doc_id": "617-improve-kep-implementation",
+      "doc_type": "sig-architecture",
+      "document_path": "docs/sig-architecture/617-improve-kep-implementation/README.md",
+      "label_path": "labels/sig-architecture/617-improve-kep-implementation/label_v2.json",
+      "enabled": false,
+      "metadata": {
+        "label_filename": "label_v2.json",
+        "document_filename": "README.md"
+      }
+    },
+    {
+      "doc_id": "714-break-test-tarball",
+      "doc_type": "sig-testing",
+      "document_path": "docs/sig-testing/714-break-test-tarball/README.md",
+      "label_path": "labels/sig-testing/714-break-test-tarball/label_v2.json",
+      "enabled": false,
+      "metadata": {
+        "label_filename": "label_v2.json",
+        "document_filename": "README.md"
+      }
+    },
+    {
+      "doc_id": "95-custom-resource-definitions",
+      "doc_type": "sig-api-machinery",
+      "document_path": "docs/sig-api-machinery/95-custom-resource-definitions/README.md",
+      "label_path": "labels/sig-api-machinery/95-custom-resource-definitions/label_v2.json",
+      "enabled": true,
+      "metadata": {
+        "label_filename": "label_v2.json",
+        "document_filename": "README.md"
+      }
+    }
+  ]
+}

@@ -1,0 +1,52 @@
+{"block_id": "block_0", "kind": "heading", "skip_reason": "skip_document_title", "raw_text_preview": "# KEP-19: CronJobs (previously ScheduledJobs)", "raw_text": null}
+{"block_id": "block_1", "kind": "paragraph", "skip_reason": "skip_toc", "raw_text_preview": "<!-- toc -->\n", "raw_text": null}
+{"block_id": "block_2", "kind": "bullet_item", "skip_reason": "skip_toc", "raw_text_preview": "- [Release Signoff Checklist](#release-signoff-checklist)\n", "raw_text": null}
+{"block_id": "block_3", "kind": "bullet_item", "skip_reason": "skip_toc", "raw_text_preview": "- [Summary](#summary)\n", "raw_text": null}
+{"block_id": "block_4", "kind": "bullet_item", "skip_reason": "skip_toc", "raw_text_preview": "- [Motivation](#motivation)\n", "raw_text": null}
+{"block_id": "block_5", "kind": "bullet_item", "skip_reason": "skip_toc", "raw_text_preview": "  - [Goals](#goals)\n", "raw_text": null}
+{"block_id": "block_6", "kind": "bullet_item", "skip_reason": "skip_toc", "raw_text_preview": "- [Proposal](#proposal)\n", "raw_text": null}
+{"block_id": "block_7", "kind": "bullet_item", "skip_reason": "skip_toc", "raw_text_preview": "  - [Plan for promoting CronJob to GA](#plan-for-promoting-cronjob-to-ga)\n", "raw_text": null}
+{"block_id": "block_8", "kind": "bullet_item", "skip_reason": "skip_toc", "raw_text_preview": "  - [Existing controller](#existing-controller)\n", "raw_text": null}
+{"block_id": "block_9", "kind": "bullet_item", "skip_reason": "skip_toc", "raw_text_preview": "  - [New controller](#new-controller)\n", "raw_text": null}
+{"block_id": "block_10", "kind": "bullet_item", "skip_reason": "skip_toc", "raw_text_preview": "    - [Informers and Caches](#informers-and-caches)\n", "raw_text": null}
+{"block_id": "block_11", "kind": "bullet_item", "skip_reason": "skip_toc", "raw_text_preview": "    - [Multiple workers](#multiple-workers)\n", "raw_text": null}
+{"block_id": "block_12", "kind": "bullet_item", "skip_reason": "skip_toc", "raw_text_preview": "    - [Handling Cron aspect](#handling-cron-aspect)\n", "raw_text": null}
+{"block_id": "block_13", "kind": "bullet_item", "skip_reason": "skip_toc", "raw_text_preview": "  - [Metrics](#metrics)\n", "raw_text": null}
+{"block_id": "block_14", "kind": "bullet_item", "skip_reason": "skip_toc", "raw_text_preview": "  - [Add .status.lastSuccessfulTime](#add-statuslastsuccessfultime)\n", "raw_text": null}
+{"block_id": "block_15", "kind": "bullet_item", "skip_reason": "skip_toc", "raw_text_preview": "  - [Fix applicable open issues](#fix-applicable-open-issues)\n", "raw_text": null}
+{"block_id": "block_16", "kind": "bullet_item", "skip_reason": "skip_toc", "raw_text_preview": "  - [Scale Targets for GA](#scale-targets-for-ga)\n", "raw_text": null}
+{"block_id": "block_17", "kind": "bullet_item", "skip_reason": "skip_toc", "raw_text_preview": "    - [CronJob Limits](#cronjob-limits)\n", "raw_text": null}
+{"block_id": "block_18", "kind": "bullet_item", "skip_reason": "skip_toc", "raw_text_preview": "    - [Frequency of launched jobs](#frequency-of-launched-jobs)\n", "raw_text": null}
+{"block_id": "block_19", "kind": "bullet_item", "skip_reason": "skip_toc", "raw_text_preview": "- [API changes](#api-changes)\n", "raw_text": null}
+{"block_id": "block_20", "kind": "bullet_item", "skip_reason": "skip_toc", "raw_text_preview": "  - [CronJob v1 API](#cronjob-v1-api)\n", "raw_text": null}
+{"block_id": "block_21", "kind": "bullet_item", "skip_reason": "skip_toc", "raw_text_preview": "  - [CronJob v1beta1 API](#cronjob-v1beta1-api)\n", "raw_text": null}
+{"block_id": "block_22", "kind": "bullet_item", "skip_reason": "skip_toc", "raw_text_preview": "  - [Validations](#validations)\n", "raw_text": null}
+{"block_id": "block_23", "kind": "bullet_item", "skip_reason": "skip_toc", "raw_text_preview": "- [Tests](#tests)\n", "raw_text": null}
+{"block_id": "block_24", "kind": "bullet_item", "skip_reason": "skip_toc", "raw_text_preview": "  - [E2E test](#e2e-test)\n", "raw_text": null}
+{"block_id": "block_25", "kind": "bullet_item", "skip_reason": "skip_toc", "raw_text_preview": "    - [Existing test cases](#existing-test-cases)\n", "raw_text": null}
+{"block_id": "block_26", "kind": "bullet_item", "skip_reason": "skip_toc", "raw_text_preview": "    - [New test cases](#new-test-cases)\n", "raw_text": null}
+{"block_id": "block_27", "kind": "bullet_item", "skip_reason": "skip_toc", "raw_text_preview": "  - [Conformance Tests](#conformance-tests)\n", "raw_text": null}
+{"block_id": "block_28", "kind": "bullet_item", "skip_reason": "skip_toc", "raw_text_preview": "  - [Unit Tests](#unit-tests)\n", "raw_text": null}
+{"block_id": "block_29", "kind": "bullet_item", "skip_reason": "skip_toc", "raw_text_preview": "- [Implementation plan](#implementation-plan)\n", "raw_text": null}
+{"block_id": "block_30", "kind": "bullet_item", "skip_reason": "skip_toc", "raw_text_preview": "    - [Release 1.20](#release-120)\n", "raw_text": null}
+{"block_id": "block_31", "kind": "bullet_item", "skip_reason": "skip_toc", "raw_text_preview": "    - [Release 1.21](#release-121)\n", "raw_text": null}
+{"block_id": "block_32", "kind": "bullet_item", "skip_reason": "skip_toc", "raw_text_preview": "    - [Release 1.22](#release-122)\n", "raw_text": null}
+{"block_id": "block_33", "kind": "bullet_item", "skip_reason": "skip_toc", "raw_text_preview": "- [Graduation Criteria](#graduation-criteria)\n", "raw_text": null}
+{"block_id": "block_34", "kind": "bullet_item", "skip_reason": "skip_toc", "raw_text_preview": "- [Production Readiness Review Questionnaire](#production-readiness-review-questionnaire)\n", "raw_text": null}
+{"block_id": "block_35", "kind": "bullet_item", "skip_reason": "skip_toc", "raw_text_preview": "  - [Feature Enablement and Rollback](#feature-enablement-and-rollback)\n", "raw_text": null}
+{"block_id": "block_36", "kind": "bullet_item", "skip_reason": "skip_toc", "raw_text_preview": "  - [Rollout, Upgrade and Rollback Planning](#rollout-upgrade-and-rollback-planning)\n", "raw_text": null}
+{"block_id": "block_37", "kind": "bullet_item", "skip_reason": "skip_toc", "raw_text_preview": "  - [Monitoring Requirements](#monitoring-requirements)\n", "raw_text": null}
+{"block_id": "block_38", "kind": "bullet_item", "skip_reason": "skip_toc", "raw_text_preview": "  - [Dependencies](#dependencies)\n", "raw_text": null}
+{"block_id": "block_39", "kind": "bullet_item", "skip_reason": "skip_toc", "raw_text_preview": "  - [Scalability](#scalability)\n", "raw_text": null}
+{"block_id": "block_40", "kind": "bullet_item", "skip_reason": "skip_toc", "raw_text_preview": "  - [Troubleshooting](#troubleshooting)\n", "raw_text": null}
+{"block_id": "block_41", "kind": "bullet_item", "skip_reason": "skip_toc", "raw_text_preview": "- [Implementation History](#implementation-history)\n", "raw_text": null}
+{"block_id": "block_42", "kind": "bullet_item", "skip_reason": "skip_toc", "raw_text_preview": "- [Alternatives and Further Reading](#alternatives-and-further-reading)\n", "raw_text": null}
+{"block_id": "block_43", "kind": "bullet_item", "skip_reason": "skip_toc", "raw_text_preview": "    - [Cron Aspect](#cron-aspect)\n", "raw_text": null}
+{"block_id": "block_44", "kind": "bullet_item", "skip_reason": "skip_toc", "raw_text_preview": "- [Improvements/Considerations](#improvementsconsiderations)\n", "raw_text": null}
+{"block_id": "block_45", "kind": "bullet_item", "skip_reason": "skip_toc", "raw_text_preview": "  - [Add .status.nextScheduleTime](#add-statusnextscheduletime)\n", "raw_text": null}
+{"block_id": "block_46", "kind": "bullet_item", "skip_reason": "skip_toc", "raw_text_preview": "  - [Add counters](#add-counters)\n", "raw_text": null}
+{"block_id": "block_47", "kind": "bullet_item", "skip_reason": "skip_toc", "raw_text_preview": "  - [Add .status.conditions](#add-statusconditions)\n", "raw_text": null}
+{"block_id": "block_48", "kind": "bullet_item", "skip_reason": "skip_toc", "raw_text_preview": "  - [Support Jitter for cronjobs](#support-jitter-for-cronjobs)\n", "raw_text": null}
+{"block_id": "block_49", "kind": "bullet_item", "skip_reason": "skip_toc", "raw_text_preview": "  - [Support Timezone for cronjobs](#support-timezone-for-cronjobs)\n", "raw_text": null}
+{"block_id": "block_50", "kind": "bullet_item", "skip_reason": "skip_toc", "raw_text_preview": "  - [CronJob umbrella issue](#cronjob-umbrella-issue)\n", "raw_text": null}
+{"block_id": "block_51", "kind": "paragraph", "skip_reason": "skip_toc", "raw_text_preview": "<!-- /toc -->\n", "raw_text": null}

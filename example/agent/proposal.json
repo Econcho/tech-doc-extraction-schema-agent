@@ -1,0 +1,143 @@
+{
+  "proposals": [
+    {
+      "proposal": {
+        "bucket_id": "bucket_5f2a9c8e1d4b",
+        "proposal_type": "new_schema",
+        "parent_schema_name": "",
+        "proposed_name": "verification_scenario",
+        "definition": "Use for spans that describe concrete scenarios, behaviors, or conditions that should be verified through tests or validation procedures, including E2E scenarios, conformance scenarios, unit-level validation scenarios, scale verification, regression checks, and manual upgrade or rollback verification.",
+        "motivation": "The bucket contains many residual blocks that enumerate concrete behaviors to be verified, such as concurrency policy behavior, suspend behavior, job history cleanup, invalid schedule handling, conformance expectations, scale behavior, and upgrade/rollback testing. These spans are not primarily design decisions or graduation criteria; their shared role is to specify verification scenarios for the proposed feature. The existing schema lacks a class dedicated to this verification-oriented content.",
+        "related_old_schema_names": [],
+        "schema_boundary": {
+          "should_include": [
+            "explicit unit test scenarios",
+            "explicit integration test scenarios",
+            "explicit e2e test scenarios",
+            "conformance test scenarios",
+            "scale or performance test scenarios",
+            "manual upgrade or rollback test plans",
+            "bug-fix regression tests",
+            "test artifact locations or code references when the main semantic role is testing",
+            "test plans that enumerate what behavior must be verified"
+          ],
+          "should_exclude": [
+            "general graduation criteria that only say tests must pass without describing a concrete test scenario",
+            "implementation details that describe feature behavior but are not framed as verification",
+            "production readiness questionnaire prompts without substantive answers",
+            "generic risks or mitigations not expressed as test coverage",
+            "release signoff checklist boilerplate",
+            "monitoring or SLI/SLO descriptions unless they are explicitly used as test assertions"
+          ]
+        },
+        "suggested_attributes": [
+          {
+            "name": "test_type",
+            "description": "The type of test, such as unit, integration, e2e, conformance, scale, performance, manual, or regression.",
+            "value_type": "string",
+            "required": false
+          },
+          {
+            "name": "target_component",
+            "description": "The Kubernetes component, controller, API object, subsystem, or feature behavior being tested.",
+            "value_type": "string",
+            "required": false
+          },
+          {
+            "name": "target_behavior",
+            "description": "The behavior, scenario, state transition, validation rule, API interaction, or failure condition being verified.",
+            "value_type": "string",
+            "required": false
+          },
+          {
+            "name": "expected_result",
+            "description": "The expected outcome asserted by the test case.",
+            "value_type": "string",
+            "required": false
+          },
+          {
+            "name": "test_artifact_ref",
+            "description": "A file path, URL, code reference, test name, package name, or dashboard reference for the test artifact if present.",
+            "value_type": "string",
+            "required": false
+          },
+          {
+            "name": "coverage_stage",
+            "description": "The maturity or release stage the test supports, such as alpha, beta, GA, stable, or conformance.",
+            "value_type": "string",
+            "required": false
+          }
+        ],
+        "confidence": 0.83,
+        "risk_flags": [
+          "may_overlap_with_graduation_criterion_when_text_only_states_that_tests_must_pass",
+          "may_overlap_with_design_decision_when_text_describes_feature_behavior_without_test_framing",
+          "requires_boundary_check_against_future_test_plan_schema_if_added_later"
+        ]
+      }
+    },
+    {
+      "proposal": {
+        "bucket_id": "bucket_5f2a9c8e1d4b",
+        "proposal_type": "new_schema",
+        "parent_schema_name": "",
+        "proposed_name": "validation_evidence",
+        "definition": "Use for spans that describe evidence, references, procedures, or artifacts used to validate that a KEP is ready or correct. This may include test code references, checklist items, conformance evidence, issue-based validation targets, manual test plans, and statements that a test suite or verification artifact exists.",
+        "motivation": "The same bucket contains many spans that are related to testing, but some of them are not concrete test cases. Examples include release signoff checklist items, test code locations, manual upgrade testing plans, references to conformance requirements, and graduation criteria saying that tests must pass. A broader validation_evidence schema could capture this validation-oriented information. However, it is only partially aligned with the main bucket meaning because it mixes concrete test cases with procedural evidence and readiness artifacts.",
+        "related_old_schema_names": [],
+        "schema_boundary": {
+          "should_include": [
+            "test code or test suite references used as validation evidence",
+            "manual testing plans",
+            "release checklist items about test plan readiness",
+            "graduation criteria that specifically require tests or validation evidence",
+            "conformance evidence statements",
+            "issue links used as validation targets",
+            "statements that specific test coverage exists or must exist"
+          ],
+          "should_exclude": [
+            "concrete test case scenarios when a narrower test_case schema is available",
+            "general release checklist boilerplate unrelated to testing or validation",
+            "implementation history events that only record dates or releases",
+            "generic design decisions not tied to validation evidence",
+            "general monitoring, scalability, or troubleshooting text not used as validation evidence"
+          ]
+        },
+        "suggested_attributes": [
+          {
+            "name": "evidence_type",
+            "description": "The validation evidence type, such as test_code_ref, test_plan, checklist_item, conformance_requirement, manual_test_plan, issue_reference, or graduation_test_requirement.",
+            "value_type": "string",
+            "required": false
+          },
+          {
+            "name": "evidence_ref",
+            "description": "A URL, file path, issue link, dashboard link, test package, or other explicit reference to the validation evidence.",
+            "value_type": "string",
+            "required": false
+          },
+          {
+            "name": "validated_behavior",
+            "description": "The behavior, API, controller, component, or release condition that the evidence validates.",
+            "value_type": "string",
+            "required": false
+          },
+          {
+            "name": "maturity_stage",
+            "description": "The maturity stage or milestone associated with the validation evidence, such as alpha, beta, GA, stable, or conformance.",
+            "value_type": "string",
+            "required": false
+          }
+        ],
+        "confidence": 0.77,
+        "risk_flags": [
+          "too_broad",
+          "may_overlap_with_test_case",
+          "may_overlap_with_graduation_criterion",
+          "may_capture_release_checklist_boilerplate",
+          "mixed_bucket_indicates_split_may_be_better"
+        ]
+      }
+    }
+  ]
+}
