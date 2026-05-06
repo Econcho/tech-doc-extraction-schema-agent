@@ -78,11 +78,11 @@ Residual Blocks
 
 ### 抽取引擎主链路
 
-![extract](.\pics\extract.svg)
+![extract](pics/extract.svg)
 
 ### align细节
 
-![align](.\pics\align.svg)
+![align](pics/align.svg)
 
 ### tokenize
 
@@ -176,7 +176,7 @@ Grounding 过程优先进行 token-level exact match；如果无法完整精确�
 
 ## 抽取质量评测系统
 
-![eval](.\pics\eval.svg)
+![eval](pics/eval.svg)
 
 ### 完整评测流程
 
@@ -197,11 +197,11 @@ Grounding 过程优先进行 token-level exact match；如果无法完整精确�
 
 ### 分流Agent
 
-![triage](.\pics\triage.svg)
+![triage](pics/triage.svg)
 
 ### 提案Agent
 
-![proposal](F:\LLM\langextract-main\pics\proposal.svg)
+![proposal](pics/proposal.svg)
 
 ## 示例
 
