@@ -1,0 +1,44 @@
+# secrets
+.env
+.env.*
+!.env.example
+**/config.yaml
+!**/config.example.yaml
+
+# logs / debug
+*.log
+logs/
+debug/
+runs/
+trace/
+tmp/
+cache/
+.cache/
+
+# generated outputs
+outputs/
+results/
+artifacts/
+raw_outputs/
+debug_outputs/
+
+# model / vector index
+*.faiss
+*.index
+*.npy
+*.npz
+
+# python
+__pycache__/
+*.pyc
+.venv/
+venv/
+.env/
+
+# IDE
+.vscode/
+.idea/
+
+# OS
+.DS_Store
+Thumbs.db

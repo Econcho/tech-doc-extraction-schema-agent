@@ -1,293 +1,244 @@
-# 指标说明
+# 定义
 
-本文档介绍 `eval_system` 当前支持的全部评测指标，包括：
+## 评测对象
 
-- 指标计算方式
-- 指标含义
-- 典型用途
+对每篇文档，gold 和 prediction 都视为一个**无序的 Extraction 集合**
 
-当前指标分为两类：
-
-1. 主评测指标
-2. 诊断指标
-
-## 1. 主评测指标
-
-主评测指标使用 gold 和 prediction 做一对一匹配，并计算：
-
-- Precision
-- Recall
-- F1
-
-### 1.1 `detection_strict`
-
-计算方式：
-
-- 只比较 `extraction_text`
-- 使用严格文本匹配
-- 忽略 `extraction_class`
-- 忽略 `attributes`
-
-用途：
-
-- 衡量模型是否把应抽取的文本片段“原样抓到”
-- 适合先看文本检测能力，不看类别和结构
-
-### 1.2 `detection_relaxed`
-
-计算方式：
-
-- 只比较 `extraction_text`
-- 使用 relaxed 文本匹配
-- 忽略 `extraction_class`
-- 忽略 `attributes`
-
-用途：
-
-- 衡量模型是否至少抓到了接近的文本
-- 适合看召回趋势和宽松文本定位能力
-
-### 1.3 `class_strict`
-
-计算方式：
-
-- 要求 `extraction_class` 一致
-- `extraction_text` 使用严格匹配
-- 忽略 `attributes`
-
-用途：
-
-- 衡量文本抓取正确且类别判断正确的能力
-- 适合看“文本 + 类别”的联合质量
-
-### 1.4 `class_relaxed`
-
-计算方式：
-
-- 要求 `extraction_class` 一致
-- `extraction_text` 使用 relaxed 匹配
-- 忽略 `attributes`
-
-用途：
-
-- 在文本允许近似的情况下评估类别判断能力
-- 适合看类别层面的总体质量趋势
-
-### 1.5 `structured_strict`
-
-计算方式：
-
-- 要求 `extraction_class` 一致
-- `extraction_text` 严格匹配
-- `attributes` 严格匹配
-
-用途：
-
-- 衡量完整结构化抽取质量
-- 这是最严格、最接近“最终可用性”的主指标之一
-
-### 1.6 `structured_relaxed`
-
-计算方式：
-
-- 要求 `extraction_class` 一致
-- `extraction_text` relaxed 匹配
-- `attributes` 仍然严格匹配
-
-用途：
-
-- 衡量在文本允许一定松弛时，结构化抽取整体是否正确
-- 这是当前非常重要的综合质量指标
-
-## 2. 诊断指标
-
-诊断指标不参与 TP / FP / FN 一对一匹配，它们主要用于帮助分析 prediction 的结构质量和 grounding 质量。
-
-### 2.1 `structure_anomaly_rate`
-
-计算方式：
-
-- 对一个 prediction 文件，设 extraction 总数为 `N`
-- 结构异常的 extraction 数量为 `m`
-- 指标值为：
-  `m / N`
-
-结构异常的定义：
-
-- `extraction_class` 不在 schema 中
-- 或者 class 合法，但 `attributes` 中出现非法字段
-- 或者属性值落在非法枚举值上
-
-用途：
-
-- 衡量 prediction 自身的 schema 合规程度
-- 适合检查 prompt、后处理、结构输出是否稳定
-- 越低越好
-
-### 2.2 `grounding_match_exact_rate`
-
-计算方式：
-
-- 对一个 prediction 文件，设 extraction 总数为 `N`
-- `alignment_status == "match_exact"` 的 extraction 数量为 `m`
-- 指标值为：
-  `m / N`
-
-用途：
-
-- 衡量 prediction 中有多少抽取结果是精确 grounding 的
-- 越高越好
-
-### 2.3 `grounding_match_lesser_rate`
-
-计算方式：
-
-- `alignment_status == "match_lesser"` 的比例
-
-用途：
-
-- 衡量轻度不精确 grounding 的占比
-- 一般用于辅助看 grounding 质量分布
-
-### 2.4 `grounding_match_fuzzy_rate`
-
-计算方式：
-
-- `alignment_status == "match_fuzzy"` 的比例
-
-用途：
-
-- 衡量模糊 grounding 的比例
-- 越低通常越好
-
-### 2.5 `grounding_match_none_rate`
-
-计算方式：
-
-- `alignment_status is None` 的比例
-- 也包括无法识别状态时归入 `none`
-
-用途：
-
-- 衡量没有 grounding 信息或 grounding 失败的比例
-- 越低通常越好
-
-## 3. 指标之间的关系
-
-可以把这 11 个指标理解成三个层次：
-
-### 文本检测层
-
-- `detection_strict`
-- `detection_relaxed`
-
-回答：
-
-- 模型有没有把相关文本抓出来
-
-### 类别判断层
-
-- `class_strict`
-- `class_relaxed`
-
-回答：
-
-- 抓出来的文本类别对不对
-
-### 完整结构层
-
-- `structured_strict`
-- `structured_relaxed`
-
-回答：
-
-- 文本、类别、属性整体对不对
-
-### 结构与 grounding 诊断层
-
-- `structure_anomaly_rate`
-- `grounding_match_exact_rate`
-- `grounding_match_lesser_rate`
-- `grounding_match_fuzzy_rate`
-- `grounding_match_none_rate`
-
-回答：
-
-- prediction 的结构有没有异常
-- grounding 的质量分布怎样
-
-## 4. 如何使用这些指标
-
-### 看总体抽取质量
-
-优先关注：
-
-- `structured_relaxed`
-- `structured_strict`
-
-### 看文本抓取能力
-
-优先关注：
-
-- `detection_relaxed`
-- `detection_strict`
-
-### 看类别判断能力
-
-优先关注：
-
-- `class_relaxed`
-- `class_strict`
-
-### 看 prediction 结构稳定性
-
-优先关注：
-
-- `structure_anomaly_rate`
-
-### 看 grounding 质量
-
-优先关注：
-
-- `grounding_match_exact_rate`
-- `grounding_match_none_rate`
-
-## 5. 指标配置方式
-
-当前 YAML 配置中的 `metrics` 可以直接写所有指标名，例如：
-
-```yaml
-metrics:
-  - detection_strict
-  - detection_relaxed
-  - class_strict
-  - class_relaxed
-  - structured_strict
-  - structured_relaxed
-  - structure_anomaly_rate
-  - grounding_match_exact_rate
-  - grounding_match_lesser_rate
-  - grounding_match_fuzzy_rate
-  - grounding_match_none_rate
-```
-
+定义单个 extraction 为：
+$$
+E=(c,t,A)
+$$
 其中：
 
-- 前 6 个是主评测指标
-- 后 5 个是诊断指标
+- c：`extraction_class`
+- t：`extraction_text`
+- A：`attributes` 字典
 
-## 6. 一个实用判断原则
 
-如果你要判断一个新参数是否“整体更好”，通常建议优先看：
 
-1. `structured_relaxed`
-2. `structured_strict`
-3. `class_relaxed`
-4. `structure_anomaly_rate`
-5. `grounding_match_exact_rate`
+## 匹配
 
-原因是：
+### 文本严格匹配
 
-- `structured_*` 最接近最终结构化抽取可用性
-- `structure_anomaly_rate` 能暴露 schema 输出问题
-- `grounding_match_exact_rate` 能反映抽取结果和原文的对齐质量
+当且仅当归一化后的`label text`和`pred text`完全相同时，该pair被标记为文本严格匹配
+
+形式上
+$$
+StrictTextMatch(t_{label}, t_{pred}) = 1 \iff N(t_{label}) = N(t_{pred})
+$$
+**示例**
+
+```
+label text = "Add metrics exposing controller throughput, latency etc."
+pred text A = "Add metrics exposing controller throughput, latency etc."
+pred text B = "Add metrics exposing controller throughput"
+```
+
+* StrictTextMatch(label, A) = 1
+
+* StrictTextMatch(label, B) = 0
+
+
+
+### 文本宽松匹配
+
+将归一化后的`label text`和`pred text`使用tokenizer切成token序列`label tokenized text`$(T_l)$和`pred tokenized text`$(T_p)$后，计算token-level precision / recall / F1
+$$
+P = \frac{|T_l \cap T_p|}{|T_p|} \\
+R = \frac{|T_l \cap T_p|}{|T_l|} \\
+F1 = \frac{2PR}{P+R}
+$$
+当且仅当`label tokenized text`和`pred tokenized text`满足以下条件之一时，该pair被标记为文本宽松匹配
+
+1. `pred text`是`label text`的一个连续子片段，且$R > \tau_R$
+2. `label text`是`pred text`的一个连续子片段，且$P > \tau_P$
+3. $F1 > \tau_{F1}$，且$\frac{LCCS(T_l, T_p)}{min(|T_l|,|T_p|)}>\tau_{LCCS}$
+
+其中LCCS（ longest common contiguous subsequence）为最长公共连续 token 片段长度
+
+形式上
+$$
+RelaxedTextMatch(t_{label}, t_{pred}) = 1 \\
+\Updownarrow \\
+(t_{pred} \sqsubseteq t_{label} \space \land \space R > \tau_R) \space \lor \space
+(t_{label} \sqsubseteq t_{pred} \space \land \space P > \tau_P) \space \lor \space
+(F1 > \tau_{F1} \space \land \space \frac{LCCS(T_l, T_p)}{min(|T_l|,|T_p|)}>\tau_{LCCS})
+$$
+
+
+**LCCS 示例**
+
+```
+label text = "→select test scenarios← that we believe are expected from all conforming clusters"
+pred text = "We will →select test scenarios←"
+LCCS = |[select, test, scenarios]| = 3
+```
+
+
+
+### 属性匹配
+
+当且仅当`label attributes`和`pred attributes`的filed和value都完全相同时，该pair被标记为属性匹配
+
+
+
+### 匹配算法
+
+最大权二分图匹配，匈牙利算法
+
+
+
+# 评价指标
+
+## 主要指标
+
+对整篇文档或全部语料，计算P，R，F1
+
+### Precision
+
+TP占预测集的比例
+$$
+P = \frac{N(TP)}{N(p)} \\
+$$
+
+### Recall
+
+TP占标注集的比例
+$$
+R = \frac{N(TP)}{N(l)} \\
+$$
+
+### F1
+
+$$
+F1 = \frac{2PR}{P+R}
+$$
+
+
+
+### Detection Strict P/R/F1
+
+`label extraction_text`和`pred extraction_text` 文本严格匹配时，该pair被标记为TP
+
+pair权重：1
+
+**用途：判断模型有没有把这段文本抽出来**
+
+
+
+### Detection Relaxed P/R/F1
+
+`label extraction_text`和`pred extraction_text` 文本宽松匹配时，该pair被标记为TP
+
+pair合法条件：$RelaxedTextMatch(t_{label}, t_{pred}) = 1$
+
+pair权重：$F1(t_{label}, t_{pred})$
+
+**用途：判断模型是否至少抓到了大体正确的文本片段，即使边界略有漂移**
+
+
+
+### Class Strict P/R/F1
+
+`label`和`pred` 满足以下条件时，该pair被标记为TP
+
+1. `extraction_class` 相同
+
+2. `extraction_text`文本严格匹配
+
+pair权重：1
+
+**用途：判断模型是否抽到了正确文本且正确识别类别**
+
+
+
+### Class Relaxed P/R/F1
+
+`label`和`pred` 满足以下条件时，该pair被标记为TP
+
+1. `extraction_class` 相同
+
+2. `extraction_text`文本宽松匹配
+
+pair权重：$F1(t_{label}, t_{pred})$
+
+**用途：用于分离两类问题：**
+
+- **类别本身错**
+- **文本边界略漂但类别对**
+
+**如果 `Class Relaxed` 明显高于 `Class Strict`，说明主要问题不在分类，而在 extraction_text 边界或最小 span 控制**
+
+
+
+### Structured Strict P/R/F1
+
+`label`和`pred` 满足以下条件时，该pair被标记为TP
+
+1. `extraction_class` 相同
+
+2. `extraction_text`文本严格匹配
+3. `attributes`属性匹配
+
+pair权重：1
+
+**用途：最严格、最完整的核心指标，用于判断模型是否完整正确地抽取了一条结构化标注**
+
+
+
+### Structured Relaxed P/R/F1
+
+`label`和`pred` 满足以下条件时，，该pair被标记为TP
+
+1. `extraction_class` 相同
+
+2. `extraction_text`文本宽松匹配
+3. `attributes`属性匹配
+
+pair权重：$F1(t_{label}, t_{pred})$
+
+**用途：判断模型是否在结构上基本正确，只存在轻微文本边界差异或轻微文本属性差异**
+
+
+
+## grouding指标
+
+`pred`中Extraction总数为N，grounding结果为MATCH_STATE的Extraction总数为m，则grounding率为$\frac{m}{N}$
+
+其中MATCH_STATE有以下取值：
+
+* MATCH_EXACT
+* MATCH_LESSER
+* MATCH_FUZZY
+* MATCH_NONE
+
+MATCH_STATE含义见抽取主链路说明文档
+
+
+
+## 辅助指标
+
+### Sructure Anomaly Rate
+
+当一个Extraction满足以下条件之一时，被标记为结构异常：
+
+1. `extraction_class` 不在 schema 中
+2. `extraction_class` 合法，但 `attributes` 中出现非法字段
+3. `extraction_class` 合法， `attributes` 合法，但`attributes`出现非法枚举值
+
+`pred`中Extraction总数为N，结构异常Extraction数量为m，则
+$$
+Sructure Anomaly Rate = \frac{m}{N}
+$$
+
+### Error Buckets
+
+包括以下Error Buckets
+
+- `miss`：gold 没被召回。
+- `spurious`：prediction 多抽了无对应项。
+- `duplicate`：prediction 出现重复 extraction。
+- `text_drift`：文本抓到了近似片段，但没有达到 class 级匹配。
+- `class_error`：文本近似命中，但 class 错了。
+- `attribute_error`：class 对了，但 attributes 错了。
+

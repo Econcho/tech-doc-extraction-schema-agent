@@ -176,6 +176,8 @@ Grounding 过程优先进行 token-level exact match；如果无法完整精确�
 
 ## 抽取质量评测系统
 
+[指标说明文档](eval_system/metrics.md)
+
 ![eval](pics/eval.svg)
 
 ### 完整评测流程
