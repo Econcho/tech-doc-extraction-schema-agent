@@ -231,6 +231,8 @@ $$
 Sructure Anomaly Rate = \frac{m}{N}
 $$
 
+**用途：评估模型是否脱离了schema约束**
+
 ### Error Buckets
 
 包括以下Error Buckets
