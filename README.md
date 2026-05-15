@@ -2,6 +2,23 @@
 
 
 
+## 目录结构
+
+```
+tech-doc-extraction-schema-agent/
+├── extract_workflow/ 					# 抽取引擎主链路
+├── eval_system/						# 评测系统
+├── residual_info_agents/				# schema 演化 agents
+├── prompt/								# 抽取prompt
+├── example/							# 示例
+├── pics/								# 架构图
+├── README.md
+├── test_KEP.py							# 单篇文档抽取入口
+└── test_multiKEPs.py					# 多篇文档抽取入口
+```
+
+
+
 ## 项目动机
 
 技术文档结构化抽取的难点不只是“让 LLM 输出 JSON”。真实技术文档通常存在以下问题：
